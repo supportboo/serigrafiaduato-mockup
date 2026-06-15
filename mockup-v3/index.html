@@ -1,0 +1,2242 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+<meta name="theme-color" content="#0A0A0A" />
+<title>Serigrafía Duato · Marcaje profesional desde 1992 · Alboraya Valencia</title>
+<meta name="description" content="Serigrafía textil, tampografía, láser CO₂, DTF, sublimación. 12 técnicas en el mismo polígono. Presupuesto en menos de 4 horas. Alboraya, Valencia." />
+<meta name="keywords" content="serigrafía valencia, imprenta alboraya, tampografía, láser CO₂, DTF, sublimación, ropa laboral, merchandising agencia" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://serigrafiaduato.es/" />
+
+<meta property="og:title" content="Serigrafía Duato · 30 años de oficio en Alboraya" />
+<meta property="og:description" content="Tinta que cuenta historias. Mallas que aguantan. 12 técnicas, mismo equipo desde 1992." />
+<meta property="og:url" content="https://serigrafiaduato.es/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://serigrafiaduato.es/#org",
+      "name": "Serigrafía Duato",
+      "url": "https://serigrafiaduato.es",
+      "telephone": "+34961860275",
+      "email": "info@serigrafiaduato.es",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Camino del Mar 36, Polígono Industrial III",
+        "addressLocality": "Alboraya",
+        "addressRegion": "Comunidad Valenciana",
+        "postalCode": "46120",
+        "addressCountry": "ES"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 39.504, "longitude": -0.349 },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00", "closes": "17:00"
+      }],
+      "foundingDate": "1992",
+      "slogan": "Marcaje profesional desde 1992"
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --paper:#EFEAE0;
+  --paper-deep:#E8E1D4;
+  --ink:#0A0A0A;
+  --ink-soft:#1A1A1A;
+  --spot:#F37920;
+  --spot-deep:#D86310;
+  --spot-glow:rgba(243,121,32,0.18);
+  --mute:#8B847A;
+  --mute-soft:#A39C8E;
+  --c:#00AEEF; /* cyan */
+  --m:#EC008C; /* magenta */
+  --y:#FFF200; /* yellow */
+  --k:var(--ink);
+  --grain-url:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04  0 0 0 0 0.04  0 0 0 0 0.04  0 0 0 0.5 0'/></filter><rect width='300' height='300' filter='url(%23n)' opacity='0.7'/></svg>");
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter Tight",system-ui,sans-serif;
+  font-feature-settings:"ss01","cv11";
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  cursor:none;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:1;
+  background:var(--grain-url);
+  background-size:300px 300px;
+  opacity:.55;
+  mix-blend-mode:multiply;
+}
+::selection{background:var(--spot);color:var(--paper)}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+
+/* TIPOGRAFÍA · Fraunces variable respira con scroll */
+.f{font-family:"Fraunces",ui-serif,Georgia,serif;font-variation-settings:"opsz" 144,"wght" 700,"SOFT" 100,"WONK" 1}
+.f-l{font-variation-settings:"opsz" 144,"wght" 400,"SOFT" 100,"WONK" 0}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--mute);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{
+  content:"";
+  width:24px;height:1px;
+  background:var(--ink);
+}
+
+/* CURSOR · rasqueta de tinta */
+#cursor{
+  position:fixed;left:0;top:0;
+  width:14px;height:14px;
+  background:var(--spot);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  mix-blend-mode:multiply;
+  transition:transform .15s cubic-bezier(.32,.72,0,1),width .2s,height .2s;
+  will-change:transform;
+}
+#cursor.is-link{width:54px;height:54px;background:var(--spot);opacity:.7}
+#ink-trail{
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:9998;
+  mix-blend-mode:multiply;
+}
+@media (hover:none){body{cursor:auto}#cursor,#ink-trail{display:none}}
+
+/* NAV */
+nav.top{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;
+  mix-blend-mode:multiply;
+  transition:padding .3s, backdrop-filter .3s;
+}
+nav.top.compact{
+  padding:12px 32px;
+  backdrop-filter:blur(12px) saturate(1.2);
+  background:rgba(239,234,224,0.78);
+  mix-blend-mode:normal;
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces";font-weight:700;font-size:20px;letter-spacing:-0.01em}
+.brand-mark{
+  width:32px;height:32px;
+  background:var(--ink);
+  color:var(--paper);
+  display:grid;place-items:center;
+  font-family:"Fraunces";font-weight:900;font-size:22px;font-style:italic;
+}
+.brand-mark .o{color:var(--spot)}
+nav .links{display:none;gap:36px;font-size:13px;font-weight:500}
+nav .links a{position:relative;padding:6px 0}
+nav .links a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;
+  height:1px;background:var(--ink);transition:right .3s;
+}
+nav .links a:hover::after{right:0}
+.nav-cta{
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:10px 18px;
+  background:var(--ink);color:var(--paper);
+  border:none;
+}
+@media(min-width:900px){nav .links{display:flex}}
+
+/* HERO · ACTO I */
+section.hero{
+  position:relative;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  padding:120px 24px 60px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+/* Halftone CMYK animado vivo */
+.halftone{
+  position:absolute;inset:-20%;
+  background-image:
+    radial-gradient(circle at 25% 25%, var(--c) 1.5px, transparent 1.8px),
+    radial-gradient(circle at 75% 25%, var(--m) 1.5px, transparent 1.8px),
+    radial-gradient(circle at 25% 75%, var(--y) 1.5px, transparent 1.8px),
+    radial-gradient(circle at 75% 75%, var(--k) 1.5px, transparent 1.8px);
+  background-size:24px 24px;
+  opacity:.10;
+  mix-blend-mode:multiply;
+  animation:halftoneDrift 30s linear infinite;
+}
+@keyframes halftoneDrift{
+  0%{transform:translate(0,0)}
+  50%{transform:translate(12px,8px)}
+  100%{transform:translate(0,0)}
+}
+/* HERO video = press window editorial · ya no cuadrado flotante con poster placeholder */
+.press-window{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/5;
+  background:var(--ink);
+  overflow:hidden;
+  isolation:isolate;
+  cursor:none;
+}
+.press-window video{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:grayscale(.18) contrast(1.06) brightness(.95);
+  transform:scale(1.04);
+  transition:transform .9s cubic-bezier(.32,.72,0,1);
+}
+.press-window:hover video{transform:scale(1.0)}
+
+/* Press window frame: registration marks + color bars */
+.pw-bars{
+  position:absolute;left:0;top:0;bottom:0;width:14px;
+  display:flex;flex-direction:column;
+  z-index:2;
+}
+.pw-bars div{flex:1}
+.pw-bars .c{background:var(--c)}
+.pw-bars .m{background:var(--m)}
+.pw-bars .y{background:var(--y)}
+.pw-bars .k{background:var(--paper)}
+.pw-bars .s{background:var(--spot)}
+
+.pw-reg{
+  position:absolute;
+  width:24px;height:24px;
+  z-index:3;
+  pointer-events:none;
+}
+.pw-reg::before,.pw-reg::after{
+  content:"";position:absolute;
+  background:var(--paper);
+}
+.pw-reg::before{left:50%;top:0;bottom:0;width:1px;transform:translateX(-50%)}
+.pw-reg::after{top:50%;left:0;right:0;height:1px;transform:translateY(-50%)}
+.pw-reg .dot{
+  position:absolute;left:50%;top:50%;
+  width:8px;height:8px;
+  border:1px solid var(--paper);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+.pw-reg.tl{top:10px;left:24px}
+.pw-reg.tr{top:10px;right:10px}
+.pw-reg.bl{bottom:10px;left:24px}
+.pw-reg.br{bottom:10px;right:10px}
+
+.pw-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(10,10,10,.05) 0%, transparent 30%, transparent 70%, rgba(10,10,10,.45) 100%);
+  pointer-events:none;
+  z-index:1;
+}
+
+.pw-meta{
+  position:absolute;left:0;right:0;bottom:0;
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding:18px 22px 18px 36px;
+  z-index:4;
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(239,234,224,0.92);
+}
+.pw-meta .pw-tag{display:flex;align-items:center;gap:10px}
+.pw-meta .pw-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--spot);box-shadow:0 0 12px var(--spot)}
+.pw-meta .pw-pms{
+  background:var(--spot);color:var(--ink);
+  padding:4px 8px;letter-spacing:.18em;
+}
+
+/* Caption pinned outside top */
+.pw-caption{
+  position:absolute;top:-32px;left:36px;
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--mute);
+  display:flex;align-items:center;gap:12px;
+}
+.pw-caption::after{
+  content:"";flex:1;height:1px;background:var(--ink);width:60px;
+}
+
+@media(max-width:1023px){
+  .press-window{aspect-ratio:1/1;margin-top:32px}
+  .pw-caption{top:-26px}
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:1280px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+@media(min-width:1024px){.hero-content{grid-template-columns:1.1fr .9fr;align-items:center}}
+
+.hero-left{position:relative}
+.hero-left .eyebrow{margin-bottom:32px}
+.hero-h1{
+  font-family:"Fraunces",serif;
+  font-variation-settings:"opsz" 144,"wght" 700,"SOFT" 100,"WONK" 1;
+  font-size:clamp(48px,9vw,128px);
+  line-height:.92;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin:0 0 32px;
+}
+.hero-h1 .line{display:block;overflow:hidden}
+.hero-h1 .line span{display:inline-block;transform:translateY(110%);will-change:transform}
+.hero-h1 em{
+  font-style:italic;
+  color:var(--spot);
+  font-variation-settings:"opsz" 144,"wght" 700,"SOFT" 100,"WONK" 1;
+  position:relative;
+}
+/* misregistration trichromy en el em */
+.hero-h1 em::before,.hero-h1 em::after{
+  content:attr(data-text);
+  position:absolute;left:0;top:0;
+  pointer-events:none;
+  mix-blend-mode:multiply;
+  opacity:.55;
+}
+.hero-h1 em::before{color:var(--c);transform:translate(-3px,1px)}
+.hero-h1 em::after{color:var(--m);transform:translate(3px,-1px)}
+
+.hero-sub{
+  font-size:clamp(15px,1.4vw,19px);
+  max-width:520px;
+  color:var(--ink-soft);
+  line-height:1.55;
+  margin-bottom:40px;
+}
+.hero-sub strong{font-weight:600;color:var(--ink)}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,auto);
+  gap:36px;
+  align-items:end;
+  padding-top:32px;
+  border-top:1px solid var(--ink);
+  margin-top:24px;
+  max-width:540px;
+}
+.hero-stat .v{
+  font-family:"Fraunces";
+  font-variation-settings:"opsz" 144,"wght" 800;
+  font-size:clamp(32px,3.4vw,52px);
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.hero-stat .v em{color:var(--spot);font-style:italic}
+.hero-stat .l{
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--mute);
+  margin-top:8px;
+}
+
+.hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.cta{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:18px 28px;
+  font-family:"JetBrains Mono",monospace;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  border:none;cursor:none;
+  transition:transform .2s, background .3s, color .3s;
+}
+.cta.primary{background:var(--ink);color:var(--paper)}
+.cta.primary:hover{background:var(--spot);color:var(--ink)}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.cta.ghost:hover{background:var(--ink);color:var(--paper)}
+.cta .arrow{display:inline-block;transition:transform .3s}
+.cta:hover .arrow{transform:translateX(6px)}
+
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--mute);
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  z-index:3;
+}
+.scroll-hint .bar{width:1px;height:32px;background:var(--ink);transform-origin:top;animation:barPulse 2s ease-in-out infinite}
+@keyframes barPulse{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+
+/* ============ TEST PRINT STRIP · color bar editorial industrial ============ */
+.test-strip{
+  position:relative;
+  background:var(--paper);
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  padding:0;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:stretch;
+  height:64px;
+  overflow:hidden;
+}
+.crosshair{
+  position:relative;
+  width:64px;height:64px;
+  background:var(--paper);
+}
+.crosshair::before,.crosshair::after{
+  content:"";position:absolute;left:50%;top:50%;
+  background:var(--ink);
+}
+.crosshair::before{width:1px;height:24px;transform:translate(-50%,-50%)}
+.crosshair::after{width:24px;height:1px;transform:translate(-50%,-50%)}
+.crosshair .ring{
+  position:absolute;left:50%;top:50%;
+  width:18px;height:18px;border:1px solid var(--ink);border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+.cmyk-bars{display:grid;grid-template-columns:repeat(4,1fr);width:80px;border-right:1px solid var(--ink)}
+.cmyk-bars div{height:100%}
+.cmyk-bars .c{background:var(--c)}
+.cmyk-bars .m{background:var(--m)}
+.cmyk-bars .y{background:var(--y)}
+.cmyk-bars .k{background:var(--ink)}
+.strip-tape{
+  position:relative;
+  overflow:hidden;
+  display:flex;align-items:center;
+  border-left:1px solid var(--ink);
+  border-right:1px solid var(--ink);
+}
+.strip-tape::before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:8px;
+  background-image:
+    linear-gradient(90deg, var(--ink) 50%, transparent 50%);
+  background-size:8px 8px;
+  opacity:.6;
+}
+.strip-tape::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:0;height:8px;
+  background-image:
+    linear-gradient(90deg, var(--ink) 50%, transparent 50%);
+  background-size:8px 8px;
+  opacity:.6;
+}
+.strip-track{
+  display:flex;gap:0;
+  animation:strip 35s linear infinite;
+  will-change:transform;
+  white-space:nowrap;
+  padding:0 24px;
+}
+@keyframes strip{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.strip-item{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:0 28px;
+  font-family:"JetBrains Mono",monospace;
+  font-size:12px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink);
+  border-right:1px solid #c8bda9;
+}
+.strip-item .pms{
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;
+  letter-spacing:.18em;
+  background:var(--ink);
+  color:var(--paper);
+  padding:3px 6px;
+}
+.strip-item.spot{color:var(--spot)}
+.strip-item.spot .pms{background:var(--spot);color:var(--ink)}
+.strip-side{
+  font-family:"JetBrains Mono",monospace;
+  font-size:9px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--mute);
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  padding:14px 8px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--paper-deep);
+}
+
+/* ACTO II · Oficio sticky split */
+section.oficio{
+  padding:160px 32px 120px;
+  position:relative;
+}
+.oficio-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:64px;
+}
+@media(min-width:1024px){.oficio-grid{grid-template-columns:1fr 1fr;gap:96px}}
+.oficio-left{position:sticky;top:120px;align-self:start}
+.oficio-left h2{
+  font-family:"Fraunces";
+  font-variation-settings:"opsz" 144,"wght" 600,"SOFT" 100;
+  font-size:clamp(40px,6vw,80px);
+  line-height:.95;letter-spacing:-0.02em;
+  margin:24px 0 32px;
+}
+.oficio-left h2 em{font-style:italic;color:var(--spot)}
+.manifesto p{
+  font-size:18px;line-height:1.65;
+  max-width:480px;
+  margin-bottom:22px;
+  color:var(--ink-soft);
+}
+.manifesto p:first-of-type::first-letter{
+  font-family:"Fraunces";
+  font-variation-settings:"opsz" 144,"wght" 800;
+  font-size:96px;line-height:.8;
+  float:left;
+  padding-right:18px;padding-top:8px;
+  color:var(--spot);
+}
+.pull-quote{
+  font-family:"Fraunces";
+  font-variation-settings:"opsz" 144,"wght" 400,"SOFT" 100,"WONK" 1;
+  font-style:italic;
+  font-size:clamp(24px,3.2vw,40px);
+  line-height:1.15;
+  margin:48px 0 32px;
+  padding-left:24px;
+  border-left:3px solid var(--spot);
+}
+.pull-quote cite{
+  display:block;
+  font-family:"JetBrains Mono",monospace;font-style:normal;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mute);
+  margin-top:18px;
+}
+
+.timeline{position:relative;padding-left:36px}
+.timeline::before{
+  content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(to bottom, var(--ink) 0%, var(--spot) 50%, var(--ink) 100%);
+}
+.tl-item{position:relative;padding-bottom:48px;opacity:.4;transition:opacity .6s}
+.tl-item.in{opacity:1}
+.tl-item::before{
+  content:"";position:absolute;left:-43px;top:6px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--paper);
+  border:2px solid var(--ink);
+}
+.tl-item.in::before{background:var(--spot);border-color:var(--spot)}
+.tl-item .year{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--spot);margin-bottom:6px;
+}
+.tl-item h4{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:22px;letter-spacing:-0.01em;margin-bottom:8px;
+}
+.tl-item p{font-size:15px;line-height:1.55;color:var(--mute);max-width:360px}
+
+/* ============ ACTO III · PANTONE BOOK INTERACTIVO ============ */
+section.tecnicas{
+  position:relative;
+  padding:120px 0 160px;
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+  min-height:100vh;
+}
+section.tecnicas::before{
+  content:"";position:absolute;inset:0;
+  background:var(--grain-url);background-size:300px;
+  opacity:.4;mix-blend-mode:overlay;pointer-events:none;
+}
+.tec-head{max-width:1280px;margin:0 auto 56px;padding:0 32px;position:relative;z-index:2}
+.tec-head .eyebrow::before{background:var(--paper)}
+.tec-head .eyebrow{color:var(--mute-soft)}
+.tec-head h2{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600,"SOFT" 100;
+  font-size:clamp(40px,6vw,84px);line-height:.95;letter-spacing:-0.02em;
+  margin-top:18px;
+}
+.tec-head h2 em{font-style:italic;color:var(--spot)}
+.tec-head .sub{
+  margin-top:18px;font-size:15px;color:var(--mute-soft);
+  font-family:"JetBrains Mono",monospace;
+  letter-spacing:.12em;
+}
+.tec-head .sub kbd{
+  display:inline-block;
+  background:var(--ink-soft);border:1px solid var(--mute);
+  padding:3px 8px;
+  font-family:"JetBrains Mono",monospace;font-size:10px;
+  margin:0 4px;
+}
+.tec-chips{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
+.tec-chips button{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  background:transparent;color:var(--paper);
+  border:1px solid var(--mute);
+  padding:10px 18px;cursor:none;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.tec-chips button.active,.tec-chips button:hover{background:var(--spot);color:var(--ink);border-color:var(--spot)}
+
+/* PANTONE BOOK · stack 3D rotation */
+.pantone-book{
+  position:relative;z-index:1;
+  max-width:1280px;margin:0 auto;padding:0 32px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+}
+@media(min-width:900px){.pantone-book{grid-template-columns:1.05fr .95fr;align-items:start;gap:80px}}
+
+.book-stage{
+  position:relative;
+  height:560px;
+  display:grid;place-items:center;
+  perspective:1800px;
+  perspective-origin:50% 60%;
+}
+.book-card{
+  position:absolute;
+  width:300px;
+  height:440px;
+  background:linear-gradient(180deg, var(--paper) 0%, var(--paper) 35%, var(--paper-deep) 100%);
+  color:var(--ink);
+  border:1px solid var(--ink);
+  padding:0;
+  cursor:none;
+  transform-origin:left center;
+  transform-style:preserve-3d;
+  transition:transform .9s cubic-bezier(.32,.72,0,1), opacity .6s, box-shadow .6s;
+  box-shadow:8px 18px 36px -12px rgba(0,0,0,.5), inset 0 -16px 0 -8px rgba(10,10,10,.06);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.book-card .swatch{
+  flex:0 0 56%;
+  position:relative;
+  overflow:hidden;
+  background:var(--spot);
+}
+.book-card .swatch::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 50% 50%, transparent 30%, rgba(0,0,0,.12) 100%);
+}
+.book-card .swatch::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(10,10,10,.18) 1px, transparent 1.5px);
+  background-size:8px 8px;
+  opacity:.22;
+  mix-blend-mode:multiply;
+}
+.book-card .swatch video,.book-card .swatch img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  filter:grayscale(.35) contrast(1.1);
+  opacity:0;transition:opacity .6s;
+}
+.book-card.is-active .swatch video,.book-card.is-active .swatch img{opacity:.85}
+.book-card .meta{
+  padding:22px 24px 24px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.book-card .num{
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;letter-spacing:.32em;color:var(--mute);
+  display:flex;align-items:center;gap:8px;
+}
+.book-card .num::before{
+  content:"";width:14px;height:1px;background:var(--ink);
+}
+.book-card h3{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600,"SOFT" 100;
+  font-size:30px;letter-spacing:-0.02em;line-height:1;
+  margin:6px 0 4px;
+}
+.book-card h3 em{font-style:italic;color:var(--spot)}
+.book-card .pms{
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.22em;
+  color:var(--mute);text-transform:uppercase;
+}
+.book-card.is-prev{transform:rotateY(-92deg) translateZ(-10px);opacity:.0;pointer-events:none}
+.book-card.is-active{transform:rotateY(0deg) translateZ(40px);z-index:10;box-shadow:18px 36px 80px -20px rgba(0,0,0,.65), inset 0 -16px 0 -8px rgba(10,10,10,.06)}
+.book-card.is-next-1{transform:rotateY(-6deg) translateX(18px) translateZ(20px);z-index:9;opacity:.92}
+.book-card.is-next-2{transform:rotateY(-12deg) translateX(36px) translateZ(0);z-index:8;opacity:.78}
+.book-card.is-next-3{transform:rotateY(-18deg) translateX(54px) translateZ(-20px);z-index:7;opacity:.62}
+.book-card.is-next-4{transform:rotateY(-22deg) translateX(72px) translateZ(-40px);z-index:6;opacity:.42}
+.book-card.is-rest{transform:rotateY(-28deg) translateX(90px) translateZ(-60px);z-index:5;opacity:0;pointer-events:none}
+
+/* Book detail panel */
+.book-detail{position:relative}
+.book-detail .num-big{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 800,"WONK" 1;
+  font-style:italic;
+  font-size:clamp(120px,18vw,220px);
+  line-height:.85;letter-spacing:-0.05em;
+  color:var(--ink-soft);
+  -webkit-text-stroke:1px var(--paper);
+  position:absolute;top:-30px;right:0;
+  z-index:0;pointer-events:none;
+}
+.book-detail .num-big em{color:var(--spot);-webkit-text-stroke:0}
+.book-detail-inner{position:relative;z-index:1}
+.book-detail h3{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600;
+  font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-0.02em;
+  margin:18px 0 16px;
+}
+.book-detail h3 em{font-style:italic;color:var(--spot)}
+.book-detail p.lead{
+  font-size:17px;line-height:1.6;color:var(--mute-soft);
+  max-width:480px;margin-bottom:24px;
+}
+.book-detail .specs{
+  display:grid;
+  grid-template-columns:auto 1fr;gap:14px 24px;
+  padding:24px 0;border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;
+  font-family:"JetBrains Mono",monospace;font-size:12px;
+}
+.book-detail .specs dt{color:var(--mute);letter-spacing:.15em;text-transform:uppercase;font-size:10px}
+.book-detail .specs dd{color:var(--paper);letter-spacing:.05em}
+.book-detail .ideal{
+  margin-top:24px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.15em;
+  color:var(--spot);
+  display:flex;gap:10px;
+}
+.book-detail .ideal::before{content:"→"}
+
+.book-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:32px;
+  padding-top:24px;border-top:1px solid #2a2a2a;
+}
+.book-counter{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--mute);
+}
+.book-counter em{color:var(--spot);font-style:normal;font-variation-settings:"wght" 600;font-size:14px}
+.book-arrows{display:flex;gap:6px}
+.book-arrows button{
+  background:transparent;border:1px solid var(--mute);color:var(--paper);
+  width:44px;height:44px;cursor:none;
+  display:grid;place-items:center;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.book-arrows button:hover{background:var(--spot);color:var(--ink);border-color:var(--spot)}
+.book-arrows button:disabled{opacity:.35;cursor:default}
+
+/* Spine dots indicador */
+.book-spine{
+  margin-top:18px;
+  display:grid;grid-template-columns:repeat(12,1fr);gap:6px;
+}
+.book-spine button{
+  height:6px;background:#2a2a2a;border:none;cursor:none;
+  transition:background .25s, transform .25s;
+}
+.book-spine button.is-active{background:var(--spot)}
+.book-spine button:hover{transform:scaleY(1.6)}
+
+/* ACTO IV · Materiales · auto-rotate Pantone */
+section.materiales{
+  padding:160px 32px;
+  position:relative;
+}
+.mat-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:64px;
+}
+@media(min-width:900px){.mat-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:96px}}
+.mat-text h2{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600,"SOFT" 100;
+  font-size:clamp(40px,6vw,84px);line-height:.95;letter-spacing:-0.02em;
+  margin:18px 0 32px;
+}
+.mat-text h2 em{font-style:italic;color:var(--spot)}
+.mat-content{position:relative;min-height:280px}
+.mat-slide{
+  position:absolute;inset:0;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .8s, transform .8s;
+  pointer-events:none;
+}
+.mat-slide.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative;inset:auto}
+.mat-slide h3{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:26px;margin-bottom:18px;
+}
+.mat-slide ul{list-style:none;padding:0}
+.mat-slide ul li{
+  padding:10px 0;border-bottom:1px solid #DDD3C2;
+  font-size:15px;color:var(--ink-soft);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.mat-slide ul li::after{
+  content:attr(data-spec);
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);
+}
+.mat-nav{display:flex;gap:8px;margin-top:24px}
+.mat-nav button{
+  width:32px;height:4px;background:#DDD3C2;border:none;cursor:none;
+  transition:background .3s;
+}
+.mat-nav button.active{background:var(--spot)}
+
+.pantone-stack{
+  position:relative;
+  display:grid;place-items:center;
+  perspective:1200px;
+  min-height:380px;
+}
+.pantone-card{
+  position:absolute;
+  width:240px;height:340px;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  padding:24px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transform-style:preserve-3d;
+  transition:transform .8s cubic-bezier(.32,.72,0,1), opacity .6s;
+  box-shadow:0 30px 60px -20px rgba(10,10,10,.3);
+}
+.pantone-card .swatch{
+  width:100%;height:200px;
+  margin-bottom:18px;
+}
+.pantone-card h4{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:var(--mute);
+  margin-bottom:6px;
+}
+.pantone-card .name{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:22px;line-height:1.1;letter-spacing:-0.01em;
+}
+.pantone-card .code{
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;color:var(--mute);
+  margin-top:8px;
+}
+
+/* ACTO V · Casos */
+section.casos{
+  padding:160px 32px;
+  background:var(--paper-deep);
+  position:relative;
+}
+.casos-head{max-width:1280px;margin:0 auto 56px}
+.casos-head h2{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600;
+  font-size:clamp(40px,6vw,84px);line-height:.95;margin:18px 0 16px;
+}
+.casos-head h2 em{font-style:italic;color:var(--spot)}
+.casos-head p{font-size:17px;color:var(--ink-soft);max-width:540px;line-height:1.55}
+.casos-filter{margin:32px 0;display:flex;gap:10px;flex-wrap:wrap}
+.casos-filter button{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  background:transparent;color:var(--ink);border:1px solid var(--ink);
+  padding:10px 18px;cursor:none;transition:.2s;
+}
+.casos-filter button.active,.casos-filter button:hover{background:var(--ink);color:var(--paper)}
+
+.casos-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+}
+@media(min-width:700px){.casos-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.casos-grid{grid-template-columns:1fr 1fr 1fr}}
+.caso{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  overflow:hidden;
+  cursor:none;
+  transition:.5s cubic-bezier(.32,.72,0,1);
+}
+.caso:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:0 30px 60px -20px rgba(10,10,10,.25)}
+.caso .img{
+  aspect-ratio:4/5;
+  background:var(--ink);
+  position:relative;overflow:hidden;
+}
+.caso .img img,.caso .img video{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.3) contrast(1.1);
+  transition:filter .6s, transform .6s;
+}
+.caso:hover .img img,.caso:hover .img video{filter:grayscale(0) contrast(1);transform:scale(1.05)}
+.caso .body{padding:24px}
+.caso .tag{
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--spot);margin-bottom:8px;
+}
+.caso h3{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:22px;letter-spacing:-0.01em;line-height:1.15;margin-bottom:6px;
+}
+.caso .meta{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);
+  margin-top:14px;display:flex;gap:14px;
+}
+.caso .meta span::before{content:"·";margin-right:8px}
+.caso .meta span:first-child::before{display:none;margin:0}
+
+/* ACTO VI · Proceso sticky 6 pasos */
+section.proceso{padding:160px 0;position:relative}
+.proc-head{max-width:1280px;margin:0 auto 64px;padding:0 32px}
+.proc-head h2{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600;
+  font-size:clamp(40px,6vw,84px);line-height:.95;margin:18px 0 0;
+}
+.proc-head h2 em{font-style:italic;color:var(--spot)}
+.proc-grid{
+  max-width:1280px;margin:0 auto;padding:0 32px;
+  display:grid;grid-template-columns:1fr;gap:48px;
+}
+@media(min-width:900px){.proc-grid{grid-template-columns:1fr 1.2fr;gap:96px}}
+.proc-sticky{
+  position:sticky;top:120px;align-self:start;
+  aspect-ratio:4/5;
+  background:var(--ink);
+  overflow:hidden;
+  position:sticky;
+}
+.proc-sticky .slide{
+  position:absolute;inset:0;
+  opacity:0;transition:opacity .8s;
+}
+.proc-sticky .slide.active{opacity:1}
+.proc-sticky .slide img,.proc-sticky .slide video{width:100%;height:100%;object-fit:cover;filter:grayscale(.3)}
+.proc-step{
+  padding:48px 0;
+  border-bottom:1px solid #DDD3C2;
+  opacity:.35;transition:opacity .5s;
+}
+.proc-step.in{opacity:1}
+.proc-step:last-child{border-bottom:none}
+.proc-step .n{
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;letter-spacing:.3em;color:var(--spot);
+  margin-bottom:14px;
+}
+.proc-step h3{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600;
+  font-size:clamp(28px,3.6vw,46px);line-height:.95;letter-spacing:-0.02em;margin-bottom:16px;
+}
+.proc-step p{font-size:16px;line-height:1.6;color:var(--ink-soft);max-width:480px}
+
+/* ACTO VII · Calculadora + form */
+section.calc{
+  padding:160px 32px 120px;
+  background:var(--ink);
+  color:var(--paper);
+  position:relative;
+}
+section.calc::before{
+  content:"";position:absolute;inset:0;background:var(--grain-url);background-size:300px;
+  opacity:.4;mix-blend-mode:overlay;pointer-events:none;
+}
+.calc-head{max-width:1280px;margin:0 auto 64px;position:relative;z-index:1}
+.calc-head .eyebrow{color:var(--mute-soft)}
+.calc-head .eyebrow::before{background:var(--paper)}
+.calc-head h2{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600;
+  font-size:clamp(40px,6vw,84px);line-height:.95;margin:18px 0 0;
+}
+.calc-head h2 em{font-style:italic;color:var(--spot)}
+
+.calc-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:48px;
+  position:relative;z-index:1;
+}
+@media(min-width:900px){.calc-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.calc-inputs label{
+  display:block;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mute-soft);
+  margin-bottom:14px;margin-top:32px;
+}
+.calc-inputs label:first-child{margin-top:0}
+.calc-chips{display:flex;gap:8px;flex-wrap:wrap}
+.calc-chips button{
+  background:transparent;border:1px solid var(--mute);
+  color:var(--paper);
+  padding:10px 16px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  cursor:none;transition:.2s;
+}
+.calc-chips button.active{background:var(--spot);color:var(--ink);border-color:var(--spot)}
+input[type="range"]{
+  width:100%;
+  -webkit-appearance:none;
+  height:2px;background:var(--mute);outline:none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--spot);cursor:none;
+}
+.range-out{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:14px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);
+}
+.range-out .v{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:28px;color:var(--paper);
+}
+
+.calc-output{
+  background:rgba(243,121,32,.06);
+  border:1px solid var(--spot);
+  padding:48px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.calc-output::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(var(--spot) 1px,transparent 1.5px);
+  background-size:18px 18px;
+  opacity:.08;
+}
+.calc-output .eyebrow{color:var(--spot);position:relative}
+.calc-output .eyebrow::before{background:var(--spot)}
+.calc-output .price{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 700;
+  font-size:clamp(48px,7vw,96px);line-height:.95;letter-spacing:-0.03em;
+  margin:18px 0 6px;
+}
+.calc-output .price em{font-style:italic;color:var(--spot)}
+.calc-output .price .unit{font-size:.3em;letter-spacing:.2em;font-style:normal;color:var(--mute-soft);font-family:"JetBrains Mono",monospace;margin-left:8px}
+.calc-output .meta{
+  font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute-soft);
+  display:grid;grid-template-columns:auto 1fr;gap:12px 24px;margin-top:24px;
+}
+.calc-output .meta dt{color:var(--mute)}
+.calc-output .meta dd{color:var(--paper);letter-spacing:.05em}
+.calc-output .disclaimer{
+  margin-top:32px;padding-top:24px;border-top:1px dashed var(--mute);
+  font-size:11px;color:var(--mute);line-height:1.5;
+}
+.calc-output .cta-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.calc-output .cta{background:var(--spot);color:var(--ink)}
+.calc-output .cta:hover{background:var(--paper);color:var(--ink)}
+.calc-output .cta.ghost{background:transparent;color:var(--paper);border:1px solid var(--paper)}
+
+/* FORM */
+section.contact{
+  padding:160px 32px;position:relative;
+}
+.contact-grid{
+  max-width:1080px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:48px;
+}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1.2fr;gap:96px}}
+.contact-left h2{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 600;
+  font-size:clamp(40px,5vw,68px);line-height:.95;margin:18px 0 32px;
+}
+.contact-left h2 em{font-style:italic;color:var(--spot)}
+.contact-channels{display:grid;gap:18px;margin-top:32px}
+.contact-ch{
+  padding:18px 0;border-bottom:1px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.contact-ch h4{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:4px;
+}
+.contact-ch p{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:22px;
+}
+
+.form-card{
+  background:var(--paper);
+  border:1px solid var(--ink);
+  padding:48px 32px;
+}
+.form-card .grid{display:grid;gap:18px}
+.form-card label{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:8px;display:block;
+}
+.form-card input,.form-card textarea,.form-card select{
+  width:100%;
+  background:transparent;
+  border:none;border-bottom:1px solid var(--ink);
+  padding:10px 0;
+  font-family:"Inter Tight",sans-serif;font-size:16px;color:var(--ink);
+  outline:none;
+  transition:border-color .3s;
+}
+.form-card input:focus,.form-card textarea:focus{border-color:var(--spot)}
+.form-card textarea{min-height:96px;resize:vertical}
+.icp-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.icp-chips button{
+  background:transparent;border:1px solid var(--ink);color:var(--ink);
+  padding:8px 14px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  cursor:none;transition:.2s;
+}
+.icp-chips button.active{background:var(--ink);color:var(--paper)}
+.form-card .submit{margin-top:24px;width:100%;justify-content:center;cursor:none}
+
+/* LEAD MAGNETS */
+section.leads{
+  padding:120px 32px;background:var(--paper-deep);
+}
+.leads-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+}
+@media(min-width:600px){.leads-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.leads-grid{grid-template-columns:repeat(4,1fr)}}
+.lead{
+  padding:32px 24px;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  cursor:none;transition:.4s;
+}
+.lead:hover{background:var(--ink);color:var(--paper)}
+.lead:hover *{color:inherit}
+.lead .icon{
+  width:48px;height:48px;display:grid;place-items:center;
+  border:1px solid var(--ink);
+  margin-bottom:24px;
+  font-family:"JetBrains Mono",monospace;font-weight:700;
+}
+.lead h4{
+  font-family:"Fraunces";font-variation-settings:"opsz" 36,"wght" 600;
+  font-size:20px;letter-spacing:-0.01em;line-height:1.2;margin-bottom:8px;
+}
+.lead p{font-size:13px;color:var(--mute);line-height:1.5;margin-bottom:18px}
+.lead .download{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;
+}
+
+/* FOOTER */
+footer{
+  background:var(--ink);
+  color:var(--paper);
+  padding:96px 32px 48px;
+  position:relative;
+}
+footer::before{
+  content:"";position:absolute;inset:0;background:var(--grain-url);background-size:300px;
+  opacity:.4;mix-blend-mode:overlay;
+}
+.ft-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:48px;
+  position:relative;z-index:1;
+}
+@media(min-width:700px){.ft-grid{grid-template-columns:2fr 1fr 1fr}}
+.ft-brand{font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 700;font-size:36px;letter-spacing:-0.02em}
+.ft-brand em{font-style:italic;color:var(--spot)}
+.ft-tag{font-size:14px;color:var(--mute-soft);margin-top:14px;max-width:340px;line-height:1.5}
+.ft-col h5{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:18px;
+}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:10px;font-size:14px}
+.ft-col a:hover{color:var(--spot)}
+.ft-bottom{
+  max-width:1280px;margin:64px auto 0;padding-top:32px;
+  border-top:1px solid #222;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.15em;color:var(--mute);
+  position:relative;z-index:1;
+}
+.ft-bottom a:hover{color:var(--paper)}
+.ft-mega{
+  font-family:"Fraunces";font-variation-settings:"opsz" 144,"wght" 800,"WONK" 1;
+  font-style:italic;
+  font-size:clamp(80px,18vw,260px);
+  line-height:.85;
+  text-align:center;
+  color:var(--ink-soft);
+  text-stroke:1px var(--paper);-webkit-text-stroke:1px var(--paper);
+  margin:96px 0 32px;
+  letter-spacing:-0.06em;
+  position:relative;z-index:1;
+}
+.ft-mega em{color:var(--spot);-webkit-text-stroke:0}
+
+/* Reduce motion */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .halftone,.marquee-track{animation:none}
+}
+
+/* Mobile */
+@media(max-width:700px){
+  nav.top{padding:14px 18px}
+  .hero{padding:100px 18px 60px}
+  .hero-content{gap:32px}
+  .hero-video-wrap{position:relative;margin-top:32px}
+  .hero-video-wrap video{width:100%;max-width:100%;height:auto;aspect-ratio:1/1}
+  .hero-stats{grid-template-columns:1fr;gap:18px;border-top:none}
+  .hero-stat{border-top:1px solid var(--ink);padding-top:14px}
+  .oficio,.materiales,.contact,.calc{padding:80px 18px}
+  .oficio-left{position:static}
+  .casos,.proceso{padding:80px 18px}
+  .leads{padding:80px 18px}
+  .calc-output{padding:32px 24px}
+  .form-card{padding:32px 24px}
+  .pantone-stack{min-height:280px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- CURSOR · rasqueta ink -->
+<div id="cursor" aria-hidden="true"></div>
+<canvas id="ink-trail" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<nav class="top">
+  <a href="#" class="brand">
+    <span class="brand-mark"><span class="o">d</span></span>
+    Duato
+  </a>
+  <div class="links">
+    <a href="#oficio">Oficio</a>
+    <a href="#tecnicas">Técnicas</a>
+    <a href="#casos">Casos</a>
+    <a href="#calc">Calculadora</a>
+    <a href="#contact">Contacto</a>
+  </div>
+  <a href="#calc" class="nav-cta">Presupuesto · 4h</a>
+</nav>
+
+<!-- ACTO I · HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="halftone"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="eyebrow">Marcaje profesional · Alboraya · desde 1992</span>
+      <h1 class="hero-h1">
+        <span class="line"><span>Tinta que cuenta</span></span>
+        <span class="line"><span><em data-text="historias">historias</em>.</span></span>
+        <span class="line f-l"><span>Mallas que aguantan</span></span>
+        <span class="line"><span>treinta <em data-text="años">años</em>.</span></span>
+      </h1>
+      <p class="hero-sub">
+        Serigrafía textil, tampografía, láser CO₂, DTF, sublimación.
+        <strong>Doce técnicas en el mismo polígono</strong>.
+        Mismo equipo desde que abrimos.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#calc" class="cta primary">Pide presupuesto <span class="arrow">→</span></a>
+        <a href="#oficio" class="cta ghost">Conoce el taller</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="v">+<em>30</em></div>
+          <div class="l">Años de oficio</div>
+        </div>
+        <div class="hero-stat">
+          <div class="v"><em>12</em></div>
+          <div class="l">Técnicas bajo el mismo techo</div>
+        </div>
+        <div class="hero-stat">
+          <div class="v"><em>4h</em></div>
+          <div class="l">Tiempo respuesta presupuesto*</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="press-window" aria-label="Press window editorial">
+        <div class="pw-caption">Hoja Nº01 · prueba de tinta · PMS 165 C</div>
+        <div class="pw-bars" aria-hidden="true">
+          <div class="c"></div><div class="m"></div><div class="y"></div><div class="k"></div><div class="s"></div>
+        </div>
+        <div class="pw-reg tl" aria-hidden="true"><div class="dot"></div></div>
+        <div class="pw-reg tr" aria-hidden="true"><div class="dot"></div></div>
+        <div class="pw-reg bl" aria-hidden="true"><div class="dot"></div></div>
+        <div class="pw-reg br" aria-hidden="true"><div class="dot"></div></div>
+        <video autoplay muted loop playsinline>
+          <source src="assets/hero/screen-print-flow.mp4" type="video/mp4">
+        </video>
+        <div class="pw-overlay" aria-hidden="true"></div>
+        <div class="pw-meta">
+          <div class="pw-tag">EN PRENSA · ALBORAYA · 39.50N · 0.34W</div>
+          <div class="pw-pms">PMS 165 C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    Desplaza
+    <div class="bar"></div>
+  </div>
+</section>
+
+<!-- TEST PRINT STRIP · color bar editorial industrial -->
+<div class="test-strip" aria-label="Print proof strip">
+  <div class="crosshair" aria-hidden="true"><div class="ring"></div></div>
+  <div class="strip-tape">
+    <div class="strip-track" id="strip-track">
+      <!-- contenido inyectado por JS para evitar duplicación -->
+    </div>
+  </div>
+  <div class="cmyk-bars" aria-hidden="true"><div class="c"></div><div class="m"></div><div class="y"></div><div class="k"></div></div>
+</div>
+
+<!-- ACTO II · OFICIO -->
+<section class="oficio" id="oficio">
+  <div class="oficio-grid">
+    <div class="oficio-left">
+      <span class="eyebrow">El oficio · 02</span>
+      <h2>Treinta años. <em>Mismo polígono.</em></h2>
+      <div class="manifesto">
+        <p>No hemos crecido subcontratando. Hemos crecido aprendiendo.</p>
+        <p>En 1992 abrimos con una sola pantalla de serigrafía manual. Hoy tenemos doce técnicas distintas bajo el mismo techo. Lo único que no cambió es quién mira la pieza antes de salir del taller.</p>
+        <p>Eso lo hace una persona. Siempre la misma persona. Lo va a hacer mañana también.</p>
+        <p>No es un eslogan. Es la única forma que conocemos de imprimir bien.</p>
+      </div>
+      <blockquote class="pull-quote">
+        "Si tu camiseta sale mal,<br>me llamas a mí."
+        <cite>— Vicente Duato · fundador</cite>
+      </blockquote>
+    </div>
+    <div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="year">1992</div>
+          <h4>Apertura del taller en Alboraya</h4>
+          <p>Serigrafía manual sobre textil. Una pantalla, dos personas, polígono industrial recién inaugurado.</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">1998</div>
+          <h4>Primer pulpo automático</h4>
+          <p>Seis brazos. Producción multiplicada por seis. La nave creció hacia el este.</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2005</div>
+          <h4>Tampografía industrial</h4>
+          <p>Boli corporativo, llavero metálico, tapa termo. Lo que la pantalla no podía tocar.</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2012</div>
+          <h4>Láser CO₂ para metacrilato</h4>
+          <p>Cortar, marcar, grabar premium. Señalética, regalo de empresa, expositores feria.</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2018</div>
+          <h4>DTF, sublimación, látex</h4>
+          <p>Tiradas cortas full-color. La era del drop D2C empezaba.</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2024</div>
+          <h4>Circuito cerrado de aguas</h4>
+          <p>Reciclamos el 100% del agua de lavado de pantalla. Próximo objetivo: ISO 14001.</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2026</div>
+          <h4>Esta web</h4>
+          <p>Treinta y cuatro años después, contar el oficio en condiciones. Producido con Boomatik en Valencia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTO III · PANTONE BOOK INTERACTIVO -->
+<section class="tecnicas" id="tecnicas">
+  <div class="tec-head">
+    <span class="eyebrow">Catálogo técnico · 03</span>
+    <h2>Doce maneras<br>de dejar <em>marca</em>.</h2>
+    <p class="sub">Pasa las fichas como un Pantone book. <kbd>←</kbd><kbd>→</kbd> o arrastra · scroll o click en el lomo abajo.</p>
+    <div class="tec-chips" role="tablist" aria-label="Filtrar técnicas">
+      <button data-filter="all" class="active">Todas</button>
+      <button data-filter="textil">Textil</button>
+      <button data-filter="industrial">Industrial</button>
+      <button data-filter="premium">Premium</button>
+      <button data-filter="rigido">Rígidos</button>
+    </div>
+  </div>
+
+  <div class="pantone-book">
+    <div class="book-stage" id="book-stage" aria-label="Catálogo de técnicas tipo Pantone book"></div>
+    <div class="book-detail" id="book-detail">
+      <div class="num-big"><em>00</em></div>
+      <div class="book-detail-inner">
+        <span class="eyebrow" id="bd-cat">Textil</span>
+        <h3 id="bd-title">Serigrafía <em>textil</em></h3>
+        <p class="lead" id="bd-lead">La técnica que nos da nombre. Sobre algodón, mezcla, poliéster. Tintas plastisol o base agua. Aguanta lavados industriales sin perder color.</p>
+        <dl class="specs">
+          <dt>PMS</dt><dd id="bd-pms">165 C · #F37920</dd>
+          <dt>Tirada</dt><dd id="bd-batch">Media a larga</dd>
+          <dt>Plazo medio</dt><dd id="bd-plazo">8-12 días lab.</dd>
+        </dl>
+        <div class="ideal" id="bd-ideal">Tiradas medias y largas con colores planos.</div>
+
+        <div class="book-nav">
+          <div class="book-counter"><em id="bd-idx">01</em> · 12</div>
+          <div class="book-arrows">
+            <button id="bd-prev" aria-label="Anterior">‹</button>
+            <button id="bd-next" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+        <div class="book-spine" id="book-spine" aria-label="Selector de técnica"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTO IV · MATERIALES + Pantone -->
+<section class="materiales" id="materiales">
+  <div class="mat-grid">
+    <div class="mat-text">
+      <span class="eyebrow">Sobre lo que imprimimos · 04</span>
+      <h2>Antes de tinta,<br><em>prenda</em>.</h2>
+      <div class="mat-content">
+        <div class="mat-slide active" data-slide="0">
+          <h3>Prenda textil</h3>
+          <ul>
+            <li data-spec="180 g/m²">Algodón orgánico</li>
+            <li data-spec="50/50">Mezcla confort</li>
+            <li data-spec="320 g">French terry sudadera</li>
+            <li data-spec="200 g">Polo piqué premium</li>
+            <li data-spec="microfibra">Camisetas técnicas</li>
+          </ul>
+          <p style="margin-top:18px;font-size:14px;color:var(--mute);max-width:380px;line-height:1.55">Trabajamos con catálogo Roly y Makito + producción a medida si lo necesitas.</p>
+        </div>
+        <div class="mat-slide" data-slide="1">
+          <h3>Ropa laboral · EPI</h3>
+          <ul>
+            <li data-spec="AENOR">Reflectante</li>
+            <li data-spec="ISO 11611">Forros polar</li>
+            <li data-spec="100°C · 50 ciclos">Lavado industrial</li>
+            <li data-spec="clase II y III">Normativa EPI</li>
+            <li data-spec="unitarias">Reposiciones</li>
+          </ul>
+          <p style="margin-top:18px;font-size:14px;color:var(--mute);max-width:380px;line-height:1.55">Equipos de 5 a 250 personas. Mismo lote, mismo color, mismo lavado.</p>
+        </div>
+        <div class="mat-slide" data-slide="2">
+          <h3>Soportes rígidos</h3>
+          <ul>
+            <li data-spec="3-10 mm">Metacrilato</li>
+            <li data-spec="calibrada">Madera contraplacada</li>
+            <li data-spec="anodizado">Aluminio</li>
+            <li data-spec="espumado · compacto">PVC</li>
+            <li data-spec="a medida">Vidrio templado</li>
+          </ul>
+          <p style="margin-top:18px;font-size:14px;color:var(--mute);max-width:380px;line-height:1.55">Cortamos, marcamos y entregamos lista la pieza.</p>
+        </div>
+      </div>
+      <div class="mat-nav">
+        <button data-mat="0" class="active"></button>
+        <button data-mat="1"></button>
+        <button data-mat="2"></button>
+      </div>
+    </div>
+    <div class="pantone-stack" id="pantone-stack">
+      <div class="pantone-card" data-card="0">
+        <div class="swatch" style="background:var(--spot)"></div>
+        <div>
+          <h4>Pantone</h4>
+          <div class="name f">Spot Duato</div>
+          <div class="code">PMS 165 C · #F37920</div>
+        </div>
+      </div>
+      <div class="pantone-card" data-card="1">
+        <div class="swatch" style="background:var(--ink)"></div>
+        <div>
+          <h4>Pantone</h4>
+          <div class="name f" style="color:var(--ink)">Ink black</div>
+          <div class="code">Process Black · #0A0A0A</div>
+        </div>
+      </div>
+      <div class="pantone-card" data-card="2">
+        <div class="swatch" style="background:var(--paper);border:1px solid #ccc"></div>
+        <div>
+          <h4>Pantone</h4>
+          <div class="name f">Paper cream</div>
+          <div class="code">Warm Gray 1 · #EFEAE0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTO V · CASOS -->
+<section class="casos" id="casos">
+  <div class="casos-head">
+    <span class="eyebrow">Trabajos reales · 05</span>
+    <h2>Cada uno con su <em>historia</em>.</h2>
+    <p>Cada uno con su cliente real, con permiso. Hemos pixelado o sustituido los logotipos clientes que no han autorizado aparecer.</p>
+    <div class="casos-filter">
+      <button data-icp="all" class="active">Todos</button>
+      <button data-icp="agencia">Agencias</button>
+      <button data-icp="empresa">Empresas</button>
+      <button data-icp="d2c">D2C</button>
+      <button data-icp="evento">Eventos</button>
+    </div>
+  </div>
+  <div class="casos-grid" id="casos-grid">
+    <article class="caso" data-icp="agencia">
+      <div class="img"><img src="assets/casos/c1-kit-congreso.png" alt="Kit congresista IBM Cloud · cuatro técnicas en un único lote" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">Agencia · Merch evento</div>
+        <h3>Kit congresista IBM Cloud</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.5">Estuche, libreta, polo y tote. Cuatro técnicas en un único lote. Entrega in-situ Madrid 12 días.</p>
+        <div class="meta"><span>Madrid 2025</span><span>1.500 ud</span><span>4 técnicas</span></div>
+      </div>
+    </article>
+    <article class="caso" data-icp="empresa">
+      <div class="img"><img src="assets/casos/c2-uniforme.png" alt="Uniforme 80 operarios · polo reflectante AENOR serigrafiado" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">Empresa · Ropa laboral</div>
+        <h3>Uniforme 80 operarios</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.5">Polos piqué, sudaderas polares y chalecos reflectantes AENOR. Reposición trimestral pactada.</p>
+        <div class="meta"><span>Castellón 2024</span><span>80 prendas</span><span>Serigrafía</span></div>
+      </div>
+    </article>
+    <article class="caso" data-icp="d2c">
+      <div class="img"><img src="assets/casos/c3-drop-d2c.png" alt="Cápsula 200 camisetas D2C serigrafiadas a mano" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">D2C · Drop edición limitada</div>
+        <h3>Cápsula 200 camisetas</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.5">Algodón orgánico 200 g, ilustración 3 colores serigrafiada manual. Sold out en 48h.</p>
+        <div class="meta"><span>Valencia 2025</span><span>200 ud</span><span>Serigrafía</span></div>
+      </div>
+    </article>
+    <article class="caso" data-icp="evento">
+      <div class="img"><img src="assets/casos/c4-festival.png" alt="Festival GranRiu · merch oficial cinco técnicas" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">Evento · Festival música</div>
+        <h3>Festival GranRiu · merch oficial</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.5">Camisetas, tote, pulseras, acreditaciones, lonas escenario. Pico 72h. Entrega Sagunto.</p>
+        <div class="meta"><span>Sagunto 2025</span><span>3.200 ud</span><span>5 técnicas</span></div>
+      </div>
+    </article>
+    <article class="caso" data-icp="agencia">
+      <div class="img"><img src="assets/casos/c5-welcome-kit.png" alt="Welcome kit marca de bebidas · cuatro técnicas premium" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">Agencia · Brand launch</div>
+        <h3>Welcome kit marca de bebidas</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.5">Bolsa lona serigrafiada + libreta UV + vaso cilíndrica + parche resina. Premium kit 250 unidades.</p>
+        <div class="meta"><span>Barcelona 2025</span><span>250 ud</span><span>4 técnicas</span></div>
+      </div>
+    </article>
+    <article class="caso" data-icp="empresa">
+      <div class="img"><img src="assets/casos/c6-senaletica.png" alt="Señalética planta 4 pisos · PVC + UV + láser" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">Empresa · Señalética interior</div>
+        <h3>Señalética planta 4 plantas</h3>
+        <p style="font-size:14px;color:var(--ink-soft);margin-top:8px;line-height:1.5">Direccional, evacuación, identificación despachos. PVC compacto + UV. Instalación nuestra.</p>
+        <div class="meta"><span>Paterna 2024</span><span>180 piezas</span><span>UV + láser</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ACTO VI · PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="proc-head">
+    <span class="eyebrow">Del brief al delivery · 06</span>
+    <h2>Seis pasos. <em>Siempre los mismos.</em></h2>
+  </div>
+  <div class="proc-grid">
+    <div class="proc-sticky" id="proc-sticky">
+      <div class="slide active" data-slide="1"><video autoplay muted loop playsinline><source src="assets/proceso/p1-brief.mp4" type="video/mp4"></video></div>
+      <div class="slide" data-slide="2"><video autoplay muted loop playsinline><source src="assets/proceso/p2-presupuesto.mp4" type="video/mp4"></video></div>
+      <div class="slide" data-slide="3"><video autoplay muted loop playsinline><source src="assets/proceso/p3-validacion.mp4" type="video/mp4"></video></div>
+      <div class="slide" data-slide="4"><video autoplay muted loop playsinline><source src="assets/proceso/p4-produccion.mp4" type="video/mp4"></video></div>
+      <div class="slide" data-slide="5"><video autoplay muted loop playsinline><source src="assets/proceso/p5-calidad.mp4" type="video/mp4"></video></div>
+      <div class="slide" data-slide="6"><video autoplay muted loop playsinline><source src="assets/proceso/p6-entrega.mp4" type="video/mp4"></video></div>
+    </div>
+    <div>
+      <div class="proc-step in" data-step="1">
+        <div class="n">01 · BRIEF</div>
+        <h3>Envías el artwork.<br>Leemos. Preguntamos.</h3>
+        <p>Si hay dudas técnicas las planteamos antes de presupuestar. Respuesta en menos de 4 horas laborables.</p>
+      </div>
+      <div class="proc-step" data-step="2">
+        <div class="n">02 · PRESUPUESTO Y MUESTRA</div>
+        <h3>Presupuesto detallado.<br>Muestra sin coste.</h3>
+        <p>Línea por concepto (producción, prenda, envío). Si la pieza es nueva, prueba de color o textura sin coste.</p>
+      </div>
+      <div class="proc-step" data-step="3">
+        <div class="n">03 · VALIDACIÓN</div>
+        <h3>Tú apruebas.<br>Anticipo si hace falta.</h3>
+        <p>Confirmas presupuesto y artwork. Aprobamos la prueba. Anticipo del 30% si supera 800 €.</p>
+      </div>
+      <div class="proc-step" data-step="4">
+        <div class="n">04 · PRODUCCIÓN</div>
+        <h3>El taller activa.<br>Sin subcontratar.</h3>
+        <p>Mismo equipo desde el inicio. La pieza no sale del polígono hasta que está terminada.</p>
+      </div>
+      <div class="proc-step" data-step="5">
+        <div class="n">05 · CONTROL CALIDAD</div>
+        <h3>Lavado de prueba.<br>Test de estrés.</h3>
+        <p>Si algo sale mal, lo rehacemos. No hay negociación de eso.</p>
+      </div>
+      <div class="proc-step" data-step="6">
+        <div class="n">06 · ENTREGA</div>
+        <h3>Mensajería o recogida.<br>Factura clara.</h3>
+        <p>Camino del Mar 36 si recoges. Mensajería 24-48h Península. Soporte de reposición continuo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTO VII · CALCULADORA -->
+<section class="calc" id="calc">
+  <div class="calc-head">
+    <span class="eyebrow">Cuánto cuesta · 07</span>
+    <h2>Calcula. Pregunta. <em>Decide.</em></h2>
+  </div>
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <label>Técnica</label>
+      <div class="calc-chips" id="calc-tech">
+        <button data-tech="serigrafia" data-base="3.2" class="active">Serigrafía</button>
+        <button data-tech="dtf" data-base="4.5">DTF</button>
+        <button data-tech="sublim" data-base="3.8">Sublimación</button>
+        <button data-tech="tampo" data-base="1.6">Tampografía</button>
+        <button data-tech="uv" data-base="6.0">UV</button>
+        <button data-tech="laser" data-base="8.0">Láser</button>
+      </div>
+
+      <label>Cantidad: <span id="qty-out">100</span> unidades</label>
+      <input type="range" id="qty-range" min="25" max="2000" value="100" step="25">
+      <div class="range-out"><span>25</span><span class="v" id="qty-big">100</span><span>2.000+</span></div>
+
+      <label>Colores del diseño</label>
+      <div class="calc-chips" id="calc-colors">
+        <button data-c="1" class="active">1</button>
+        <button data-c="2">2</button>
+        <button data-c="3">3</button>
+        <button data-c="4">4+</button>
+      </div>
+
+      <label>Tipo de soporte</label>
+      <div class="calc-chips" id="calc-mat">
+        <button data-m="camiseta" data-mult="1" class="active">Camiseta</button>
+        <button data-m="sudadera" data-mult="2.2">Sudadera</button>
+        <button data-m="polo" data-mult="1.5">Polo</button>
+        <button data-m="bolsa" data-mult="0.8">Tote bag</button>
+        <button data-m="rigido" data-mult="2.5">Rígido</button>
+      </div>
+    </div>
+
+    <div class="calc-output">
+      <span class="eyebrow">Estimación de referencia</span>
+      <div class="price"><em id="price-low">4,80</em> <span>—</span> <em id="price-high">7,20</em> <span class="unit">€/UNIDAD</span></div>
+      <dl class="meta">
+        <dt>Tirada total estimada</dt><dd id="total">480 — 720 €</dd>
+        <dt>Plazo medio producción</dt><dd id="plazo">8-12 días laborables</dd>
+        <dt>Tiempo respuesta presupuesto</dt><dd>Menos de 4 horas laborables*</dd>
+      </dl>
+      <p class="disclaimer">
+        *Estimación de referencia · no vinculante. El presupuesto formal se entrega tras revisar artwork y artículo final. Tiempo respuesta y plazo medio son objetivos comprometidos del taller, no datos auditados públicamente.
+      </p>
+      <div class="cta-row">
+        <a href="#contact" class="cta primary">Pedir presupuesto formal <span class="arrow">→</span></a>
+        <a href="tel:+34961860275" class="cta ghost">Llamar 96 186 02 75</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNETS -->
+<section class="leads">
+  <div class="leads-grid">
+    <a href="#" class="lead">
+      <div class="icon">A</div>
+      <h4>Briefing kit · Agencias</h4>
+      <p>Plantilla para pasarnos el brief en formato listo para producción.</p>
+      <span class="download">Descargar PDF →</span>
+    </a>
+    <a href="#" class="lead">
+      <div class="icon">B</div>
+      <h4>Guía ropa laboral 2026</h4>
+      <p>Cómo elegir prenda según uso, lavado y normativa EPI.</p>
+      <span class="download">Descargar PDF →</span>
+    </a>
+    <a href="#" class="lead">
+      <div class="icon">C</div>
+      <h4>Drop D2C · Checklist</h4>
+      <p>Decisiones técnicas antes del primer drop. Lo que ahorra retrabajo.</p>
+      <span class="download">Descargar PDF →</span>
+    </a>
+    <a href="#" class="lead">
+      <div class="icon">D</div>
+      <h4>Eventos 72h · Plan</h4>
+      <p>Cómo planificamos un evento con presupuesto y plazo ajustados.</p>
+      <span class="download">Descargar PDF →</span>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <span class="eyebrow">Habla con producción · 08</span>
+      <h2>Tres formas de <em>llegar</em>.</h2>
+      <div class="contact-channels">
+        <div class="contact-ch">
+          <div>
+            <h4>Teléfono</h4>
+            <p>+34 96 186 02 75</p>
+          </div>
+          <a href="tel:+34961860275" class="cta primary">Llamar</a>
+        </div>
+        <div class="contact-ch">
+          <div>
+            <h4>WhatsApp · respuesta misma jornada</h4>
+            <p>+34 96 186 02 75</p>
+          </div>
+          <a href="https://wa.me/34961860275" class="cta primary">Abrir</a>
+        </div>
+        <div class="contact-ch">
+          <div>
+            <h4>Taller · visita con cita</h4>
+            <p>Camino del Mar 36<br>Alboraya 46120</p>
+          </div>
+          <a href="#" class="cta primary">Pedir cita</a>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-card" onsubmit="event.preventDefault();alert('Mockup. Form no conectado.')">
+      <div class="grid">
+        <div>
+          <label>Tu nombre</label>
+          <input type="text" placeholder="Nombre y apellidos" required>
+        </div>
+        <div>
+          <label>Email profesional</label>
+          <input type="email" placeholder="tucorreo@empresa.es" required>
+        </div>
+        <div>
+          <label>Teléfono o WhatsApp</label>
+          <input type="tel" placeholder="+34 ...">
+        </div>
+        <div>
+          <label>¿Quién eres?</label>
+          <div class="icp-chips">
+            <button type="button" class="active">Agencia</button>
+            <button type="button">Empresa</button>
+            <button type="button">D2C / Brand</button>
+            <button type="button">Evento</button>
+          </div>
+        </div>
+        <div>
+          <label>Necesito presupuesto para</label>
+          <textarea placeholder="Cuéntanos: técnica, tirada, plazo, soporte. Si tienes artwork, mándalo a info@serigrafiaduato.es."></textarea>
+        </div>
+        <button type="submit" class="cta primary submit">Enviar · respondemos en menos de 4h <span class="arrow">→</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-mega"><em>Duato</em></div>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">Serigrafía <em>Duato</em></div>
+      <p class="ft-tag">Marcaje profesional desde 1992. Camino del Mar 36, Polígono Industrial III, 46120 Alboraya · Valencia.</p>
+    </div>
+    <div class="ft-col">
+      <h5>Sitio</h5>
+      <ul>
+        <li><a href="#oficio">Oficio</a></li>
+        <li><a href="#tecnicas">Técnicas</a></li>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#calc">Calculadora</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="tel:+34961860275">+34 96 186 02 75</a></li>
+        <li><a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a></li>
+        <li>L-V 08:00 - 17:00</li>
+        <li>Visitas con cita previa</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div>© 2026 Serigrafía Duato S.L. · CIF [validar]</div>
+    <div>
+      <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a>
+    </div>
+    <div>Producido en Alboraya. Web hecha en Valencia por <a href="https://boomatik.com">Boomatik</a>.</div>
+  </div>
+</footer>
+
+<!-- LIBS · Lenis + GSAP CDN -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* LENIS · smooth scroll */
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduced){
+  const lenis = new Lenis({duration:1.4, smoothWheel:true, smoothTouch:false, wheelMultiplier:0.85});
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  lenis.on("scroll", ScrollTrigger.update);
+}
+
+/* CURSOR · rasqueta de tinta */
+const cursor = document.getElementById("cursor");
+const trail = document.getElementById("ink-trail");
+const ctx = trail.getContext("2d");
+function sizeTrail(){ trail.width=innerWidth; trail.height=innerHeight; }
+sizeTrail(); addEventListener("resize", sizeTrail);
+
+let mx=0,my=0,cx=0,cy=0;
+let lastDrop=0;
+addEventListener("pointermove", e=>{
+  mx=e.clientX; my=e.clientY;
+});
+function trailRaf(){
+  cx += (mx-cx)*0.18;
+  cy += (my-cy)*0.18;
+  cursor.style.transform = `translate(${cx-7}px,${cy-7}px)`;
+  // ink drops persistentes
+  const now = performance.now();
+  if(now-lastDrop > 24){
+    lastDrop = now;
+    ctx.fillStyle = "rgba(243,121,32,0.04)";
+    ctx.beginPath();
+    ctx.arc(cx,cy, Math.random()*8+4, 0, Math.PI*2);
+    ctx.fill();
+    // fade lento
+    ctx.fillStyle = "rgba(239,234,224,0.012)";
+    ctx.fillRect(0,0,trail.width,trail.height);
+  }
+  requestAnimationFrame(trailRaf);
+}
+if(!reduced){ requestAnimationFrame(trailRaf); }
+
+// Hover state cursor
+document.querySelectorAll("a, button, .cta, .caso, .lead, .book-card").forEach(el=>{
+  el.addEventListener("mouseenter", ()=>cursor.classList.add("is-link"));
+  el.addEventListener("mouseleave", ()=>cursor.classList.remove("is-link"));
+});
+
+/* CURSOR · imprime swatch al click (sobre hero + secciones) */
+const swatchLayer = document.createElement("div");
+swatchLayer.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:9997;mix-blend-mode:multiply";
+document.body.appendChild(swatchLayer);
+document.addEventListener("click", e=>{
+  if(e.target.closest("button, a, input, textarea, .cta")) return;
+  const swatch = document.createElement("div");
+  const sx = e.clientX, sy = e.clientY;
+  const colors = ["#F37920","#0A0A0A","#EC008C","#00AEEF"];
+  const color = colors[Math.floor(Math.random()*colors.length)];
+  swatch.style.cssText = `position:absolute;left:${sx-32}px;top:${sy-32}px;width:64px;height:80px;background:${color};opacity:.18;border:1px solid ${color};font-family:'JetBrains Mono',monospace;font-size:9px;color:#0A0A0A;padding:42px 6px 6px;letter-spacing:.1em;animation:swatchOut 4.5s ease forwards;will-change:opacity,transform;`;
+  swatch.textContent = color.toUpperCase();
+  swatchLayer.appendChild(swatch);
+  setTimeout(()=> swatch.remove(), 4800);
+});
+const swatchKeyframes = document.createElement("style");
+swatchKeyframes.textContent = `@keyframes swatchOut{0%{opacity:.32;transform:rotate(-6deg) scale(.85)}15%{opacity:.32;transform:rotate(${(Math.random()-.5)*8}deg) scale(1)}100%{opacity:0;transform:rotate(${(Math.random()-.5)*12}deg) scale(.92)}}`;
+document.head.appendChild(swatchKeyframes);
+
+/* HALFTONE REACTIVO · density crece con scroll velocity */
+const halftoneEl = document.querySelector(".halftone");
+let lastScrollY = 0, scrollVel = 0;
+window.addEventListener("scroll", ()=>{
+  const dy = Math.abs(window.scrollY - lastScrollY);
+  lastScrollY = window.scrollY;
+  scrollVel = Math.min(40, dy);
+}, {passive:true});
+function halftoneRaf(){
+  if(halftoneEl){
+    scrollVel *= 0.92;
+    const size = 24 - scrollVel * 0.45;
+    const opacity = 0.10 + scrollVel * 0.005;
+    halftoneEl.style.backgroundSize = `${Math.max(8, size)}px ${Math.max(8, size)}px`;
+    halftoneEl.style.opacity = Math.min(0.3, opacity);
+  }
+  requestAnimationFrame(halftoneRaf);
+}
+if(!reduced){ requestAnimationFrame(halftoneRaf); }
+
+/* FRAUNCES VARIABLE · respira con cursor X (no solo scroll Y) */
+window.addEventListener("pointermove", e=>{
+  if(!heroH1) return;
+  const xRatio = e.clientX / innerWidth;
+  const opsz = 9 + xRatio * 135;
+  const wonk = e.clientY < innerHeight/2 ? 1 : 0;
+  // Solo overrideamos opsz · wght queda al scroll
+  const current = heroH1.style.fontVariationSettings || `"opsz" 144,"wght" 700,"SOFT" 100,"WONK" 1`;
+  const wghtMatch = current.match(/"wght"\s*(\d+)/);
+  const softMatch = current.match(/"SOFT"\s*(\d+)/);
+  const wght = wghtMatch ? wghtMatch[1] : 700;
+  const soft = softMatch ? softMatch[1] : 100;
+  heroH1.style.fontVariationSettings = `"opsz" ${opsz.toFixed(0)},"wght" ${wght},"SOFT" ${soft},"WONK" ${wonk}`;
+},{passive:true});
+
+/* HERO H1 · split + reveal */
+gsap.utils.toArray(".hero-h1 .line span").forEach((el,i)=>{
+  gsap.fromTo(el, {y:"110%"}, {y:"0%", duration:1.1, delay:0.15+i*0.12, ease:"cubic-bezier(.32,.72,0,1)"});
+});
+
+/* FRAUNCES VARIABLE · respira con scroll */
+const heroH1 = document.querySelector(".hero-h1");
+window.addEventListener("scroll", ()=>{
+  if(!heroH1) return;
+  const s = Math.min(1, window.scrollY/innerHeight);
+  const wght = 700 - s*200;
+  const soft = 100 - s*60;
+  heroH1.style.fontVariationSettings = `"opsz" 144,"wght" ${wght},"SOFT" ${soft},"WONK" 1`;
+}, {passive:true});
+
+/* NAV compact al scroll */
+const nav = document.querySelector("nav.top");
+ScrollTrigger.create({trigger:"body", start:"top top-=80",
+  onUpdate:s=>{ nav.classList.toggle("compact", s.scroll() > 80); }
+});
+
+/* TIMELINE reveal */
+gsap.utils.toArray(".tl-item").forEach(el=>{
+  ScrollTrigger.create({trigger:el, start:"top 75%",
+    onEnter:()=>el.classList.add("in")
+  });
+});
+
+/* ======== TEST PRINT STRIP · inyectar técnicas con PMS ======== */
+const TECHS = [
+  {slug:"01-serigrafia-textil",num:"01",name:"Serigrafía textil",pms:"PMS 165 C",hex:"#F37920",cat:"textil",lead:"La técnica que nos da nombre. Sobre algodón, mezcla, poliéster. Tintas plastisol o base agua. Aguanta lavados industriales sin perder color.",batch:"Media a larga",plazo:"8-12 días lab.",ideal:"Tiradas medias y largas con colores planos.",emTitle:"textil"},
+  {slug:"02-tampografia",num:"02",name:"Tampografía",pms:"Process Black",hex:"#0A0A0A",cat:"industrial",lead:"La técnica de las curvas. Bolígrafos, llaveros, tapas de termo, piezas curvas que la pantalla no puede tocar.",batch:"Media a larga",plazo:"7-10 días lab.",ideal:"Merchandising corporativo, piezas técnicas no planas.",emTitle:""},
+  {slug:"03-laser-co2",num:"03",name:"Láser CO₂",pms:"Anthracite",hex:"#1A1A1A",cat:"premium rigido",lead:"Corta, marca, graba. Sobre metacrilato, madera, cuero. Precisión 0,1 mm. Acabado limpio sin residuos.",batch:"1 a 500 ud",plazo:"5-8 días lab.",ideal:"Señalética premium, placas, regalos corporativos.",emTitle:"CO₂"},
+  {slug:"04-laser-fibra",num:"04",name:"Láser fibra",pms:"Metal etch",hex:"#5A5A5A",cat:"industrial rigido",lead:"Para metal y plásticos técnicos. Marca permanente sin tinta. Aguanta abrasión y temperatura.",batch:"50 a 5.000 ud",plazo:"6-10 días lab.",ideal:"Componentes industriales, herramienta, repuestos.",emTitle:""},
+  {slug:"05-dtf",num:"05",name:"DTF",pms:"Full-color",hex:"#EC008C",cat:"textil premium",lead:"Imprime cualquier diseño. Cualquier color. Cualquier sombra. Sobre cualquier prenda. Sin pre-tratado.",batch:"25 a 1.000 ud",plazo:"5-7 días lab.",ideal:"Drops D2C, tiradas cortas full-color, fotografía sobre tela.",emTitle:""},
+  {slug:"06-sublimacion",num:"06",name:"Sublimación",pms:"Penetra fibra",hex:"#00AEEF",cat:"textil",lead:"La tinta entra dentro del tejido. Sobre poliéster blanco. Color total sin tacto. Aguanta lo que aguante la prenda.",batch:"50 a 2.000 ud",plazo:"7-10 días lab.",ideal:"Deportivas, banderas, lonas, gorras técnicas.",emTitle:""},
+  {slug:"07-rotulacion",num:"07",name:"Rotulación",pms:"Spot vinyl",hex:"#F37920",cat:"industrial",lead:"Vinilo cortado o impreso. Sobre vehículos, escaparates, carpas, paneles publicitarios. Aplicación in-situ con cita.",batch:"1 a ∞ m²",plazo:"3-7 días lab.",ideal:"Tiendas, eventos, flotas, ferias.",emTitle:""},
+  {slug:"08-uvi",num:"08",name:"Tinta UV",pms:"PMS Spot",hex:"#FFF200",cat:"premium rigido",lead:"Tinta sólida que cura con luz ultravioleta. Sobre PVC, metacrilato, madera, metal, vidrio.",batch:"1 a 800 ud",plazo:"5-8 días lab.",ideal:"Señalética interior, placas premium, regalo corporativo.",emTitle:"UV"},
+  {slug:"09-latex",num:"09",name:"Tinta látex",pms:"Eco-cert",hex:"#10B981",cat:"industrial",lead:"Sin disolventes. Sin olor. Apta para interiores sensibles (hospitales, colegios, oficinas). Sobre vinilos, lonas, papel mural.",batch:"1 a ∞ m²",plazo:"7-10 días lab.",ideal:"Wall-graphics, decoración interior corporativa.",emTitle:""},
+  {slug:"10-fresado",num:"10",name:"Fresado metacrilato",pms:"Acrylic clear",hex:"#E0E0E0",cat:"premium rigido",lead:"Corte 3D sobre acrílico. Volumen, profundidad, piezas a medida desde 3 mm. Acabado pulido sin grieta.",batch:"1 a 500 ud",plazo:"8-12 días lab.",ideal:"Soportes punto venta, premios, expositores feria.",emTitle:""},
+  {slug:"11-gota-resina",num:"11",name:"Gota de resina",pms:"Epoxy glow",hex:"#FFFAE5",cat:"premium",lead:"Capa transparente sobre el marcaje. Volumen, brillo, tacto premium. Como una etiqueta sin etiqueta.",batch:"50 a 5.000 ud",plazo:"10-14 días lab.",ideal:"Llaveros, pins, parches premium, branding rígido.",emTitle:"resina"},
+  {slug:"12-cilindrica",num:"12",name:"Cilíndrica",pms:"4 colors curve",hex:"#F37920",cat:"industrial",lead:"Para superficies redondas. Tazas, vasos, botellas, termos, tubos. Hasta 4 colores en plano curvo.",batch:"50 a 3.000 ud",plazo:"8-12 días lab.",ideal:"Hostelería, deportivo, regalo corporativo de mesa.",emTitle:""}
+];
+
+/* Inyectar test strip */
+(function buildStrip(){
+  const track = document.getElementById("strip-track");
+  if(!track) return;
+  const items = TECHS.map(t => {
+    const isSpot = t.hex === "#F37920";
+    return `<span class="strip-item ${isSpot?'spot':''}"><span class="pms">${t.pms}</span> ${t.name}</span>`;
+  }).join("");
+  // Duplicar para loop seamless
+  track.innerHTML = items + items;
+})();
+
+/* ============ PANTONE BOOK · construir 12 cards + interacción ============ */
+const stage = document.getElementById("book-stage");
+const spineEl = document.getElementById("book-spine");
+let bookIdx = 0;
+let bookFilter = "all";
+let bookCards = [];
+
+function buildBook(){
+  stage.innerHTML = "";
+  spineEl.innerHTML = "";
+  bookCards = [];
+  const filtered = TECHS.map((t,i)=>({...t,origIdx:i})).filter(t => bookFilter==="all" || t.cat.includes(bookFilter));
+
+  filtered.forEach((t,i)=>{
+    const card = document.createElement("div");
+    card.className = "book-card";
+    card.dataset.idx = i;
+    card.style.background = `linear-gradient(180deg, ${t.hex} 0%, ${t.hex} 56%, var(--paper-deep) 56%, var(--paper-deep) 100%)`;
+    card.innerHTML = `
+      <div class="swatch" style="background:${t.hex}">
+        <video autoplay muted loop playsinline poster="https://placehold.co/600x400/${t.hex.slice(1)}/0A0A0A?text=${encodeURIComponent(t.name)}">
+          <source src="assets/tecnicas/${t.slug}.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="meta">
+        <div class="num"><span>${t.num}</span></div>
+        <h3>${t.emTitle ? t.name.replace(t.emTitle, `<em>${t.emTitle}</em>`) : t.name}</h3>
+        <div class="pms">${t.pms} · ${t.hex}</div>
+      </div>
+    `;
+    card.addEventListener("click", ()=> setBookIdx(i));
+    stage.appendChild(card);
+    bookCards.push(card);
+
+    // Spine button
+    const spineBtn = document.createElement("button");
+    spineBtn.style.background = t.hex;
+    spineBtn.style.opacity = ".4";
+    spineBtn.addEventListener("click", ()=> setBookIdx(i));
+    spineEl.appendChild(spineBtn);
+  });
+
+  bookIdx = 0;
+  setBookIdx(0);
+}
+
+function setBookIdx(idx){
+  if(idx < 0 || idx >= bookCards.length) return;
+  bookIdx = idx;
+  bookCards.forEach((card,i)=>{
+    card.classList.remove("is-prev","is-active","is-next-1","is-next-2","is-next-3","is-next-4","is-rest");
+    const offset = i - bookIdx;
+    if(offset < 0) card.classList.add("is-prev");
+    else if(offset === 0) card.classList.add("is-active");
+    else if(offset === 1) card.classList.add("is-next-1");
+    else if(offset === 2) card.classList.add("is-next-2");
+    else if(offset === 3) card.classList.add("is-next-3");
+    else if(offset === 4) card.classList.add("is-next-4");
+    else card.classList.add("is-rest");
+  });
+  spineEl.querySelectorAll("button").forEach((b,i)=>{
+    b.classList.toggle("is-active", i===bookIdx);
+    b.style.opacity = i===bookIdx ? "1" : ".4";
+  });
+
+  // Update detail panel
+  const filtered = TECHS.filter(t => bookFilter==="all" || t.cat.includes(bookFilter));
+  const t = filtered[bookIdx];
+  if(!t) return;
+  document.getElementById("bd-cat").textContent = t.cat.toUpperCase().replace("RIGIDO","RÍGIDOS");
+  document.getElementById("bd-title").innerHTML = t.emTitle ? t.name.replace(t.emTitle, `<em>${t.emTitle}</em>`) : t.name;
+  document.getElementById("bd-lead").textContent = t.lead;
+  document.getElementById("bd-pms").textContent = `${t.pms} · ${t.hex}`;
+  document.getElementById("bd-batch").textContent = t.batch;
+  document.getElementById("bd-plazo").textContent = t.plazo;
+  document.getElementById("bd-ideal").textContent = t.ideal;
+  document.getElementById("bd-idx").textContent = String(bookIdx+1).padStart(2,"0");
+  document.querySelector(".num-big em").textContent = t.num;
+
+  document.getElementById("bd-prev").disabled = bookIdx===0;
+  document.getElementById("bd-next").disabled = bookIdx===bookCards.length-1;
+}
+
+/* Build initial */
+buildBook();
+
+/* Arrows */
+document.getElementById("bd-prev").addEventListener("click", ()=> setBookIdx(bookIdx-1));
+document.getElementById("bd-next").addEventListener("click", ()=> setBookIdx(bookIdx+1));
+
+/* Keyboard */
+window.addEventListener("keydown", e=>{
+  if(e.target.matches("input,textarea,select")) return;
+  if(e.key === "ArrowLeft") setBookIdx(bookIdx-1);
+  if(e.key === "ArrowRight") setBookIdx(bookIdx+1);
+});
+
+/* Wheel (in book stage) → horizontal */
+let wheelLock = false;
+stage.addEventListener("wheel", e=>{
+  if(wheelLock) return;
+  if(Math.abs(e.deltaY) < 6) return;
+  e.preventDefault();
+  wheelLock = true;
+  if(e.deltaY > 0) setBookIdx(bookIdx+1);
+  else setBookIdx(bookIdx-1);
+  setTimeout(()=> wheelLock=false, 380);
+},{passive:false});
+
+/* Drag */
+let dragX0 = null;
+stage.addEventListener("pointerdown", e=>{ dragX0 = e.clientX; });
+stage.addEventListener("pointerup", e=>{
+  if(dragX0 === null) return;
+  const dx = e.clientX - dragX0;
+  dragX0 = null;
+  if(dx < -40) setBookIdx(bookIdx+1);
+  else if(dx > 40) setBookIdx(bookIdx-1);
+});
+
+/* Filtros chips */
+document.querySelectorAll(".tec-chips button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll(".tec-chips button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    bookFilter = btn.dataset.filter;
+    buildBook();
+  });
+});
+
+/* MATERIALES · auto rotate 4.2s */
+let matIdx = 0;
+const matSlides = document.querySelectorAll(".mat-slide");
+const matNavBtns = document.querySelectorAll(".mat-nav button");
+const pantoneCards = document.querySelectorAll(".pantone-card");
+function matSetIdx(i){
+  matIdx = i % matSlides.length;
+  matSlides.forEach((s,k)=> s.classList.toggle("active", k===matIdx));
+  matNavBtns.forEach((b,k)=> b.classList.toggle("active", k===matIdx));
+  pantoneCards.forEach((c,k)=>{
+    const off = (k - matIdx + 3) % 3;
+    const rot = off * 6;
+    const tz = off * -20;
+    const tx = off * 28;
+    const op = off === 0 ? 1 : 0.55;
+    c.style.transform = `translateX(${tx}px) translateZ(${tz}px) rotateY(${rot}deg) rotateZ(${-rot*0.4}deg)`;
+    c.style.opacity = op;
+    c.style.zIndex = 10 - off;
+  });
+}
+matSetIdx(0);
+matNavBtns.forEach((b,i)=> b.addEventListener("click", ()=> matSetIdx(i)));
+setInterval(()=> matSetIdx(matIdx+1), 4200);
+
+/* CASOS · filter ICP */
+document.querySelectorAll(".casos-filter button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll(".casos-filter button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    const f = btn.dataset.icp;
+    document.querySelectorAll(".caso").forEach(c=>{
+      const show = (f==="all") || c.dataset.icp === f;
+      c.style.display = show ? "" : "none";
+    });
+  });
+});
+
+/* FORM ICP chips */
+document.querySelectorAll(".icp-chips button").forEach(btn=>{
+  btn.addEventListener("click", e=>{
+    e.preventDefault();
+    const parent = btn.parentElement;
+    parent.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+/* PROCESO sticky · IntersectionObserver swap slide */
+const procSlides = document.querySelectorAll(".proc-sticky .slide");
+gsap.utils.toArray(".proc-step").forEach(el=>{
+  ScrollTrigger.create({trigger:el, start:"top 55%", end:"bottom 45%",
+    onEnter:()=>{
+      document.querySelectorAll(".proc-step").forEach(s=>s.classList.remove("in"));
+      el.classList.add("in");
+      const n = el.dataset.step;
+      procSlides.forEach(s => s.classList.toggle("active", s.dataset.slide === n));
+    },
+    onEnterBack:()=>{
+      document.querySelectorAll(".proc-step").forEach(s=>s.classList.remove("in"));
+      el.classList.add("in");
+      const n = el.dataset.step;
+      procSlides.forEach(s => s.classList.toggle("active", s.dataset.slide === n));
+    }
+  });
+});
+
+/* CALCULADORA reactiva */
+const state = { tech: 3.2, qty: 100, colors: 1, mult: 1 };
+function setActive(group, btn, key, val){
+  group.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  state[key] = val;
+  calc();
+}
+document.getElementById("calc-tech").addEventListener("click", e=>{
+  if(!e.target.matches("button")) return;
+  setActive(e.currentTarget, e.target, "tech", parseFloat(e.target.dataset.base));
+});
+document.getElementById("calc-colors").addEventListener("click", e=>{
+  if(!e.target.matches("button")) return;
+  setActive(e.currentTarget, e.target, "colors", parseInt(e.target.dataset.c));
+});
+document.getElementById("calc-mat").addEventListener("click", e=>{
+  if(!e.target.matches("button")) return;
+  setActive(e.currentTarget, e.target, "mult", parseFloat(e.target.dataset.mult));
+});
+document.getElementById("qty-range").addEventListener("input", e=>{
+  state.qty = parseInt(e.target.value);
+  document.getElementById("qty-out").textContent = state.qty;
+  document.getElementById("qty-big").textContent = state.qty;
+  calc();
+});
+
+function calc(){
+  const base = state.tech * state.mult;
+  const colorAdd = (state.colors-1) * 0.6;
+  const qtyDiscount = Math.max(0.55, 1 - Math.log10(state.qty/25) * 0.13);
+  const low = (base + colorAdd) * qtyDiscount * 0.9;
+  const high = (base + colorAdd) * qtyDiscount * 1.15;
+  const total = low * state.qty;
+  const totalHigh = high * state.qty;
+  document.getElementById("price-low").textContent = low.toFixed(2).replace(".",",");
+  document.getElementById("price-high").textContent = high.toFixed(2).replace(".",",");
+  document.getElementById("total").textContent = `${total.toFixed(0)} — ${totalHigh.toFixed(0)} €`;
+  let plazo = "8-12 días laborables";
+  if(state.qty > 500) plazo = "12-18 días laborables";
+  if(state.qty > 1500) plazo = "18-25 días laborables";
+  document.getElementById("plazo").textContent = plazo;
+}
+calc();
+
+/* SCROLL · ScrollTrigger refresh */
+ScrollTrigger.refresh();
+</script>
+
+</body>
+</html>
