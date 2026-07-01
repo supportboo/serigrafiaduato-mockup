@@ -160,6 +160,46 @@
     show(0); start();
   }
 
+  /* ---------- PACK FIRMA (1+2+4): titulares que se imprimen ---------- */
+  var titles = [].slice.call(document.querySelectorAll('main h2'));
+  if (titles.length) {
+    if (RM || !('IntersectionObserver' in window)) {
+      titles.forEach(function (h) { h.classList.add('print-in', 'printed'); });
+    } else {
+      var to = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('printed'); to.unobserve(e.target); } });
+      }, { threshold: 0.55 });
+      titles.forEach(function (h) { h.classList.add('print-in'); to.observe(h); });
+    }
+  }
+
+  /* ---------- PACK FIRMA (7): gota de progreso de scroll ---------- */
+  var ink = document.createElement('div');
+  ink.className = 'ink-progress'; ink.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(ink);
+  var inkTick = false;
+  function inkUpdate() {
+    if (inkTick) return; inkTick = true;
+    requestAnimationFrame(function () {
+      var d = document.documentElement;
+      var max = d.scrollHeight - d.clientHeight;
+      var p = max > 0 ? (d.scrollTop / max * 100) : 0;
+      ink.style.setProperty('--scroll', p.toFixed(1));
+      inkTick = false;
+    });
+  }
+  window.addEventListener('scroll', inkUpdate, { passive: true });
+  window.addEventListener('resize', inkUpdate, { passive: true });
+  inkUpdate();
+
+  /* ---------- PACK FIRMA (8): botones que estampan ---------- */
+  if (!RM) document.addEventListener('click', function (e) {
+    var b = e.target.closest('.btn');
+    if (!b) return;
+    b.classList.remove('stamped'); void b.offsetWidth; b.classList.add('stamped');
+    setTimeout(function () { b.classList.remove('stamped'); }, 340);
+  });
+
   /* ---------- Spotlight en secciones oscuras ---------- */
   if (!RM) document.querySelectorAll('.spotlight').forEach(function (s) {
     s.addEventListener('pointermove', function (e) {

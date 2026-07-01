@@ -328,6 +328,42 @@
   .btile, .btile--feature, .btile--wide { grid-column: span 1; grid-row: span 1; } }
 @media (max-width: 520px) { .bento { grid-template-columns: 1fr; } }
 
+/* ============================================================================
+   18 · PACK FIRMA — «la web imprime» (efectos únicos de Serigrafía Duato)
+============================================================================ */
+/* (1) Titular que se imprime: barrido de rasqueta + (2) registro CMYK que cuadra
+   + (4) subrayado grabado a láser. Se aplica por JS a los h2 de cada sección. */
+.print-in { position: relative; clip-path: inset(0 100% 0 0);
+  text-shadow: 3px 0 rgba(0,170,235,.5), -3px 0 rgba(230,0,126,.45); }
+.print-in.printed { clip-path: inset(0 0 0 0); text-shadow: none;
+  transition: clip-path .7s var(--ease), text-shadow .5s var(--ease) .18s; }
+/* rasqueta (squeegee) que barre la tinta */
+.print-in::after { content: ""; position: absolute; top: -4%; bottom: -4%; left: 0; width: 12px;
+  background: linear-gradient(90deg, transparent, var(--safety)); opacity: 0; pointer-events: none; z-index: 2; }
+.print-in.printed::after { animation: squeegee .7s var(--ease) forwards; }
+@keyframes squeegee { 0% { left: 0; opacity: .9; } 100% { left: 100%; opacity: 0; } }
+/* subrayado grabado a láser (punto caliente que dibuja) */
+.print-in::before { content: ""; position: absolute; left: 0; bottom: -.28em; height: 3px; width: 0;
+  background: var(--safety); box-shadow: 0 0 8px 1px rgba(232,89,12,.85); pointer-events: none; }
+.print-in.printed::before { animation: laserdraw .7s var(--ease) .5s forwards; }
+@keyframes laserdraw { from { width: 0; } to { width: 2.4em; } }
+
+/* (2) Slider: el titular «cuadra» el registro CMYK al activarse la diapositiva */
+.hero-slide h1 { text-shadow: 3px 0 rgba(0,170,235,.5), -3px 0 rgba(230,0,126,.45); }
+.hero-slide.is-active h1 { text-shadow: none; transition: text-shadow .6s var(--ease) .25s; }
+
+/* (7) Progreso de scroll = gota de tinta Duato que se llena de naranja */
+.ink-progress { position: fixed; left: 16px; bottom: 16px; width: 30px; height: 37px; z-index: 200; pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20120'%3E%3Cpath%20d='M50%206C68%2042%2090%2060%2090%2084a40%2040%200%201%201-80%200C10%2060%2032%2042%2050%206Z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20120'%3E%3Cpath%20d='M50%206C68%2042%2090%2060%2090%2084a40%2040%200%201%201-80%200C10%2060%2032%2042%2050%206Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  background: linear-gradient(to top, var(--safety) calc(var(--scroll,0) * 1%), rgba(120,130,140,.32) calc(var(--scroll,0) * 1%));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.28)); }
+@media (max-width: 760px) { .ink-progress { width: 26px; height: 32px; left: 12px; bottom: 12px; } }
+
+/* (8) Botones que estampan (micro-gesto de tampón al pulsar) */
+@keyframes stamp { 0% { transform: scale(.94); } 45% { transform: scale(1.03); } 100% { transform: scale(1); } }
+.btn.stamped { animation: stamp .32s var(--ease); }
+
 /* ---------- 14 · REDUCED MOTION: todo estático y visible ---------- */
 @media (prefers-reduced-motion: reduce) {
   [data-fx], [data-fx-stagger] > * { opacity: 1 !important; transform: none !important;
@@ -337,4 +373,8 @@
   .media:hover img { transform: none; }
   .spotlight::before { display: none; }
   .hero-slide.is-active .hs-media img { animation: none; transform: none; }
+  .print-in { clip-path: none !important; text-shadow: none !important; }
+  .print-in::after, .print-in::before { display: none !important; }
+  .hero-slide h1 { text-shadow: none !important; }
+  .btn.stamped { animation: none !important; }
 }
