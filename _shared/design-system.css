@@ -1,0 +1,711 @@
+/* ============================================================================
+   SERIGRAFÍA DUATO · v4 industrial · SISTEMA DE DISEÑO "Acero & Seguridad"
+   ----------------------------------------------------------------------------
+   Sistema compartido de todos los page-builders del mockup industrial.
+   Listo para inline (<style>…</style>) en cualquier entregable single-file.
+
+   Fuente de verdad:
+     - MASTER-STRATEGY-v4.md · §"Sistema de diseño recomendado"
+     - knowledge-base/12-sistema-visual-industrial-premium.md (paleta, materialidad)
+     - knowledge-base/13-tipografia-web-industrial.md (tipografía, jerarquía, datos)
+     - knowledge-base/10-referencias-web-b2b-industrial.md (tier-1: Domino, Markem-Imaje, TRUMPF, Bürkert)
+     - knowledge-base/11-ux-cro-b2b-industrial-leadgen.md (CRO, RFQ, trust signals)
+
+   Reglas duras:
+     - Naranja seguridad (--safety) SOLO en CTA / dato clave / alerta · <8% de superficie.
+     - JetBrains Mono tabular obligatorio en TODO dato (m², plazos, lotes, técnica×material).
+     - Cero gradientes cinematográficos · casi plano · elevación por capa de color.
+     - Motion 150-250ms · easing cubic-bezier(0.2,0,0,1) · solo funcional · prefers-reduced-motion.
+     - Contraste WCAG 2.2 AA (4.5:1 cuerpo) orientado a APCA (Lc 90 cuerpo).
+   Fuentes vía Google Fonts <link> (ver components.md / SHELL.md).
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   1 · TOKENS
+---------------------------------------------------------------------------- */
+:root {
+  /* --- Paleta "Acero & Seguridad" (Dirección A, recomendada) --- */
+  --surface:        #F4F5F7; /* fondo general claro */
+  --surface-2:      #E7E9ED; /* tarjetas, bandas, papel técnico */
+  --ink:            #15181D; /* texto y titulares */
+  --steel:          #4A525E; /* texto secundario, bordes */
+  --safety:         #E8590C; /* CTA · dato clave · alerta · <8% superficie */
+  --safety-2:       #FFB000; /* badges normativa / PRL */
+  --dark:           #16191E; /* secciones hero / proceso */
+
+  /* --- Derivados de uso (sobrios, sin inventar color nuevo) --- */
+  --ink-on-dark:    #F4F5F7; /* texto sobre --dark */
+  --steel-on-dark:  #A8AFB9; /* texto secundario sobre --dark (contraste suficiente) */
+  --line:           #CBD0D8; /* hairline técnica 1px sobre claro */
+  --line-2:         #2A2F38; /* hairline sobre --dark */
+  --safety-hover:   #CF4D08; /* hover del CTA naranja */
+  --safety-press:   #B54206; /* active del CTA naranja */
+  --safety-tint:    rgba(232, 89, 12, .10); /* fondo de chip/alerta naranja muy diluido */
+  --safety-2-tint:  rgba(255, 176, 0, .14);
+  --focus-ring:     #1B6FE0; /* anillo de foco azul — contraste contra naranja, accesible */
+
+  /* --- Tipografía --- */
+  --font-display: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Escala modular 1.250 (Major Third) · base cuerpo 18px · clamp mobile-first */
+  --fs-display: clamp(2.25rem, 1.4rem + 4.2vw, 4rem);     /* 36 → 64 */
+  --fs-h2:      clamp(1.75rem, 1.25rem + 2.5vw, 2.5rem);  /* 28 → 40 */
+  --fs-h3:      clamp(1.375rem, 1.1rem + 1.4vw, 1.75rem); /* 22 → 28 */
+  --fs-lead:    clamp(1.125rem, 1rem + .6vw, 1.375rem);   /* 18 → 22 */
+  --fs-body:    1.125rem;   /* 18 */
+  --fs-sm:      0.9375rem;  /* 15 */
+  --fs-eyebrow: 0.8125rem;  /* 13 */
+  --fs-data:    1rem;       /* 16, mono */
+
+  --lh-display: 1.05;
+  --lh-head:    1.12;
+  --lh-body:    1.6;
+  --lh-tight:   1.3;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  --tracking-eyebrow: 0.1em;   /* placa / señalética */
+  --tracking-head:   -0.01em;
+  --tracking-display:-0.02em;
+
+  /* --- Escala de espaciado 4/8 --- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  /* --- Layout --- */
+  --container:    1280px;
+  --container-sm: 1100px;
+  --gutter:       24px;
+  --gutter-mobile:16px;
+
+  /* --- Radios (técnicos, contenidos) --- */
+  --radius-0:  0px;   /* esquinas a 90° = lenguaje de plano */
+  --radius-1:  2px;
+  --radius-2:  4px;   /* tarjetas, inputs */
+  --radius-3:  8px;   /* contenedores grandes */
+  --radius-pill: 999px; /* solo chips de selección */
+
+  /* --- Sombras planas (elevación por capa, no por difusión cinematográfica) --- */
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 0 var(--line);                 /* hairline inferior */
+  --shadow-2: 0 1px 2px rgba(21, 24, 29, .06), 0 0 0 1px var(--line); /* tarjeta */
+  --shadow-3: 0 2px 0 0 rgba(21, 24, 29, .08), 0 0 0 1px var(--line); /* sombra dura corta */
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-1: 150ms;
+  --dur-2: 200ms;
+  --dur-3: 250ms;
+
+  /* --- Retícula de plano / blueprint (≤4% opacidad) --- */
+  --grid-line: rgba(21, 24, 29, .035);
+  --grid-line-dark: rgba(244, 245, 247, .045);
+  --grid-size: 24px;
+}
+
+/* ----------------------------------------------------------------------------
+   2 · RESET LIGERO
+---------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+svg { fill: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; }
+
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: var(--radius-2); }
+
+/* ----------------------------------------------------------------------------
+   3 · TIPOGRAFÍA BASE
+---------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tracking-head);
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-display); font-weight: var(--fw-black); line-height: var(--lh-display); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semi); }
+h4 { font-size: var(--fs-lead); font-weight: var(--fw-medium); }
+
+p { max-width: 68ch; }
+.lead { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--steel); max-width: 64ch; }
+small, .text-sm { font-size: var(--fs-sm); line-height: 1.5; }
+strong, b { font-weight: var(--fw-semi); }
+em, i { font-style: normal; font-weight: var(--fw-semi); } /* sin itálica decorativa: énfasis por peso */
+
+/* DATO: JetBrains Mono tabular — m², plazos, lotes, técnica×material, lote/serie */
+.mono, .data, .spec, td.num, .stat-value {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
+}
+.mono-unit { color: var(--steel); font-weight: var(--fw-regular); } /* mm, m², ud, días atenuados */
+
+/* ----------------------------------------------------------------------------
+   4 · UTILIDADES DE LAYOUT
+---------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--narrow { max-width: var(--container-sm); }
+
+.section { padding-block: var(--sp-9); }
+.section--tight { padding-block: var(--sp-7); }
+.section--dark {
+  background: var(--dark);
+  color: var(--ink-on-dark);
+}
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--ink-on-dark); }
+.section--dark .lead { color: var(--steel-on-dark); }
+.section--surface-2 { background: var(--surface-2); }
+
+/* Grid 12 col */
+.grid { display: grid; gap: var(--gutter); grid-template-columns: repeat(12, 1fr); }
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+/* Helpers de auto-fit para tarjetas uniformes (lenguaje de ficha de catálogo) */
+.grid-cards { display: grid; gap: var(--gutter); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-cards--2 { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+.stack > * + * { margin-top: var(--sp-4); }
+.stack-lg > * + * { margin-top: var(--sp-6); }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.between { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
+
+/* ----------------------------------------------------------------------------
+   5 · EYEBROW (placa / señalética)
+---------------------------------------------------------------------------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-text);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--steel);
+}
+.eyebrow::before { /* tick de cota: línea fina superior izquierda */
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--safety);
+  flex: none;
+}
+.section--dark .eyebrow { color: var(--steel-on-dark); }
+
+/* ----------------------------------------------------------------------------
+   6 · BOTONES
+   .btn (base) · .btn-safety (CTA primario naranja) · .btn-ghost (secundario)
+   CTAs en UPPERCASE bold, texto blanco sobre fondo de color explícito.
+---------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 48px;
+  padding: 0 var(--sp-5);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-2);
+  border: 1.5px solid transparent;
+  transition: background var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease),
+              color var(--dur-2) var(--ease),
+              transform var(--dur-1) var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn .icon { width: 18px; height: 18px; flex: none; }
+
+/* Primario · naranja seguridad · el único uso de superficie naranja permitido */
+.btn-safety {
+  background: var(--safety);
+  color: #FFFFFF;
+  border-color: var(--safety);
+}
+.btn-safety:hover { background: var(--safety-hover); border-color: var(--safety-hover); }
+.btn-safety:active { background: var(--safety-press); border-color: var(--safety-press); }
+
+/* Secundario · borde de acero sobre claro */
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--steel);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.section--dark .btn-ghost { color: var(--ink-on-dark); border-color: var(--steel-on-dark); }
+.section--dark .btn-ghost:hover { background: var(--ink-on-dark); color: var(--ink); border-color: var(--ink-on-dark); }
+
+/* Sólido oscuro · alternativa neutra de alto contraste sin gastar naranja */
+.btn-dark { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.btn-dark:hover { background: #000; border-color: #000; }
+
+.btn-block { width: 100%; }
+
+/* ----------------------------------------------------------------------------
+   7 · TARJETAS (capacidad / solución) — módulos uniformes tipo ficha
+---------------------------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+  position: relative;
+}
+.card:hover { border-color: var(--steel); box-shadow: var(--shadow-3); }
+.card--accent { border-top: 3px solid var(--safety); } /* elevación por capa de color */
+.card .card-icon { width: 32px; height: 32px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; }
+.card h3 { font-size: var(--fs-h3); }
+.card p { color: var(--steel); font-size: var(--fs-sm); }
+.card .card-meta { /* metadato mono: técnica / material / serie */
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--steel);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.card-link { margin-top: var(--sp-2); font-weight: var(--fw-semi); color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.card-link .icon { width: 16px; height: 16px; transition: transform var(--dur-2) var(--ease); }
+.card:hover .card-link .icon { transform: translateX(4px); }
+
+/* ----------------------------------------------------------------------------
+   8 · TABLA TÉCNICA (.spec-table) — mono tabular, cabecera tipo placa
+---------------------------------------------------------------------------- */
+.spec-table {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  background: var(--surface);
+  font-size: var(--fs-sm);
+}
+.spec-table caption {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.spec-table th {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.spec-table td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--ink);
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td.num, .spec-table .mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+}
+.spec-table tbody tr:hover { background: var(--surface-2); }
+
+/* ----------------------------------------------------------------------------
+   9 · BADGE DE NORMATIVA / PRL (--safety-2 ámbar)
+---------------------------------------------------------------------------- */
+.badge-normativa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  background: var(--safety-2-tint);
+  border: 1px solid var(--safety-2);
+  border-radius: var(--radius-2);
+}
+.badge-normativa .icon { width: 14px; height: 14px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; flex: none; }
+
+/* Chip de estado de dato (doctrina boo-data-certainty) */
+.badge-pending {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 8px; font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.02em; color: var(--steel);
+  background: var(--surface-2); border: 1px dashed var(--steel); border-radius: var(--radius-2);
+}
+
+/* ----------------------------------------------------------------------------
+   10 · DISCLAIMER (cifra pública no vinculante)
+---------------------------------------------------------------------------- */
+.disclaimer {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--steel);
+  font-family: var(--font-text);
+}
+.disclaimer::before { content: "— "; }
+
+/* ----------------------------------------------------------------------------
+   11 · STAT / DATO DESTACADO (trust signal numérico)
+---------------------------------------------------------------------------- */
+.stat { display: flex; flex-direction: column; gap: var(--sp-1); }
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  font-weight: var(--fw-semi);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-value .accent { color: var(--safety); } /* el "+" o la unidad clave en naranja — dato clave */
+.stat-label {
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--steel);
+  font-weight: var(--fw-semi);
+}
+.section--dark .stat-value { color: var(--ink-on-dark); }
+.section--dark .stat-label { color: var(--steel-on-dark); }
+
+/* ----------------------------------------------------------------------------
+   12 · RETÍCULA DE PLANO / BLUEPRINT (.blueprint-bg) · ≤4% opacidad
+   Fondo de secciones de proceso. No compite con el contenido.
+---------------------------------------------------------------------------- */
+.blueprint-bg {
+  position: relative;
+  isolation: isolate;
+}
+.blueprint-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+}
+.section--dark.blueprint-bg::before {
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+}
+
+/* ----------------------------------------------------------------------------
+   13 · PLACEHOLDER DE IMAGEN HONESTO (.media-pending)
+   NUNCA stock de moda, NUNCA render falso. Retícula blueprint + etiqueta honesta.
+---------------------------------------------------------------------------- */
+.media-pending {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--surface-2);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}
+.media-pending::after { /* esquina técnica con cruz de registro */
+  content: "+";
+  position: absolute;
+  top: var(--sp-3); right: var(--sp-4);
+  font-family: var(--font-mono);
+  color: var(--steel);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.media-pending .media-label {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  background: linear-gradient(to top, rgba(231,233,237,.96), rgba(231,233,237,0)); /* overlay funcional, no decorativo */
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--steel);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.media-pending .media-label .icon { width: 16px; height: 16px; color: var(--steel); stroke: var(--steel); stroke-width: 1.5; flex: none; }
+.media-pending--dark {
+  background: var(--dark);
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  border-color: var(--line-2);
+}
+.media-pending--dark .media-label { color: var(--steel-on-dark); background: linear-gradient(to top, rgba(22,25,30,.96), rgba(22,25,30,0)); }
+.media-pending--dark .media-label .icon { color: var(--steel-on-dark); stroke: var(--steel-on-dark); }
+
+/* ----------------------------------------------------------------------------
+   14 · HEADER + NAV
+---------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 245, 247, .92);
+  backdrop-filter: saturate(120%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: var(--sp-5); }
+.brand { display: inline-flex; align-items: baseline; gap: var(--sp-2); font-family: var(--font-display); font-weight: var(--fw-black); font-size: 1.125rem; color: var(--ink); letter-spacing: -0.01em; }
+.brand .brand-sub { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: var(--fw-medium); text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel); }
+.nav { display: flex; align-items: center; gap: var(--sp-5); }
+.nav a { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--steel); padding: var(--sp-2) 0; border-bottom: 2px solid transparent; transition: color var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--safety); }
+.header-cta { display: flex; align-items: center; gap: var(--sp-3); }
+.nav-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--ink); }
+.nav-toggle .icon { width: 24px; height: 24px; stroke: var(--ink); stroke-width: 1.5; }
+
+/* ----------------------------------------------------------------------------
+   15 · FOOTER
+---------------------------------------------------------------------------- */
+.site-footer { background: var(--dark); color: var(--steel-on-dark); padding-block: var(--sp-8) var(--sp-6); }
+.site-footer a { color: var(--steel-on-dark); transition: color var(--dur-2) var(--ease); }
+.site-footer a:hover { color: var(--ink-on-dark); }
+.site-footer h4 { color: var(--ink-on-dark); font-size: var(--fs-eyebrow); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-text); font-weight: var(--fw-semi); margin-bottom: var(--sp-4); }
+.footer-grid { display: grid; gap: var(--sp-7); grid-template-columns: 1.4fr 1fr 1fr; }
+.footer-data { font-family: var(--font-mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; line-height: 1.9; }
+.footer-bottom { margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--line-2); display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: space-between; font-size: var(--fs-sm); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+
+/* ----------------------------------------------------------------------------
+   16 · WHATSAPP STICKY (móvil) + atajo urgencias
+---------------------------------------------------------------------------- */
+.whatsapp-sticky {
+  display: none;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0 var(--sp-5);
+  min-height: 52px;
+  background: var(--ink);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  box-shadow: 0 4px 16px rgba(21,24,29,.28);
+}
+.whatsapp-sticky .icon { width: 22px; height: 22px; stroke: var(--ink-on-dark); stroke-width: 1.5; }
+
+/* ----------------------------------------------------------------------------
+   17 · RFQ — barra de progreso + paso
+---------------------------------------------------------------------------- */
+.rfq-progress { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-6); }
+.rfq-progress .step {
+  flex: 1;
+  height: 4px;
+  background: var(--line);
+  border-radius: var(--radius-1);
+  position: relative;
+}
+.rfq-progress .step.is-done { background: var(--steel); }
+.rfq-progress .step.is-active { background: var(--safety); }
+.rfq-progress-label { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--steel); margin-bottom: var(--sp-3); }
+.rfq-step h3 { margin-bottom: var(--sp-2); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 10px var(--sp-4);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-sm); font-weight: var(--fw-medium);
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+.chip:hover { border-color: var(--steel); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:has(input:checked), .chip.is-selected { border-color: var(--safety); background: var(--safety-tint); }
+
+.field { display: flex; flex-direction: column; gap: var(--sp-2); }
+.field label { font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--ink); }
+.field input, .field select, .field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px var(--sp-4);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-2);
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease);
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--steel); box-shadow: var(--shadow-focus); }
+
+.dropzone {
+  border: 1.5px dashed var(--steel);
+  border-radius: var(--radius-2);
+  padding: var(--sp-7) var(--sp-5);
+  text-align: center;
+  color: var(--steel);
+  background: var(--surface-2);
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-3);
+}
+.dropzone .icon { width: 32px; height: 32px; stroke: var(--steel); stroke-width: 1.5; }
+
+/* ----------------------------------------------------------------------------
+   18 · HELPERS DE COLOR / TEXTO
+---------------------------------------------------------------------------- */
+.text-steel { color: var(--steel); }
+.text-safety { color: var(--safety); }
+.text-center { text-align: center; }
+.measure { max-width: 60ch; }
+.divider { height: 1px; background: var(--line); border: none; margin-block: var(--sp-6); }
+.section--dark .divider { background: var(--line-2); }
+
+/* ----------------------------------------------------------------------------
+   19 · MOTION · reveals discretos · solo funcional
+---------------------------------------------------------------------------- */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ----------------------------------------------------------------------------
+   20 · RESPONSIVE · mobile-first auditado 320 / 375 / 390 / 430
+---------------------------------------------------------------------------- */
+
+/* Tablet hacia abajo */
+@media (max-width: 980px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: span 6; }
+}
+
+/* Móvil (<= 760px) */
+@media (max-width: 760px) {
+  :root { --gutter: var(--gutter-mobile); }
+  .container { padding-inline: var(--gutter-mobile); }
+  .section { padding-block: var(--sp-7); }
+  .section--tight { padding-block: var(--sp-6); }
+
+  .nav { display: none; }
+  /* Menú móvil desplegado (controlado por JS con .is-open, sin estilos inline) */
+  .nav.is-open {
+    display: flex;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: var(--sp-4) var(--gutter-mobile);
+    z-index: 99;
+  }
+  .nav-toggle { display: inline-flex; }
+  .site-header .header-cta .btn-ghost { display: none; }
+
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .col-12, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: 1 / -1; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .footer-bottom { flex-direction: column; gap: var(--sp-3); }
+
+  .whatsapp-sticky { display: inline-flex; }
+
+  /* Tablas de specs colapsan a tarjetas */
+  .spec-table.collapsible thead { display: none; }
+  .spec-table.collapsible, .spec-table.collapsible tbody, .spec-table.collapsible tr, .spec-table.collapsible td { display: block; width: 100%; }
+  .spec-table.collapsible tr { border-bottom: 1px solid var(--line); padding: var(--sp-2) 0; }
+  .spec-table.collapsible td { border-bottom: none; padding: 6px var(--sp-4); }
+  .spec-table.collapsible td[data-label]::before {
+    content: attr(data-label) " · ";
+    font-family: var(--font-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.6875rem;
+    font-weight: var(--fw-semi);
+    color: var(--steel);
+  }
+
+  body { padding-bottom: 84px; } /* deja sitio al WhatsApp sticky */
+}
+
+/* Móvil pequeño (<= 380px): cuerpo nunca < 16px */
+@media (max-width: 380px) {
+  :root { --fs-body: 1.0625rem; }
+  .btn { padding-inline: var(--sp-4); }
+}

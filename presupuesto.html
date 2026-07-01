@@ -1,0 +1,1986 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedir presupuesto · Serigrafía Duato — Marcaje industrial en Valencia</title>
+  <meta name="description" content="Pide presupuesto de marcaje industrial a Serigrafía Duato (Alboraya, Valencia). Formulario técnico en 4 pasos: técnica, detalle de la pieza, datos. 12 técnicas bajo un techo, más de 30 años.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ====================================================================
+       Sistema de diseño "Acero & Seguridad" · INLINE (_shared/design-system.css)
+  ==================================================================== -->
+  <style>
+/* ============================================================================
+   SERIGRAFÍA DUATO · v4 industrial · SISTEMA DE DISEÑO "Acero & Seguridad"
+============================================================================ */
+
+/* 1 · TOKENS */
+:root {
+  --surface:        #F4F5F7;
+  --surface-2:      #E7E9ED;
+  --ink:            #15181D;
+  --steel:          #4A525E;
+  --safety:         #E8590C;
+  --safety-2:       #FFB000;
+  --dark:           #16191E;
+
+  --ink-on-dark:    #F4F5F7;
+  --steel-on-dark:  #A8AFB9;
+  --line:           #CBD0D8;
+  --line-2:         #2A2F38;
+  --safety-hover:   #CF4D08;
+  --safety-press:   #B54206;
+  --safety-ink:     #A53D06;
+  --safety-tint:    rgba(232, 89, 12, .10);
+  --safety-2-tint:  rgba(255, 176, 0, .14);
+  --focus-ring:     #1B6FE0;
+
+  --font-display: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --fs-display: clamp(2.25rem, 1.4rem + 4.2vw, 4rem);
+  --fs-h2:      clamp(1.75rem, 1.25rem + 2.5vw, 2.5rem);
+  --fs-h3:      clamp(1.375rem, 1.1rem + 1.4vw, 1.75rem);
+  --fs-lead:    clamp(1.125rem, 1rem + .6vw, 1.375rem);
+  --fs-body:    1.125rem;
+  --fs-sm:      0.9375rem;
+  --fs-eyebrow: 0.8125rem;
+  --fs-data:    1rem;
+
+  --lh-display: 1.05;
+  --lh-head:    1.12;
+  --lh-body:    1.6;
+  --lh-tight:   1.3;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  --tracking-eyebrow: 0.1em;
+  --tracking-head:   -0.01em;
+  --tracking-display:-0.02em;
+
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  --container:    1280px;
+  --container-sm: 1100px;
+  --gutter:       24px;
+  --gutter-mobile:16px;
+
+  --radius-0:  0px;
+  --radius-1:  2px;
+  --radius-2:  4px;
+  --radius-3:  8px;
+  --radius-pill: 999px;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 0 var(--line);
+  --shadow-2: 0 1px 2px rgba(21, 24, 29, .06), 0 0 0 1px var(--line);
+  --shadow-3: 0 2px 0 0 rgba(21, 24, 29, .08), 0 0 0 1px var(--line);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-1: 150ms;
+  --dur-2: 200ms;
+  --dur-3: 250ms;
+
+  --grid-line: rgba(21, 24, 29, .035);
+  --grid-line-dark: rgba(244, 245, 247, .045);
+  --grid-size: 24px;
+}
+
+/* 2 · RESET LIGERO */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+svg { fill: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; }
+
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: var(--radius-2); }
+
+/* 3 · TIPOGRAFÍA BASE */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tracking-head);
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-display); font-weight: var(--fw-black); line-height: var(--lh-display); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semi); }
+h4 { font-size: var(--fs-lead); font-weight: var(--fw-medium); }
+
+p { max-width: 68ch; }
+.lead { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--steel); max-width: 64ch; }
+small, .text-sm { font-size: var(--fs-sm); line-height: 1.5; }
+strong, b { font-weight: var(--fw-semi); }
+em, i { font-style: normal; font-weight: var(--fw-semi); }
+
+.mono, .data, .spec, td.num, .stat-value {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
+}
+.mono-unit { color: var(--steel); font-weight: var(--fw-regular); }
+
+/* 4 · UTILIDADES DE LAYOUT */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--narrow { max-width: var(--container-sm); }
+
+.section { padding-block: var(--sp-9); }
+.section--tight { padding-block: var(--sp-7); }
+.section--dark { background: var(--dark); color: var(--ink-on-dark); }
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--ink-on-dark); }
+.section--dark .lead { color: var(--steel-on-dark); }
+.section--surface-2 { background: var(--surface-2); }
+
+.grid { display: grid; gap: var(--gutter); grid-template-columns: repeat(12, 1fr); }
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+.grid-cards { display: grid; gap: var(--gutter); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-cards--2 { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+.stack > * + * { margin-top: var(--sp-4); }
+.stack-lg > * + * { margin-top: var(--sp-6); }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.between { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
+
+/* 5 · EYEBROW */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-text);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--steel);
+}
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--safety);
+  flex: none;
+}
+.section--dark .eyebrow { color: var(--steel-on-dark); }
+
+/* 6 · BOTONES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 48px;
+  padding: 0 var(--sp-5);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-2);
+  border: 1.5px solid transparent;
+  transition: background var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease),
+              color var(--dur-2) var(--ease),
+              transform var(--dur-1) var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn .icon { width: 18px; height: 18px; flex: none; }
+
+/* Primario · CTA de marca unificado en las 4 páginas: naranja profundo + texto
+   blanco. Blanco sobre #BA4408 ≈ 5.0:1 → cumple WCAG 2.2 AA texto normal. El token
+   --safety (#E8590C) se reserva a acentos no-texto (tick eyebrow, índice, stat). */
+.btn-safety { background: #BA4408; color: #FFFFFF; border-color: #BA4408; }
+.btn-safety:hover { background: #A23A06; border-color: #A23A06; color: #FFFFFF; }
+.btn-safety:active { background: #8F3305; border-color: #8F3305; color: #FFFFFF; }
+.btn-safety .icon { stroke: #FFFFFF; }
+
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--steel); }
+.btn-ghost:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.section--dark .btn-ghost { color: var(--ink-on-dark); border-color: var(--steel-on-dark); }
+.section--dark .btn-ghost:hover { background: var(--ink-on-dark); color: var(--ink); border-color: var(--ink-on-dark); }
+
+.btn-dark { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.btn-dark:hover { background: #000; border-color: #000; }
+
+.btn-block { width: 100%; }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+/* 7 · TARJETAS */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+  position: relative;
+}
+.card:hover { border-color: var(--steel); box-shadow: var(--shadow-3); }
+.card--accent { border-top: 3px solid var(--safety); }
+.card .card-icon { width: 32px; height: 32px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; }
+.card h3 { font-size: var(--fs-h3); }
+.card p { color: var(--steel); font-size: var(--fs-sm); }
+.card .card-meta {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--steel);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.card-link { margin-top: var(--sp-2); font-weight: var(--fw-semi); color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.card-link .icon { width: 16px; height: 16px; transition: transform var(--dur-2) var(--ease); }
+.card:hover .card-link .icon { transform: translateX(4px); }
+
+/* 8 · TABLA TÉCNICA */
+.spec-table {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  background: var(--surface);
+  font-size: var(--fs-sm);
+}
+.spec-table caption {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.spec-table th {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.spec-table td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--ink);
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td.num, .spec-table .mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+}
+.spec-table tbody tr:hover { background: var(--surface-2); }
+
+/* 9 · BADGE DE NORMATIVA / PRL */
+.badge-normativa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  background: var(--safety-2-tint);
+  border: 1px solid var(--safety-2);
+  border-radius: var(--radius-2);
+}
+.badge-normativa .icon { width: 14px; height: 14px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; flex: none; }
+
+.badge-pending {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 8px; font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.02em; color: var(--steel);
+  background: var(--surface-2); border: 1px dashed var(--steel); border-radius: var(--radius-2);
+}
+.badge-pending .icon { width: 14px; height: 14px; color: var(--steel); stroke: var(--steel); stroke-width: 1.5; flex: none; }
+
+/* 10 · DISCLAIMER */
+.disclaimer {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--steel);
+  font-family: var(--font-text);
+}
+.disclaimer::before { content: "— "; }
+
+/* 11 · STAT */
+.stat { display: flex; flex-direction: column; gap: var(--sp-1); }
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  font-weight: var(--fw-semi);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-value .accent { color: var(--safety); }
+.stat-label {
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--steel);
+  font-weight: var(--fw-semi);
+}
+.section--dark .stat-value { color: var(--ink-on-dark); }
+.section--dark .stat-label { color: var(--steel-on-dark); }
+
+/* 12 · RETÍCULA DE PLANO / BLUEPRINT */
+.blueprint-bg { position: relative; isolation: isolate; }
+.blueprint-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+}
+.section--dark.blueprint-bg::before {
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+}
+
+/* 13 · PLACEHOLDER DE IMAGEN HONESTO */
+.media-pending {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--surface-2);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}
+.media-pending::after {
+  content: "+";
+  position: absolute;
+  top: var(--sp-3); right: var(--sp-4);
+  font-family: var(--font-mono);
+  color: var(--steel);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.media-pending .media-label {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  background: linear-gradient(to top, rgba(231,233,237,.96), rgba(231,233,237,0));
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--steel);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.media-pending .media-label .icon { width: 16px; height: 16px; color: var(--steel); stroke: var(--steel); stroke-width: 1.5; flex: none; }
+.media-pending--dark {
+  background: var(--dark);
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  border-color: var(--line-2);
+}
+.media-pending--dark .media-label { color: var(--steel-on-dark); background: linear-gradient(to top, rgba(22,25,30,.96), rgba(22,25,30,0)); }
+.media-pending--dark .media-label .icon { color: var(--steel-on-dark); stroke: var(--steel-on-dark); }
+
+/* 14 · HEADER + NAV */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 245, 247, .92);
+  backdrop-filter: saturate(120%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: var(--sp-5); }
+.brand { display: inline-flex; align-items: baseline; gap: var(--sp-2); font-family: var(--font-display); font-weight: var(--fw-black); font-size: 1.125rem; color: var(--ink); letter-spacing: -0.01em; }
+.brand .brand-sub { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: var(--fw-medium); text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel); }
+.nav { display: flex; align-items: center; gap: var(--sp-5); }
+.nav a { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--steel); padding: var(--sp-2) 0; border-bottom: 2px solid transparent; transition: color var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--safety); }
+.header-cta { display: flex; align-items: center; gap: var(--sp-3); }
+.nav-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--ink); }
+.nav-toggle .icon { width: 24px; height: 24px; stroke: var(--ink); stroke-width: 1.5; }
+
+/* 15 · FOOTER */
+.site-footer { background: var(--dark); color: var(--steel-on-dark); padding-block: var(--sp-8) var(--sp-6); }
+.site-footer a { color: var(--steel-on-dark); transition: color var(--dur-2) var(--ease); }
+.site-footer a:hover { color: var(--ink-on-dark); }
+.site-footer h4 { color: var(--ink-on-dark); font-size: var(--fs-eyebrow); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-text); font-weight: var(--fw-semi); margin-bottom: var(--sp-4); }
+.footer-grid { display: grid; gap: var(--sp-7); grid-template-columns: 1.4fr 1fr 1fr; }
+.footer-data { font-family: var(--font-mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; line-height: 1.9; }
+.footer-bottom { margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--line-2); display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: space-between; font-size: var(--fs-sm); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+
+/* 16 · WHATSAPP STICKY */
+.whatsapp-sticky {
+  display: none;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0 var(--sp-5);
+  min-height: 52px;
+  background: var(--ink);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  box-shadow: 0 4px 16px rgba(21,24,29,.28);
+}
+.whatsapp-sticky .icon { width: 22px; height: 22px; stroke: var(--ink-on-dark); stroke-width: 1.5; }
+
+/* 17 · RFQ — barra de progreso + paso */
+.rfq-progress { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-6); }
+.rfq-progress .step {
+  flex: 1;
+  height: 4px;
+  background: var(--line);
+  border-radius: var(--radius-1);
+  position: relative;
+  transition: background var(--dur-2) var(--ease);
+}
+.rfq-progress .step.is-done { background: var(--steel); }
+.rfq-progress .step.is-active { background: var(--safety); }
+.rfq-progress-label { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--steel); margin-bottom: var(--sp-3); }
+.rfq-step h3 { margin-bottom: var(--sp-2); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 10px var(--sp-4);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-sm); font-weight: var(--fw-medium);
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+  cursor: pointer;
+  position: relative;
+}
+.chip:hover { border-color: var(--steel); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:has(input:checked), .chip.is-selected { border-color: var(--safety); background: var(--safety-tint); }
+.chip:focus-within { box-shadow: var(--shadow-focus); }
+
+.field { display: flex; flex-direction: column; gap: var(--sp-2); }
+.field label { font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--ink); }
+.field input, .field select, .field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px var(--sp-4);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-2);
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease);
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--steel); box-shadow: var(--shadow-focus); }
+.field-hint { font-size: 0.8125rem; color: var(--steel); }
+.field-error { font-size: 0.8125rem; color: var(--safety-ink); font-weight: var(--fw-semi); display: none; }
+.field-error:empty { display: none !important; }
+.field-error::before { content: ""; display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; background-color: currentColor; -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2 1 21h22L12 2zm0 14a1.25 1.25 0 1 1 0 2.5A1.25 1.25 0 0 1 12 16zm-1.1-7h2.2l-.3 5.5h-1.6L10.9 9z'/%3E%3C/svg%3E"); mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2 1 21h22L12 2zm0 14a1.25 1.25 0 1 1 0 2.5A1.25 1.25 0 0 1 12 16zm-1.1-7h2.2l-.3 5.5h-1.6L10.9 9z'/%3E%3C/svg%3E"); }
+.field.has-error input, .field.has-error select, .field.has-error textarea { border-color: var(--safety); }
+.field.has-error .field-error { display: block; }
+
+.dropzone {
+  border: 1.5px dashed var(--steel);
+  border-radius: var(--radius-2);
+  padding: var(--sp-7) var(--sp-5);
+  text-align: center;
+  color: var(--steel);
+  background: var(--surface-2);
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-3);
+  cursor: pointer;
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+.dropzone:hover { border-color: var(--ink); }
+.dropzone.is-dragover { border-color: var(--safety); background: var(--safety-tint); }
+.dropzone .icon { width: 32px; height: 32px; stroke: var(--steel); stroke-width: 1.5; }
+.dropzone.is-dragover .icon { stroke: var(--safety); }
+
+/* 18 · HELPERS DE COLOR / TEXTO */
+.text-steel { color: var(--steel); }
+.text-safety { color: var(--safety); }
+.req { color: var(--safety-ink); font-weight: var(--fw-bold); }
+.req-text { color: var(--steel); font-weight: var(--fw-regular); font-size: 0.78rem; text-transform: none; letter-spacing: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.text-center { text-align: center; }
+.measure { max-width: 60ch; }
+.divider { height: 1px; background: var(--line); border: none; margin-block: var(--sp-6); }
+.section--dark .divider { background: var(--line-2); }
+
+/* 19 · MOTION */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* 20 · RESPONSIVE */
+@media (max-width: 980px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: span 6; }
+}
+
+@media (max-width: 760px) {
+  :root { --gutter: var(--gutter-mobile); }
+  .container { padding-inline: var(--gutter-mobile); }
+  .section { padding-block: var(--sp-7); }
+  .section--tight { padding-block: var(--sp-6); }
+
+  .nav { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .site-header .header-cta .btn-ghost { display: none; }
+
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .col-12, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: 1 / -1; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .footer-bottom { flex-direction: column; gap: var(--sp-3); }
+
+  .whatsapp-sticky { display: inline-flex; }
+
+  .spec-table.collapsible thead { display: none; }
+  .spec-table.collapsible, .spec-table.collapsible tbody, .spec-table.collapsible tr, .spec-table.collapsible td { display: block; width: 100%; }
+  .spec-table.collapsible tr { border-bottom: 1px solid var(--line); padding: var(--sp-2) 0; }
+  .spec-table.collapsible td { border-bottom: none; padding: 6px var(--sp-4); }
+  .spec-table.collapsible td[data-label]::before {
+    content: attr(data-label) " · ";
+    font-family: var(--font-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.6875rem;
+    font-weight: var(--fw-semi);
+    color: var(--steel);
+  }
+
+  body { padding-bottom: 84px; }
+}
+
+@media (max-width: 380px) {
+  :root { --fs-body: 1.0625rem; }
+  .btn { padding-inline: var(--sp-4); }
+}
+  </style>
+
+  <!-- ====================================================================
+       Ajustes puntuales de esta página (solo tokens) — RFQ
+  ==================================================================== -->
+  <style>
+/* Menú móvil desplegable funcional (panel posicionado bajo el header) */
+@media (max-width: 760px) {
+  .site-header { position: sticky; }
+  .nav.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    left: 0; right: 0;
+    top: 100%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 16px rgba(21, 24, 29, .12);
+    padding: var(--sp-2) var(--gutter-mobile) var(--sp-4);
+    z-index: 99;
+  }
+  .nav.is-open a {
+    padding: var(--sp-4) 0;
+    border-bottom: 1px solid var(--line);
+    border-left: none;
+    font-size: var(--fs-body);
+  }
+  .nav.is-open a:last-child { border-bottom: none; }
+}
+
+/* Layout RFQ: formulario + lateral persistente */
+.rfq-layout { display: grid; gap: var(--sp-7); grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.9fr); align-items: start; }
+
+/* Panel del formulario */
+.rfq-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--safety);
+  border-radius: var(--radius-3);
+  padding: var(--sp-7);
+}
+
+/* Cada paso (oculto salvo el activo) */
+.rfq-step { display: none; }
+.rfq-step.is-current { display: block; }
+.rfq-step .step-intro { margin-bottom: var(--sp-5); }
+
+/* Cabecera de progreso */
+.rfq-head { margin-bottom: var(--sp-6); }
+.rfq-progress-meta { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-4); margin-bottom: var(--sp-3); flex-wrap: wrap; }
+.rfq-progress-meta .step-name { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-lead); color: var(--ink); letter-spacing: var(--tracking-head); }
+
+/* Grupos de chips */
+.chip-grid { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-4); }
+
+/* Campos en 2 columnas en desktop */
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+
+/* Bloque condicional */
+.conditional {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--safety-2);
+  border-radius: var(--radius-2);
+  padding: var(--sp-5);
+  background: var(--surface-2);
+  margin-top: var(--sp-4);
+}
+.conditional .cond-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  margin-bottom: var(--sp-4);
+  display: flex; align-items: center; gap: var(--sp-2);
+}
+.conditional .cond-title .icon { width: 16px; height: 16px; stroke: var(--steel); stroke-width: 1.5; flex: none; }
+
+/* Lista de archivos subidos (UI, sin backend) */
+.file-list { margin-top: var(--sp-3); display: flex; flex-direction: column; gap: var(--sp-2); }
+.file-item {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+}
+.file-item .file-icon { width: 18px; height: 18px; stroke: var(--steel); stroke-width: 1.5; flex: none; }
+.file-item .file-name { color: var(--ink); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-item .file-size { color: var(--steel); }
+.file-item .file-remove { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; color: var(--steel); border-radius: var(--radius-2); flex: none; }
+.file-item .file-remove:hover { color: var(--safety); background: var(--safety-tint); }
+.file-item .file-remove .icon { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.5; }
+
+/* Navegación entre pasos */
+.rfq-nav { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--line); }
+.rfq-nav .btn-back { display: inline-flex; align-items: center; gap: var(--sp-2); font-weight: var(--fw-semi); color: var(--steel); font-size: var(--fs-sm); }
+.rfq-nav .btn-back .icon { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.5; }
+.rfq-nav .btn-back:hover { color: var(--ink); }
+.rfq-nav .btn-back[hidden] { visibility: hidden; }
+
+/* Resumen (paso 4) */
+.summary-grid { display: grid; gap: var(--sp-2); }
+.summary-row {
+  display: grid; grid-template-columns: 160px 1fr; gap: var(--sp-4);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--line);
+}
+.summary-row:last-child { border-bottom: none; }
+.summary-key { font-family: var(--font-text); font-size: var(--fs-sm); font-weight: var(--fw-semi); text-transform: uppercase; letter-spacing: 0.04em; color: var(--steel); }
+.summary-val { font-family: var(--font-mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; color: var(--ink); }
+.summary-val.empty { color: var(--steel); font-style: normal; }
+
+/* Promesa de respuesta (paso 4) */
+.promise {
+  display: flex; gap: var(--sp-4); align-items: flex-start;
+  padding: var(--sp-5);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--safety);
+  border-radius: var(--radius-2);
+}
+.promise .icon { width: 28px; height: 28px; stroke: var(--safety); stroke-width: 1.5; flex: none; margin-top: 2px; }
+
+/* Estado enviado */
+.rfq-sent { display: none; text-align: center; padding: var(--sp-7) var(--sp-4); }
+.rfq-sent.is-shown { display: block; }
+.rfq-sent .sent-mark { width: 56px; height: 56px; margin: 0 auto var(--sp-5); color: var(--safety); stroke: var(--safety); stroke-width: 1.5; }
+
+/* Lateral de confianza */
+.rfq-aside { display: flex; flex-direction: column; gap: var(--sp-5); position: sticky; top: 84px; }
+.trust-card {
+  background: var(--dark);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-3);
+  padding: var(--sp-6);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.trust-card::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+.trust-card h4 { color: var(--ink-on-dark); font-size: var(--fs-eyebrow); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-text); font-weight: var(--fw-semi); margin-bottom: var(--sp-5); }
+.trust-stats { display: flex; flex-direction: column; gap: var(--sp-5); }
+.trust-stats .stat-value { color: var(--ink-on-dark); font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem); }
+.trust-stats .stat-label { color: var(--steel-on-dark); }
+.trust-divider { height: 1px; background: var(--line-2); border: none; margin-block: var(--sp-6); }
+.trust-contact { display: flex; flex-direction: column; gap: var(--sp-4); }
+.trust-contact .contact-row { display: flex; align-items: center; gap: var(--sp-3); }
+.trust-contact .contact-row .icon { width: 20px; height: 20px; stroke: var(--safety); stroke-width: 1.5; flex: none; }
+.trust-contact .contact-row a, .trust-contact .contact-row span { font-family: var(--font-mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; color: var(--ink-on-dark); }
+.trust-contact .contact-row a:hover { color: var(--safety); }
+.aside-cta { display: flex; flex-direction: column; gap: var(--sp-3); }
+.aside-cta .btn-ghost { color: var(--ink-on-dark); border-color: var(--steel-on-dark); }
+.aside-cta .btn-ghost:hover { background: var(--ink-on-dark); color: var(--ink); border-color: var(--ink-on-dark); }
+
+.eco-note {
+  display: flex; gap: var(--sp-3); align-items: flex-start;
+  padding: var(--sp-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  background: var(--surface);
+}
+.eco-note .icon { width: 22px; height: 22px; stroke: var(--steel); stroke-width: 1.5; flex: none; margin-top: 2px; }
+.eco-note p { font-size: var(--fs-sm); color: var(--steel); }
+
+/* Honeypot anti-spam (oculto a humanos) */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Checkbox de consentimiento con estilo propio (lenguaje industrial) */
+.consent-label { display: flex; align-items: flex-start; gap: var(--sp-3); font-weight: var(--fw-regular); cursor: pointer; }
+.consent-check {
+  appearance: none; -webkit-appearance: none;
+  width: 22px; height: 22px; min-height: 22px; flex: none; margin-top: 1px;
+  background: var(--surface);
+  border: 1.5px solid var(--steel);
+  border-radius: var(--radius-2);
+  display: inline-grid; place-content: center;
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+  cursor: pointer;
+}
+.consent-check::before {
+  content: ""; width: 12px; height: 12px;
+  transform: scale(0); transition: transform var(--dur-1) var(--ease);
+  background-color: #FFFFFF;
+  -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M5 12l5 5L19 6'/%3E%3C/svg%3E");
+  mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M5 12l5 5L19 6'/%3E%3C/svg%3E");
+}
+.consent-check:checked { background: #BA4408; border-color: #BA4408; }
+.consent-check:checked::before { transform: scale(1); }
+.consent-check:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+.consent-check:hover { border-color: var(--ink); }
+
+/* Atajo rápido (vía exprés para el comprador con prisa: plano + email y listo) */
+.rfq-express {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--safety);
+  border-radius: var(--radius-2);
+  background: var(--surface-2);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+.rfq-express .express-head { display: flex; align-items: flex-start; gap: var(--sp-3); }
+.rfq-express .express-head .icon { width: 22px; height: 22px; stroke: var(--safety); stroke-width: 1.5; flex: none; margin-top: 2px; }
+.rfq-express .express-title { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-lead); color: var(--ink); letter-spacing: var(--tracking-head); }
+.rfq-express .express-sub { font-size: var(--fs-sm); color: var(--steel); margin-top: 2px; }
+.rfq-express-fields { margin-top: var(--sp-5); display: none; }
+.rfq-express.is-open .rfq-express-fields { display: block; }
+.rfq-express .express-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+.rfq-express .express-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4); margin-top: var(--sp-4); }
+.rfq-express .express-toggle { display: inline-flex; align-items: center; gap: var(--sp-2); margin-top: var(--sp-3); font-weight: var(--fw-semi); font-size: var(--fs-sm); color: var(--ink); }
+.rfq-express .express-toggle .icon { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.5; transition: transform var(--dur-2) var(--ease); }
+.rfq-express.is-open .express-toggle .icon { transform: rotate(180deg); }
+.rfq-divider-or {
+  display: flex; align-items: center; gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  font-family: var(--font-mono); font-size: var(--fs-sm);
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel);
+}
+.rfq-divider-or::before, .rfq-divider-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+@media (max-width: 760px) {
+  .rfq-express .express-row { grid-template-columns: 1fr; }
+}
+
+/* Resumen de confianza compacto (solo móvil, dentro del flujo) */
+.trust-mini { display: none; }
+
+@media (max-width: 980px) {
+  .rfq-layout { grid-template-columns: 1fr; }
+  .rfq-aside { position: static; }
+  .trust-mini {
+    display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; justify-content: space-between;
+    margin-bottom: var(--sp-5);
+    padding: var(--sp-4) var(--sp-5);
+    background: var(--dark); color: var(--ink-on-dark);
+    border-radius: var(--radius-3);
+  }
+  .trust-mini .tm-stats { display: flex; gap: var(--sp-5); flex-wrap: wrap; }
+  .trust-mini .tm-stat { display: flex; flex-direction: column; gap: 2px; }
+  .trust-mini .tm-val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: var(--fw-semi); font-size: 1.0625rem; color: var(--ink-on-dark); line-height: 1; }
+  .trust-mini .tm-val .accent { color: var(--safety-2); }
+  .trust-mini .tm-label { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel-on-dark); font-weight: var(--fw-semi); }
+  .trust-mini .tm-actions { display: flex; gap: var(--sp-2); }
+  .trust-mini .tm-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: var(--radius-2);
+    border: 1.5px solid var(--steel-on-dark); color: var(--ink-on-dark);
+  }
+  .trust-mini .tm-btn:hover { border-color: var(--ink-on-dark); }
+  .trust-mini .tm-btn .icon { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; }
+}
+@media (max-width: 760px) {
+  .rfq-panel { padding: var(--sp-5); }
+  .field-row { grid-template-columns: 1fr; }
+  .summary-row { grid-template-columns: 1fr; gap: var(--sp-1); }
+  .summary-key { font-size: 0.72rem; }
+}
+  </style>
+  <link rel="stylesheet" href="assets/fx.css">
+</head>
+<body>
+
+  <!-- ====================== HEADER (idéntico en las 4 páginas) ====================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="home.html" aria-label="Serigrafía Duato, inicio">
+        <img class="brand-logo" src="assets/img/homepage__logo-v2-con-d-horiz.png" alt="Serigrafía Duato · marcaje industrial" width="184" height="61">
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Principal">
+        <a href="home.html#soluciones">Soluciones</a>
+        <a href="home.html#capacidades">Capacidades</a>
+        <a href="casos.html">Casos</a>
+        <a href="home.html#calidad">Calidad</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="home.html#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="tel:+34961860275">Hablar con un técnico</a>
+        <a class="btn btn-safety" href="presupuesto.html" aria-current="page">Pedir presupuesto</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================== HERO ====================== -->
+    <section class="section section--tight section--dark blueprint-bg">
+      <div class="container">
+        <span class="eyebrow reveal">Presupuesto técnico · RFQ</span>
+        <div class="grid" style="margin-top: var(--sp-4); align-items: end;">
+          <div class="col-8 reveal">
+            <h1>Pídenos presupuesto de marcaje. En 4 pasos y sin teléfono de por medio.</h1>
+            <p class="lead" style="margin-top: var(--sp-4);">Cuéntanos qué pieza, serie o uniforme necesitas marcar y con qué técnica. Cuanto más detalle nos des, más ajustado será el presupuesto — y antes te respondemos.</p>
+          </div>
+          <div class="col-4 reveal">
+            <div class="cluster" style="gap: var(--sp-7); justify-content: flex-start;">
+              <div class="stat">
+                <span class="stat-value"><span class="accent">+</span>30</span>
+                <span class="stat-label">Años de oficio</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">12</span>
+                <span class="stat-label">Técnicas bajo un techo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== RFQ ====================== -->
+    <section class="section">
+      <div class="container">
+        <div class="rfq-layout">
+
+          <!-- ----------- Columna formulario ----------- -->
+          <div class="rfq-panel reveal">
+
+            <!-- Resumen de confianza compacto · solo móvil (trust signal a la vista durante el flujo) -->
+            <div class="trust-mini" aria-label="Confianza y contacto directo">
+              <div class="tm-stats">
+                <div class="tm-stat">
+                  <span class="tm-val"><span class="accent">+</span>30 años</span>
+                  <span class="tm-label">De oficio</span>
+                </div>
+                <div class="tm-stat">
+                  <span class="tm-val">12 técnicas</span>
+                  <span class="tm-label">Bajo un techo</span>
+                </div>
+              </div>
+              <div class="tm-actions">
+                <a class="tm-btn" href="tel:+34961860275" aria-label="Llamar al taller, +34 96 186 02 75">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </a>
+                <a class="tm-btn" href="https://wa.me/34961860275" aria-label="Escríbenos por WhatsApp">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- ===== ATAJO RÁPIDO · para quien llega con prisa y ya tiene su plano ===== -->
+            <div class="rfq-express" id="rfq-express">
+              <div class="express-head">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <div>
+                  <span class="express-title">¿Con prisa? Mándanos el plano y ya</span>
+                  <p class="express-sub">Déjanos tu email y tu plano (o una línea con lo que necesitas) y te respondemos. El resto lo concretamos contigo.</p>
+                  <button type="button" class="express-toggle" id="express-toggle" aria-expanded="false" aria-controls="express-fields">
+                    Usar el atajo rápido
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <form class="rfq-express-fields" id="express-form" novalidate>
+                <div class="express-row">
+                  <div class="field">
+                    <label for="exp-email">Email <span class="req" aria-hidden="true">*</span> <span class="req-text">(obligatorio)</span></label>
+                    <input id="exp-email" name="exp_email" type="email" autocomplete="email" placeholder="nombre@empresa.es" aria-describedby="err-exp-email">
+                    <p class="field-error" id="err-exp-email" role="alert" aria-live="assertive">Escribe un email válido para enviarte el presupuesto.</p>
+                  </div>
+                  <div class="field">
+                    <label for="exp-telefono">Teléfono o WhatsApp (opcional)</label>
+                    <input id="exp-telefono" name="exp_telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34 600 00 00 00">
+                  </div>
+                </div>
+
+                <div class="field" style="margin-top: var(--sp-4);">
+                  <label for="exp-nota">Qué necesitas, en una línea (opcional)</label>
+                  <input id="exp-nota" name="exp_nota" type="text" placeholder="Ej.: marcar nº de serie por láser sobre carcasa de aluminio, unas 500 ud">
+                </div>
+
+                <div class="field" style="margin-top: var(--sp-4);">
+                  <label for="exp-plano">Adjunta tu plano o artwork (opcional)</label>
+                  <div class="dropzone" id="exp-dropzone" tabindex="0" role="button" aria-label="Zona de subida de archivos del atajo rápido. Arrastra aquí o pulsa para seleccionar.">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L8 8m4-4l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span>Arrastra aquí <strong>PDF, AI, PNG o DXF</strong> — o pulsa para seleccionar</span>
+                    <span class="text-sm">Hasta 8 archivos · máx. 20 MB cada uno</span>
+                    <input id="exp-plano" type="file" accept=".pdf,.ai,.png,.dxf" multiple hidden>
+                  </div>
+                  <div class="file-list" id="exp-file-list" aria-live="polite"></div>
+                  <p class="field-error" id="exp-file-note" role="alert" aria-live="assertive" style="display: block; min-height: 0; color: var(--safety-ink);"></p>
+                  <p class="disclaimer">En esta versión de muestra los archivos no se suben de verdad; en la web definitiva el plano llega cifrado al taller.</p>
+                </div>
+
+                <!-- Honeypot anti-spam del atajo -->
+                <div class="hp-field" aria-hidden="true">
+                  <label for="exp-empresa-web">No rellenar este campo</label>
+                  <input id="exp-empresa-web" name="exp_empresa_web" type="text" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="field" style="margin-top: var(--sp-4);">
+                  <label class="consent-label" for="exp-consent">
+                    <input type="checkbox" class="consent-check" name="exp_consent" id="exp-consent" aria-describedby="err-exp-consent">
+                    <span class="text-sm text-steel">He leído y acepto la <a href="#privacidad" style="color: var(--ink); text-decoration: underline;">política de privacidad</a> y el tratamiento de mis datos para responder a esta solicitud.</span>
+                  </label>
+                  <p class="field-error" id="err-exp-consent" role="alert" aria-live="assertive">Necesitamos tu consentimiento para poder responderte.</p>
+                </div>
+
+                <div class="express-actions">
+                  <button type="submit" class="btn btn-safety" id="exp-submit">
+                    Enviar y que os pongáis en contacto
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <span class="field-hint">Sin plano también vale: con tu email arrancamos.</span>
+                </div>
+                <p class="field-hint" id="exp-submit-note" role="status" aria-live="polite" style="margin-top: var(--sp-3);"></p>
+              </form>
+            </div>
+
+            <div class="rfq-divider-or" aria-hidden="true">o cuéntanos el detalle paso a paso</div>
+
+            <form id="rfq-form" novalidate>
+
+              <!-- Cabecera de progreso (efecto Zeigarnik) -->
+              <div class="rfq-head" id="rfq-head">
+                <div class="rfq-progress-meta" aria-live="polite">
+                  <span class="rfq-progress-label">Paso <span id="step-num" class="mono">1</span> de <span class="mono">4</span></span>
+                  <span class="step-name" id="step-name">¿Qué necesitas?</span>
+                </div>
+                <div class="rfq-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4" aria-label="Progreso del presupuesto" id="rfq-progress">
+                  <span class="step is-active" data-step="1"></span>
+                  <span class="step" data-step="2"></span>
+                  <span class="step" data-step="3"></span>
+                  <span class="step" data-step="4"></span>
+                </div>
+              </div>
+
+              <!-- ===== PASO 1 · ¿Qué necesitas? ===== -->
+              <fieldset class="rfq-step is-current" data-step="1">
+                <legend class="step-intro">
+                  <span class="eyebrow">¿Qué necesitas marcar?</span>
+                  <h3 style="margin-top: var(--sp-3);">Elige una o varias técnicas</h3>
+                  <p class="text-sm text-steel" style="margin-top: var(--sp-2);">Puedes seleccionar varias: trabajamos las 12 técnicas en el mismo taller. Si no lo tienes claro, marca «No lo sé, asesoradme» y lo resolvemos contigo.</p>
+                </legend>
+
+                <div class="chip-grid" role="group" aria-label="Técnicas de marcaje" aria-describedby="err-tecnica">
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Serigrafía"> Serigrafía</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Tampografía"> Tampografía</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Láser"> Láser</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="DTF"> DTF</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Sublimación"> Sublimación</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Rotulación"> Rotulación</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Serigrafía cilíndrica"> Cilíndrico / envases</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Señalética"> Señalética técnica</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="Ropa laboral / EPI"> Ropa laboral / EPI</label>
+                  <label class="chip"><input type="checkbox" name="tecnica" value="No lo sé"> No lo sé, asesoradme</label>
+                </div>
+                <div class="field" style="margin-top: var(--sp-2);">
+                  <p class="field-error" id="err-tecnica" role="alert" aria-live="assertive">Selecciona al menos una técnica para continuar.</p>
+                </div>
+
+                <div class="field" style="margin-top: var(--sp-5);">
+                  <label for="descripcion">Describe brevemente la pieza o el trabajo</label>
+                  <textarea id="descripcion" name="descripcion" placeholder="Ej.: marcaje de número de serie sobre carcasa de ABS, serie recurrente de unas 2.000 piezas al trimestre"></textarea>
+                  <p class="field-hint">Con tres líneas nos basta para arrancar. El detalle técnico va en el paso siguiente.</p>
+                </div>
+              </fieldset>
+
+              <!-- ===== PASO 2 · Detalle técnico ===== -->
+              <fieldset class="rfq-step" data-step="2">
+                <legend class="step-intro">
+                  <span class="eyebrow">Detalle técnico</span>
+                  <h3 style="margin-top: var(--sp-3);">Material, serie, plazo y plano</h3>
+                  <p class="text-sm text-steel" style="margin-top: var(--sp-2);">Esto es lo que nos permite afinar el presupuesto. Si algún dato aún no lo tienes, déjalo en blanco y lo concretamos contigo.</p>
+                </legend>
+
+                <div class="field-row" style="margin-top: var(--sp-4);">
+                  <div class="field">
+                    <label for="material">Material o sustrato</label>
+                    <select id="material" name="material">
+                      <option value="">Selecciona…</option>
+                      <option>Metal (aluminio, acero, inox)</option>
+                      <option>Plástico técnico (ABS, PP, PE, PC)</option>
+                      <option>Vidrio / cerámica</option>
+                      <option>Metacrilato / PVC rígido</option>
+                      <option>Envase cilíndrico (vidrio, PET, aluminio)</option>
+                      <option>Textil / prenda laboral</option>
+                      <option>Otro / no estoy seguro</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="cantidad">Cantidad o serie aproximada</label>
+                    <input id="cantidad" name="cantidad" type="text" placeholder="Ej.: 2.000 ud / serie recurrente">
+                  </div>
+                </div>
+
+                <div class="field-row" style="margin-top: var(--sp-4);">
+                  <div class="field">
+                    <label for="plazo">Plazo deseado</label>
+                    <select id="plazo" name="plazo">
+                      <option value="">Selecciona…</option>
+                      <option>Lo antes posible</option>
+                      <option>En 1–2 semanas</option>
+                      <option>En 3–4 semanas</option>
+                      <option>Más de un mes</option>
+                      <option>Sin fecha cerrada / recurrente</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="acabado">Color o acabado (opcional)</label>
+                    <input id="acabado" name="acabado" type="text" placeholder="Ej.: Pantone 485 C, una tinta">
+                  </div>
+                </div>
+
+                <!-- Subida de artwork / plano (UI, sin backend real) -->
+                <div class="field" style="margin-top: var(--sp-5);">
+                  <label for="plano">Sube tu plano o artwork (opcional)</label>
+                  <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Zona de subida de archivos. Arrastra aquí o pulsa para seleccionar.">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L8 8m4-4l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span>Arrastra aquí <strong>PDF, AI, PNG o DXF</strong> — o pulsa para seleccionar</span>
+                    <span class="text-sm">Hasta 8 archivos · máx. 20 MB cada uno</span>
+                    <input id="plano" type="file" accept=".pdf,.ai,.png,.dxf" multiple hidden>
+                  </div>
+                  <div class="file-list" id="file-list" aria-live="polite"></div>
+                  <p class="field-error" id="file-note" role="alert" aria-live="assertive" style="display: block; min-height: 0; color: var(--safety-ink);"></p>
+                  <p class="field-hint" id="file-restored" aria-live="polite" style="margin-top: var(--sp-2);"></p>
+                  <p class="field-hint">El plano o el artwork es lo más decisivo en marcaje industrial: con él vemos al momento si tu pieza encaja.</p>
+                  <p class="field-hint" id="plano-reminder" role="status" aria-live="polite" style="margin-top: var(--sp-3); color: var(--safety-ink); display: none;">Puedes seguir sin plano, pero adjuntarlo o describir la pieza nos permite afinar mucho más el presupuesto.</p>
+                  <p class="disclaimer">En esta versión de muestra los archivos no se suben de verdad; en la web definitiva el plano llega cifrado al taller.</p>
+                </div>
+
+                <!-- Campos condicionales: aparecen según la técnica del paso 1 -->
+                <div class="conditional" id="cond-dtf" hidden>
+                  <div class="cond-title">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    Detalle para DTF / sublimación / textil
+                  </div>
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="dtf-prendas">Número de prendas</label>
+                      <input id="dtf-prendas" name="dtf_prendas" type="text" inputmode="numeric" placeholder="Ej.: 120 prendas">
+                    </div>
+                    <div class="field">
+                      <label for="dtf-m2">Superficie de estampación (m²)</label>
+                      <input id="dtf-m2" name="dtf_m2" type="text" inputmode="decimal" placeholder="Ej.: 0,06 m² por prenda">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="conditional" id="cond-laser" hidden>
+                  <div class="cond-title">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    Detalle para láser / serigrafía cilíndrica
+                  </div>
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="laser-material">Material exacto de la pieza</label>
+                      <input id="laser-material" name="laser_material" type="text" placeholder="Ej.: acero inox 304, ABS negro">
+                    </div>
+                    <div class="field">
+                      <label for="laser-diam">Diámetro / dimensión clave</label>
+                      <input id="laser-diam" name="laser_diametro" type="text" placeholder="Ej.: Ø 35 mm, alto 120 mm">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="conditional" id="cond-epi" hidden>
+                  <div class="cond-title">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    Detalle para ropa laboral / EPI
+                  </div>
+                  <div class="field">
+                    <label for="epi-cert">¿La prenda es un EPI certificado? (alta visibilidad, ignífugo, etc.)</label>
+                    <select id="epi-cert" name="epi_certificado">
+                      <option value="">Selecciona…</option>
+                      <option>Sí, es un EPI certificado</option>
+                      <option>No, es uniforme / ropa de trabajo no certificada</option>
+                      <option>No lo sé</option>
+                    </select>
+                  </div>
+                  <p class="field-hint" style="margin-top: var(--sp-3);">Marcar sobre un EPI certificado puede afectar a su certificación. Si nos lo indicas, validamos la compatibilidad antes de producir y te lo confirmamos por escrito.</p>
+                </div>
+              </fieldset>
+
+              <!-- ===== PASO 3 · ¿Quién eres? ===== -->
+              <fieldset class="rfq-step" data-step="3">
+                <legend class="step-intro">
+                  <span class="eyebrow">¿Quién eres?</span>
+                  <h3 style="margin-top: var(--sp-3);">Dónde te enviamos el presupuesto</h3>
+                  <p class="text-sm text-steel" style="margin-top: var(--sp-2);">Solo lo justo para responderte. No te llamaremos sin avisar.</p>
+                </legend>
+
+                <div class="field-row" style="margin-top: var(--sp-4);">
+                  <div class="field">
+                    <label for="nombre">Nombre y apellidos <span class="req" aria-hidden="true">*</span> <span class="req-text">(obligatorio)</span></label>
+                    <input id="nombre" name="nombre" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-nombre">
+                    <p class="field-error" id="err-nombre">Indícanos tu nombre.</p>
+                  </div>
+                  <div class="field">
+                    <label for="empresa">Empresa</label>
+                    <input id="empresa" name="empresa" type="text" autocomplete="organization">
+                  </div>
+                </div>
+
+                <div class="field-row" style="margin-top: var(--sp-4);">
+                  <div class="field">
+                    <label for="email">Email <span class="req" aria-hidden="true">*</span> <span class="req-text">(obligatorio)</span></label>
+                    <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="err-email" placeholder="nombre@empresa.es">
+                    <p class="field-error" id="err-email">Escribe un email válido para enviarte el presupuesto.</p>
+                  </div>
+                  <div class="field">
+                    <label for="telefono">Teléfono (opcional)</label>
+                    <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34 600 00 00 00">
+                  </div>
+                </div>
+
+                <!-- Honeypot anti-spam: invisible para humanos -->
+                <div class="hp-field" aria-hidden="true">
+                  <label for="empresa-web">No rellenar este campo</label>
+                  <input id="empresa-web" name="empresa_web" type="text" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="field" style="margin-top: var(--sp-5);">
+                  <label class="consent-label" for="consent">
+                    <input type="checkbox" class="consent-check" name="consent" id="consent" required aria-required="true" aria-describedby="err-consent">
+                    <span class="text-sm text-steel">He leído y acepto la <a href="#privacidad" style="color: var(--ink); text-decoration: underline;">política de privacidad</a> y el tratamiento de mis datos para responder a esta solicitud.</span>
+                  </label>
+                  <p class="field-error" id="err-consent">Necesitamos tu consentimiento para poder responderte.</p>
+                </div>
+              </fieldset>
+
+              <!-- ===== PASO 4 · Confirmación ===== -->
+              <fieldset class="rfq-step" data-step="4">
+                <legend class="step-intro">
+                  <span class="eyebrow">Confirmación</span>
+                  <h3 style="margin-top: var(--sp-3);">Revisa tu petición antes de enviarla</h3>
+                </legend>
+
+                <div class="summary-grid" id="summary" aria-live="polite">
+                  <!-- Rellenado por JS -->
+                </div>
+
+                <div class="promise" style="margin-top: var(--sp-6);">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <div>
+                    <h4 style="font-size: var(--fs-lead); font-weight: var(--fw-semi); margin-bottom: var(--sp-2);">Te respondemos con presupuesto</h4>
+                    <p class="text-sm text-steel">Lo revisa un técnico del taller y te enviamos el presupuesto lo antes posible dentro del horario de taller, en Alboraya.</p>
+                    <p class="disclaimer" style="margin-top: var(--sp-2);">Estimación orientativa, sujeta a brief. El plazo y el importe definitivos se confirman tras revisar tu pieza y tu plano.</p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <p class="field-hint" id="submit-note" role="status" aria-live="polite" style="margin-top: var(--sp-4); text-align: right;"></p>
+
+              <!-- ===== Navegación ===== -->
+              <div class="rfq-nav" id="rfq-nav">
+                <button type="button" class="btn-back" id="btn-back" hidden>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Atrás
+                </button>
+                <button type="button" class="btn btn-safety" id="btn-next">
+                  Siguiente
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="submit" class="btn btn-safety" id="btn-submit" hidden>
+                  Enviar petición de presupuesto
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </form>
+
+            <!-- ===== Estado: enviado ===== -->
+            <div class="rfq-sent" id="rfq-sent" role="status" aria-live="assertive">
+              <svg class="sent-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3>Petición recibida. Gracias.</h3>
+              <p class="text-steel" style="margin: var(--sp-3) auto 0; max-width: 44ch;">La revisará un técnico del taller y te responderemos con presupuesto lo antes posible. Si tu plazo es crítico, escríbenos directamente por WhatsApp o llámanos.</p>
+              <p class="disclaimer" style="margin-top: var(--sp-3); max-width: 48ch; margin-inline: auto;">Estimación orientativa, sujeta a brief.</p>
+              <div class="cluster" style="justify-content: center; margin-top: var(--sp-6);">
+                <a class="btn btn-dark" href="https://wa.me/34961860275">
+                  WhatsApp
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </a>
+                <a class="btn btn-ghost" href="home.html">Volver al inicio</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ----------- Lateral persistente de confianza ----------- -->
+          <aside class="rfq-aside" aria-label="Confianza y contacto directo">
+            <div class="trust-card reveal">
+              <h4>Por qué Serigrafía Duato</h4>
+              <div class="trust-stats">
+                <div class="stat">
+                  <span class="stat-value"><span class="accent">+</span>30 años</span>
+                  <span class="stat-label">De oficio, marcando piezas</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">12 técnicas</span>
+                  <span class="stat-label">Bajo un mismo techo</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">Alboraya</span>
+                  <span class="stat-label">Taller propio · Valencia</span>
+                </div>
+              </div>
+
+              <hr class="trust-divider">
+
+              <h4>¿Plazo crítico? Atajo directo</h4>
+              <div class="trust-contact">
+                <div class="contact-row">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  <a href="tel:+34961860275">+34 96 186 02 75</a>
+                </div>
+                <div class="contact-row">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <a href="https://wa.me/34961860275">WhatsApp</a>
+                </div>
+                <div class="contact-row">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  <a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a>
+                </div>
+              </div>
+
+              <div class="aside-cta" style="margin-top: var(--sp-6);">
+                <a class="btn btn-ghost btn-block" href="tel:+34961860275">Llamar al taller</a>
+              </div>
+            </div>
+
+            <div class="eco-note reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C8 7 6 10 6 14a6 6 0 0 0 12 0c0-4-2-7-6-11z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <p>Taller con tratamiento de aguas en circuito cerrado y partner de reciclaje RECICLAMAS. Trabajamos pensando en quedarnos: el proveedor que sigue ahí para la reposición.</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PRIVACIDAD (resumen para el consentimiento) ====================== -->
+    <section class="section section--tight section--surface-2" id="privacidad" aria-label="Política de privacidad">
+      <div class="container container--narrow">
+        <span class="eyebrow">Privacidad · Protección de datos</span>
+        <h2 style="margin-top: var(--sp-4);">Cómo tratamos tus datos</h2>
+        <p class="lead" style="margin-top: var(--sp-3);">Resumen del tratamiento de los datos que nos facilitas en este formulario. La política completa estará disponible en la web definitiva.</p>
+        <table class="spec-table collapsible" style="margin-top: var(--sp-6);">
+            <tbody>
+              <tr><th scope="row">Responsable</th><td>Serigrafía Duato S.L. · Camino del Mar 36, 46120 Alboraya (Valencia) · <a href="mailto:info@serigrafiaduato.es" style="text-decoration: underline;">info@serigrafiaduato.es</a></td></tr>
+              <tr><th scope="row">Finalidad</th><td>Atender tu petición de presupuesto y responderte sobre el trabajo de marcaje que nos describes.</td></tr>
+              <tr><th scope="row">Base legal</th><td>Tu consentimiento, que prestas al marcar la casilla y enviar el formulario.</td></tr>
+              <tr><th scope="row">Conservación</th><td>Mientras dure la gestión de tu solicitud y, después, el plazo legal aplicable a las relaciones comerciales.</td></tr>
+              <tr><th scope="row">Destinatarios</th><td>No cedemos tus datos a terceros salvo obligación legal.</td></tr>
+              <tr><th scope="row">Derechos</th><td>Puedes acceder, rectificar o suprimir tus datos, así como ejercer el resto de derechos, escribiendo a <a href="mailto:info@serigrafiaduato.es" style="text-decoration: underline;">info@serigrafiaduato.es</a>.</td></tr>
+            </tbody>
+        </table>
+        <p class="disclaimer" style="margin-top: var(--sp-4);">Texto orientativo de la versión de muestra. La política de privacidad y el aviso legal completos se publican en la web definitiva.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================== FOOTER (idéntico en las 4 páginas) ====================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="home.html" style="color: var(--ink-on-dark)">
+            Serigrafía Duato
+            <span class="brand-sub" style="color: var(--steel-on-dark)">Marcaje industrial</span>
+          </a>
+          <p class="text-sm" style="margin-top: var(--sp-4); max-width: 42ch; color: var(--steel-on-dark)">
+            Taller de marcaje industrial multitécnica en Alboraya (Valencia).
+            12 técnicas bajo un techo, más de 30 años de oficio.
+          </p>
+          <p class="text-sm" style="margin-top: var(--sp-4); color: var(--steel-on-dark)">
+            Tratamiento de aguas en circuito cerrado. Partner de reciclaje RECICLAMAS.
+          </p>
+        </div>
+
+        <div>
+          <h4>Contacto</h4>
+          <address class="footer-data" style="font-style: normal">
+            Camino del Mar 36<br>
+            46120 Alboraya · Valencia<br>
+            <a href="tel:+34961860275">+34 96 186 02 75</a><br>
+            <a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a>
+          </address>
+        </div>
+
+        <div>
+          <h4>Capacidades</h4>
+          <ul class="stack" style="--sp-4: 8px">
+            <li><a href="marcaje-piezas-componentes.html">Piezas y componentes</a></li>
+            <li><a href="#" title="Disponible en la web completa">Trazabilidad industrial</a></li>
+            <li><a href="#" title="Disponible en la web completa">Envases y cilíndrico</a></li>
+            <li><a href="#" title="Disponible en la web completa">Ropa laboral y EPI</a></li>
+            <li><a href="capacidades-tampografia.html">Todas las técnicas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span class="mono">2026</span> Serigrafía Duato S.L.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="#" title="Disponible en la web completa">Aviso legal</a>
+          <a href="#privacidad">Privacidad</a>
+          <a href="#" title="Disponible en la web completa">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================== WHATSAPP STICKY (idéntico, solo móvil) ====================== -->
+  <a class="whatsapp-sticky" href="https://wa.me/34961860275" aria-label="Escríbenos por WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    WhatsApp
+  </a>
+
+  <script>
+  (function () {
+    'use strict';
+    var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Reveals discretos ---------- */
+    if (!rm && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
+    }
+
+    /* ---------- Nav móvil (panel desplegable funcional) ---------- */
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    function closeNav() {
+      if (!nav) return;
+      nav.classList.remove('is-open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    }
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      nav.addEventListener('click', function (e) { if (e.target.closest('a')) closeNav(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+      document.addEventListener('click', function (e) {
+        if (nav.classList.contains('is-open') && !nav.contains(e.target) && !toggle.contains(e.target)) closeNav();
+      });
+    }
+
+    /* ====================================================================
+       RFQ MULTIPASO — navegación, validación, condicionales, resumen
+    ==================================================================== */
+    var form = document.getElementById('rfq-form');
+    if (!form) return;
+
+    var TOTAL = 4;
+    var current = 1;
+    var startTime = Date.now();
+
+    var steps = Array.prototype.slice.call(form.querySelectorAll('.rfq-step'));
+    var progressBars = Array.prototype.slice.call(document.querySelectorAll('#rfq-progress .step'));
+    var progressEl = document.getElementById('rfq-progress');
+    var stepNum = document.getElementById('step-num');
+    var stepNameEl = document.getElementById('step-name');
+    var btnBack = document.getElementById('btn-back');
+    var btnNext = document.getElementById('btn-next');
+    var btnSubmit = document.getElementById('btn-submit');
+    var sentEl = document.getElementById('rfq-sent');
+    var headEl = document.getElementById('rfq-head');
+    var navEl = document.getElementById('rfq-nav');
+
+    var stepNames = { 1: '¿Qué necesitas?', 2: 'Detalle técnico', 3: '¿Quién eres?', 4: 'Confirmación' };
+
+    function showStep(n) {
+      current = n;
+      steps.forEach(function (s) { s.classList.toggle('is-current', Number(s.dataset.step) === n); });
+      progressBars.forEach(function (b) {
+        var bs = Number(b.dataset.step);
+        b.classList.toggle('is-active', bs === n);
+        b.classList.toggle('is-done', bs < n);
+        if (bs === n) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+      });
+      stepNum.textContent = String(n);
+      stepNameEl.textContent = stepNames[n];
+      progressEl.setAttribute('aria-valuenow', String(n));
+
+      btnBack.hidden = (n === 1);
+      btnNext.hidden = (n === TOTAL);
+      btnSubmit.hidden = (n !== TOTAL);
+
+      if (n === 2) applyConditionals();
+      if (n === TOTAL) buildSummary();
+
+      // Llevar el foco al inicio del paso (accesible)
+      var heading = steps[n - 1].querySelector('h3');
+      if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
+      headEl.scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'start' });
+    }
+
+    /* ----- Campos condicionales según técnica del paso 1 ----- */
+    function selectedTecnicas() {
+      return Array.prototype.slice.call(form.querySelectorAll('input[name="tecnica"]:checked')).map(function (i) { return i.value; });
+    }
+    function applyConditionals() {
+      var t = selectedTecnicas();
+      var dtf = t.indexOf('DTF') > -1 || t.indexOf('Sublimación') > -1 || t.indexOf('Ropa laboral / EPI') > -1;
+      var laser = t.indexOf('Láser') > -1 || t.indexOf('Serigrafía cilíndrica') > -1;
+      var epi = t.indexOf('Ropa laboral / EPI') > -1;
+      document.getElementById('cond-dtf').hidden = !dtf;
+      document.getElementById('cond-laser').hidden = !laser;
+      document.getElementById('cond-epi').hidden = !epi;
+    }
+
+    /* ----- Validación por paso ----- */
+    function clearError(id) {
+      var f = document.getElementById(id);
+      if (f) { var field = f.closest('.field'); if (field) field.classList.remove('has-error'); f.removeAttribute('aria-invalid'); }
+    }
+    function setError(id) {
+      var f = document.getElementById(id);
+      if (f) { var field = f.closest('.field'); if (field) field.classList.add('has-error'); f.setAttribute('aria-invalid', 'true'); }
+    }
+    function validateStep(n) {
+      var ok = true;
+      var firstBad = null;
+      if (n === 1) {
+        var hasTec = selectedTecnicas().length > 0;
+        var errTec = document.getElementById('err-tecnica');
+        var group = document.querySelector('.chip-grid[role="group"]');
+        errTec.style.display = hasTec ? 'none' : 'block';
+        if (group) { if (hasTec) group.removeAttribute('aria-invalid'); else group.setAttribute('aria-invalid', 'true'); }
+        if (!hasTec) { ok = false; if (!firstBad) firstBad = form.querySelector('input[name="tecnica"]'); }
+      }
+      if (n === 3) {
+        var nombre = document.getElementById('nombre');
+        var email = document.getElementById('email');
+        var consent = document.getElementById('consent');
+        clearError('nombre'); clearError('email');
+        document.getElementById('err-consent').style.display = 'none';
+        consent.removeAttribute('aria-invalid');
+
+        if (!nombre.value.trim()) { setError('nombre'); ok = false; if (!firstBad) firstBad = nombre; }
+        var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+        if (!emailOk) { setError('email'); ok = false; if (!firstBad) firstBad = email; }
+        if (!consent.checked) { document.getElementById('err-consent').style.display = 'block'; consent.setAttribute('aria-invalid', 'true'); ok = false; if (!firstBad) firstBad = consent; }
+      }
+      if (!ok && firstBad) { try { firstBad.focus({ preventScroll: false }); } catch (e) {} }
+      return ok;
+    }
+
+    /* ----- Resumen (paso 4) ----- */
+    function row(key, val) {
+      var empty = !val || (typeof val === 'string' && !val.trim());
+      return '<div class="summary-row"><span class="summary-key">' + key + '</span>' +
+             '<span class="summary-val' + (empty ? ' empty' : '') + '">' + (empty ? '— sin especificar' : escapeHtml(val)) + '</span></div>';
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function val(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+    function buildSummary() {
+      var tec = selectedTecnicas();
+      var files = uploaded.map(function (f) { return f.name; });
+      var html = '';
+      html += row('Técnica(s)', tec.length ? tec.join(' · ') : '');
+      html += row('Descripción', val('descripcion'));
+      html += row('Material', val('material'));
+      html += row('Cantidad / serie', val('cantidad'));
+      html += row('Plazo', val('plazo'));
+      if (val('acabado').trim()) html += row('Color / acabado', val('acabado'));
+      if (!document.getElementById('cond-dtf').hidden && (val('dtf-prendas').trim() || val('dtf-m2').trim())) {
+        html += row('Prendas / m²', [val('dtf-prendas'), val('dtf-m2')].filter(function (x) { return x.trim(); }).join(' · '));
+      }
+      if (!document.getElementById('cond-laser').hidden && (val('laser-material').trim() || val('laser-diam').trim())) {
+        html += row('Material / Ø', [val('laser-material'), val('laser-diam')].filter(function (x) { return x.trim(); }).join(' · '));
+      }
+      if (!document.getElementById('cond-epi').hidden && val('epi-cert').trim()) {
+        html += row('¿EPI certificado?', val('epi-cert'));
+      }
+      html += row('Plano / artwork', files.length ? (files.length + (files.length === 1 ? ' archivo' : ' archivos') + ' · ' + files.join(', ')) : '');
+      html += row('Nombre', val('nombre'));
+      html += row('Empresa', val('empresa'));
+      html += row('Email', val('email'));
+      html += row('Teléfono', val('telefono'));
+      document.getElementById('summary').innerHTML = html;
+    }
+
+    /* ----- Zona de subida de archivos (UI, sin backend) ----- */
+    var dropzone = document.getElementById('dropzone');
+    var fileInput = document.getElementById('plano');
+    var fileListEl = document.getElementById('file-list');
+    var uploaded = [];
+
+    function fmtSize(bytes) {
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+      return (bytes / 1024 / 1024).toFixed(1) + ' MB';
+    }
+    function renderFiles() {
+      fileListEl.innerHTML = uploaded.map(function (f, i) {
+        return '<div class="file-item">' +
+          '<svg class="file-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 3h8l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>' +
+          '<span class="file-name">' + escapeHtml(f.name) + '</span>' +
+          '<span class="file-size">' + fmtSize(f.size) + '</span>' +
+          '<button type="button" class="file-remove" data-i="' + i + '" aria-label="Quitar ' + escapeHtml(f.name) + '">' +
+          '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>' +
+          '</button></div>';
+      }).join('');
+    }
+    var MAX_FILES = 8;
+    var MAX_SIZE = 20 * 1024 * 1024; /* 20 MB por archivo */
+    var fileNote = document.getElementById('file-note');
+    function addFiles(list) {
+      var allowed = ['pdf', 'ai', 'png', 'dxf'];
+      var msgs = [];
+      Array.prototype.slice.call(list).forEach(function (f) {
+        var ext = (f.name.split('.').pop() || '').toLowerCase();
+        if (allowed.indexOf(ext) === -1) { msgs.push('«' + f.name + '»: formato no admitido (usa PDF, AI, PNG o DXF).'); return; }
+        if (f.size > MAX_SIZE) { msgs.push('«' + f.name + '»: supera los 20 MB.'); return; }
+        if (uploaded.length >= MAX_FILES) { msgs.push('Máximo ' + MAX_FILES + ' archivos: «' + f.name + '» no se ha añadido.'); return; }
+        uploaded.push({ name: f.name, size: f.size });
+      });
+      renderFiles();
+      if (fileNote) fileNote.textContent = msgs.join(' ');
+    }
+    if (dropzone) {
+      dropzone.addEventListener('click', function () { fileInput.click(); });
+      dropzone.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); } });
+      fileInput.addEventListener('change', function () { addFiles(fileInput.files); fileInput.value = ''; });
+      ['dragenter', 'dragover'].forEach(function (ev) {
+        dropzone.addEventListener(ev, function (e) { e.preventDefault(); dropzone.classList.add('is-dragover'); });
+      });
+      ['dragleave', 'drop'].forEach(function (ev) {
+        dropzone.addEventListener(ev, function (e) { e.preventDefault(); dropzone.classList.remove('is-dragover'); });
+      });
+      dropzone.addEventListener('drop', function (e) { if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+      fileListEl.addEventListener('click', function (e) {
+        var btn = e.target.closest('.file-remove');
+        if (btn) { uploaded.splice(Number(btn.dataset.i), 1); renderFiles(); }
+      });
+    }
+
+    /* ----- Recalcular condicionales al cambiar chips ----- */
+    form.querySelectorAll('input[name="tecnica"]').forEach(function (chk) {
+      chk.addEventListener('change', function () {
+        if (selectedTecnicas().length > 0) {
+          document.getElementById('err-tecnica').style.display = 'none';
+          var grp = document.querySelector('.chip-grid[role="group"]');
+          if (grp) grp.removeAttribute('aria-invalid');
+        }
+      });
+    });
+
+    /* ----- Limpiar error en vivo al corregir ----- */
+    ['nombre', 'email'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('input', function () { if (el.value.trim()) clearError(id); });
+    });
+    var consentEl = document.getElementById('consent');
+    if (consentEl) consentEl.addEventListener('change', function () {
+      if (consentEl.checked) { document.getElementById('err-consent').style.display = 'none'; consentEl.removeAttribute('aria-invalid'); }
+    });
+
+    /* ----- Botones ----- */
+    var planoNudgeShown = false;
+    btnNext.addEventListener('click', function () {
+      if (!validateStep(current)) return;
+      // Recordatorio suave (no bloqueante) en el paso 2: el plano es lo más decisivo.
+      // Una sola pausa: si no hay plano ni detalle, lo avisamos y dejamos seguir al instante.
+      if (current === 2) {
+        var hasPlano = uploaded.length > 0;
+        var hasDetalle = val('descripcion').trim() || val('laser-material').trim() ||
+                         val('cantidad').trim() || val('material').trim();
+        var reminder = document.getElementById('plano-reminder');
+        if (!hasPlano && !hasDetalle && !planoNudgeShown) {
+          planoNudgeShown = true;
+          if (reminder) reminder.style.display = 'block';
+          return; // segunda pulsación de Siguiente avanza igualmente
+        }
+        if (reminder) reminder.style.display = 'none';
+      }
+      if (current < TOTAL) showStep(current + 1);
+    });
+    btnBack.addEventListener('click', function () { if (current > 1) showStep(current - 1); });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validateStep(3)) { showStep(3); return; }
+      // Anti-spam: honeypot relleno o envío < 3 s = posible bot. Damos feedback al humano legítimo.
+      var hp = document.getElementById('empresa-web').value;
+      var elapsed = Date.now() - startTime;
+      if (hp) { return; } // honeypot relleno = bot, descartar en silencio
+      if (elapsed < 3000) {
+        // Demasiado rápido para un humano normal; pedimos un instante en vez de fallar en silencio.
+        var note = document.getElementById('submit-note');
+        if (note) { note.textContent = 'Un momento, comprobando la solicitud… vuelve a pulsar Enviar.'; }
+        startTime = Date.now() - 3000; // el siguiente intento pasa
+        return;
+      }
+      // En producción: POST validado con Zod + rate-limit. Aquí, confirmación UI.
+      clearStore();
+      form.style.display = 'none';
+      sentEl.classList.add('is-shown');
+      sentEl.scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'center' });
+    });
+
+    /* ====================================================================
+       ATAJO RÁPIDO — email + plano y listo (para el comprador con prisa)
+    ==================================================================== */
+    var expressWrap = document.getElementById('rfq-express');
+    var expressForm = document.getElementById('express-form');
+    var expressToggle = document.getElementById('express-toggle');
+    if (expressToggle && expressWrap) {
+      expressToggle.addEventListener('click', function () {
+        var open = expressWrap.classList.toggle('is-open');
+        expressToggle.setAttribute('aria-expanded', String(open));
+        if (open) {
+          var firstField = document.getElementById('exp-email');
+          if (firstField) firstField.focus({ preventScroll: true });
+        }
+      });
+    }
+
+    if (expressForm) {
+      // Dropzone propio del atajo (UI, sin backend, igual que el del wizard)
+      var expDrop = document.getElementById('exp-dropzone');
+      var expFileInput = document.getElementById('exp-plano');
+      var expFileListEl = document.getElementById('exp-file-list');
+      var expFileNote = document.getElementById('exp-file-note');
+      var expUploaded = [];
+
+      function renderExpFiles() {
+        expFileListEl.innerHTML = expUploaded.map(function (f, i) {
+          return '<div class="file-item">' +
+            '<svg class="file-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 3h8l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>' +
+            '<span class="file-name">' + escapeHtml(f.name) + '</span>' +
+            '<span class="file-size">' + fmtSize(f.size) + '</span>' +
+            '<button type="button" class="file-remove" data-i="' + i + '" aria-label="Quitar ' + escapeHtml(f.name) + '">' +
+            '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>' +
+            '</button></div>';
+        }).join('');
+      }
+      function addExpFiles(list) {
+        var allowed = ['pdf', 'ai', 'png', 'dxf'];
+        var msgs = [];
+        Array.prototype.slice.call(list).forEach(function (f) {
+          var ext = (f.name.split('.').pop() || '').toLowerCase();
+          if (allowed.indexOf(ext) === -1) { msgs.push('«' + f.name + '»: formato no admitido (usa PDF, AI, PNG o DXF).'); return; }
+          if (f.size > MAX_SIZE) { msgs.push('«' + f.name + '»: supera los 20 MB.'); return; }
+          if (expUploaded.length >= MAX_FILES) { msgs.push('Máximo ' + MAX_FILES + ' archivos: «' + f.name + '» no se ha añadido.'); return; }
+          expUploaded.push({ name: f.name, size: f.size });
+        });
+        renderExpFiles();
+        if (expFileNote) expFileNote.textContent = msgs.join(' ');
+      }
+      if (expDrop) {
+        expDrop.addEventListener('click', function () { expFileInput.click(); });
+        expDrop.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); expFileInput.click(); } });
+        expFileInput.addEventListener('change', function () { addExpFiles(expFileInput.files); expFileInput.value = ''; });
+        ['dragenter', 'dragover'].forEach(function (ev) {
+          expDrop.addEventListener(ev, function (e) { e.preventDefault(); expDrop.classList.add('is-dragover'); });
+        });
+        ['dragleave', 'drop'].forEach(function (ev) {
+          expDrop.addEventListener(ev, function (e) { e.preventDefault(); expDrop.classList.remove('is-dragover'); });
+        });
+        expDrop.addEventListener('drop', function (e) { if (e.dataTransfer && e.dataTransfer.files) addExpFiles(e.dataTransfer.files); });
+        expFileListEl.addEventListener('click', function (e) {
+          var btn = e.target.closest('.file-remove');
+          if (btn) { expUploaded.splice(Number(btn.dataset.i), 1); renderExpFiles(); }
+        });
+      }
+
+      // Limpieza de errores en vivo
+      var expEmail = document.getElementById('exp-email');
+      var expConsent = document.getElementById('exp-consent');
+      if (expEmail) expEmail.addEventListener('input', function () { if (expEmail.value.trim()) clearError('exp-email'); });
+      if (expConsent) expConsent.addEventListener('change', function () {
+        if (expConsent.checked) { document.getElementById('err-exp-consent').style.display = 'none'; expConsent.removeAttribute('aria-invalid'); }
+      });
+
+      var expressStart = Date.now();
+      expressForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var ok = true, firstBad = null;
+        clearError('exp-email');
+        document.getElementById('err-exp-consent').style.display = 'none';
+        expConsent.removeAttribute('aria-invalid');
+
+        var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(expEmail.value.trim());
+        if (!emailOk) { setError('exp-email'); ok = false; if (!firstBad) firstBad = expEmail; }
+        if (!expConsent.checked) { document.getElementById('err-exp-consent').style.display = 'block'; expConsent.setAttribute('aria-invalid', 'true'); ok = false; if (!firstBad) firstBad = expConsent; }
+        if (!ok) { if (firstBad) try { firstBad.focus(); } catch (e2) {} return; }
+
+        // Anti-spam: honeypot + timing
+        if (document.getElementById('exp-empresa-web').value) { return; }
+        if (Date.now() - expressStart < 2000) {
+          var n = document.getElementById('exp-submit-note');
+          if (n) n.textContent = 'Un momento, comprobando la solicitud… vuelve a pulsar Enviar.';
+          expressStart = Date.now() - 2000;
+          return;
+        }
+        // En producción: POST validado con Zod + rate-limit. Aquí, confirmación UI.
+        clearStore();
+        if (form) form.style.display = 'none';
+        expressWrap.style.display = 'none';
+        var divOr = document.querySelector('.rfq-divider-or');
+        if (divOr) divOr.style.display = 'none';
+        sentEl.classList.add('is-shown');
+        sentEl.scrollIntoView({ behavior: rm ? 'auto' : 'smooth', block: 'center' });
+      });
+    }
+
+    /* ====================================================================
+       Autosave en sessionStorage — no perder datos al recargar o volver atrás
+       (solo nombres de archivo; el contenido de los planos nunca se guarda)
+    ==================================================================== */
+    var STORE_KEY = 'sd-rfq-v1';
+    var savedFileNames = [];
+    var TEXT_IDS = ['descripcion', 'material', 'cantidad', 'plazo', 'acabado',
+      'dtf-prendas', 'dtf-m2', 'laser-material', 'laser-diam', 'epi-cert',
+      'nombre', 'empresa', 'email', 'telefono'];
+
+    function readStore() {
+      try { return JSON.parse(sessionStorage.getItem(STORE_KEY)) || {}; } catch (e) { return {}; }
+    }
+    function saveStore() {
+      try {
+        var data = { step: current, tec: selectedTecnicas(), consent: document.getElementById('consent').checked, fields: {}, files: uploaded.map(function (f) { return f.name; }) };
+        TEXT_IDS.forEach(function (id) { var el = document.getElementById(id); if (el) data.fields[id] = el.value; });
+        sessionStorage.setItem(STORE_KEY, JSON.stringify(data));
+      } catch (e) {}
+    }
+    function clearStore() { try { sessionStorage.removeItem(STORE_KEY); } catch (e) {} }
+
+    function restoreStore() {
+      var data = readStore();
+      if (!data || !data.fields) return 1;
+      TEXT_IDS.forEach(function (id) { var el = document.getElementById(id); if (el && typeof data.fields[id] === 'string') el.value = data.fields[id]; });
+      if (Array.isArray(data.tec)) {
+        form.querySelectorAll('input[name="tecnica"]').forEach(function (chk) {
+          chk.checked = data.tec.indexOf(chk.value) > -1;
+        });
+      }
+      var c = document.getElementById('consent'); if (c) c.checked = !!data.consent;
+      if (Array.isArray(data.files) && data.files.length) {
+        savedFileNames = data.files.slice();
+        var note = document.getElementById('file-restored');
+        if (note) note.textContent = 'Adjuntaste antes: ' + savedFileNames.join(', ') + '. Por seguridad, vuelve a subir los archivos.';
+      }
+      return (data.step >= 1 && data.step <= TOTAL) ? data.step : 1;
+    }
+
+    form.addEventListener('input', saveStore);
+    form.addEventListener('change', saveStore);
+
+    /* ====================================================================
+       Preselección desde el enlace de origen (landing / asistente / ficha)
+       ?tecnica=… premarca el chip · #metal|#plastico|… preselecciona material
+       ?intencion=muestra muestra un contexto y orienta la descripción.
+       Solo se aplica si NO hay una sesión guardada en curso (no pisa al usuario).
+    ==================================================================== */
+    function hasStoredSession() {
+      try { return !!sessionStorage.getItem(STORE_KEY); } catch (e) { return false; }
+    }
+    function prefillFromURL() {
+      var params = new URLSearchParams(window.location.search);
+      var applied = false;
+
+      // Técnica → premarcar chip (acepta varias separadas por coma)
+      var tecMap = {
+        'serigrafia': 'Serigrafía', 'tampografia': 'Tampografía', 'laser': 'Láser',
+        'dtf': 'DTF', 'sublimacion': 'Sublimación', 'rotulacion': 'Rotulación',
+        'cilindrico': 'Serigrafía cilíndrica', 'envases': 'Serigrafía cilíndrica',
+        'senaletica': 'Señalética', 'epi': 'Ropa laboral / EPI', 'ropa': 'Ropa laboral / EPI'
+      };
+      var tecParam = params.get('tecnica');
+      var COMBINING = new RegExp('[\\u0300-\\u036f]', 'g');
+      if (tecParam) {
+        tecParam.toLowerCase().split(',').forEach(function (raw) {
+          var key = raw.trim().normalize('NFD').replace(COMBINING, '');
+          var label = tecMap[key];
+          if (!label) return;
+          form.querySelectorAll('input[name="tecnica"]').forEach(function (chk) {
+            if (chk.value === label) { chk.checked = true; applied = true; }
+          });
+        });
+      }
+
+      // Material desde el hash (#metal, #plastico, #envase, #textil, #metacrilato)
+      var matMap = {
+        'metal': 'Metal (aluminio, acero, inox)',
+        'plastico': 'Plástico técnico (ABS, PP, PE, PC)',
+        'vidrio': 'Vidrio / cerámica',
+        'metacrilato': 'Metacrilato / PVC rígido',
+        'envase': 'Envase cilíndrico (vidrio, PET, aluminio)',
+        'textil': 'Textil / prenda laboral'
+      };
+      var hashKey = (window.location.hash || '').replace(/^#/, '').toLowerCase();
+      if (matMap[hashKey]) {
+        var sel = document.getElementById('material');
+        if (sel) {
+          Array.prototype.slice.call(sel.options).forEach(function (opt) {
+            if (opt.value === matMap[hashKey] || opt.text === matMap[hashKey]) { sel.value = opt.value || opt.text; applied = true; }
+          });
+        }
+        // El hash de material no es una sección de la página: evitar salto de scroll.
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      }
+
+      // Intención = muestra: orientar la descripción si está vacía
+      if (params.get('intencion') === 'muestra') {
+        var desc = document.getElementById('descripcion');
+        if (desc && !desc.value.trim()) {
+          desc.setAttribute('placeholder', 'Ej.: quiero una muestra de marcaje sobre mi pieza antes de lanzar la serie. Te detallo material y plano en el paso siguiente.');
+        }
+        applied = true;
+      }
+      return applied;
+    }
+
+    var storedBefore = hasStoredSession();
+    var startStep = restoreStore();
+    if (!storedBefore && prefillFromURL()) { saveStore(); }
+    showStep(startStep);
+  })();
+  </script>
+  <script src="assets/fx.js" defer></script>
+</body>
+</html>

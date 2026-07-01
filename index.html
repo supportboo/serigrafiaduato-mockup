@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serigrafía Duato · Maqueta web v4 industrial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:#F4F5F7; --surface-2:#E7E9ED; --ink:#15181D; --steel:#4A525E;
+    --safety:#E8590C; --safety-2:#FFB000; --dark:#16191E;
+    --line:rgba(21,24,29,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--surface);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:56px 56px;background-position:center;}
+  .wrap{max-width:1080px;margin:0 auto;padding:64px 24px 96px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.18em;
+    font-size:12px;color:var(--safety);font-weight:700}
+  h1{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.02em;margin:14px 0 10px;line-height:1.05}
+  .lead{color:var(--steel);font-size:18px;max-width:64ch;margin-bottom:8px}
+  .meta{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--steel);margin-top:18px;
+    font-variant-numeric:tabular-nums}
+  .meta b{color:var(--ink);font-weight:700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:44px}
+  a.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);
+    border-radius:4px;padding:26px 24px;transition:transform .18s cubic-bezier(.2,0,0,1),border-color .18s,box-shadow .18s}
+  a.card:hover{transform:translateY(-3px);border-color:var(--safety);box-shadow:0 10px 30px rgba(21,24,29,.10)}
+  a.card:focus-visible{outline:3px solid var(--safety);outline-offset:2px}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+    color:var(--steel);display:flex;justify-content:space-between;align-items:center}
+  .tag .n{color:var(--safety);font-weight:700}
+  .card h2{font-size:20px;font-weight:700;margin:14px 0 8px;letter-spacing:-.01em}
+  .card p{color:var(--steel);font-size:14.5px}
+  .card .go{margin-top:16px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+  .card .go svg{stroke:var(--safety)}
+  .note{margin-top:40px;padding:20px 22px;background:var(--dark);color:#E7E9ED;border-radius:4px;font-size:14px;line-height:1.6}
+  .note b{color:#fff}
+  .note code{font-family:'JetBrains Mono',monospace;color:var(--safety-2);font-size:13px}
+  footer{margin-top:40px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--steel)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">Boomatik · Maqueta v4 · pivote industrial</span>
+  <h1>Serigrafía Duato — Marcaje industrial en Valencia</h1>
+  <p class="lead">Primera entrega de la nueva web con enfoque industrial B2B. Sistema de diseño «Acero &amp; Seguridad». Abre cada página para navegar la maqueta.</p>
+  <p class="meta"><b>6 páginas</b> · sistema «Acero &amp; Seguridad» · fotos reales del taller · FX y grafismos propios · <b>datos verificados</b>, sin invención</p>
+
+  <div class="grid">
+    <a class="card" href="home.html">
+      <div class="tag"><span>Página principal</span><span class="n">01</span></div>
+      <h2>Home segmentadora</h2>
+      <p>Autoridad industrial en 5 s + 6 soluciones + capacidad por superficie + prueba de repetibilidad.</p>
+      <span class="go">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="marcaje-piezas-componentes.html">
+      <div class="tag"><span>Solución insignia</span><span class="n">02</span></div>
+      <h2>Marcaje de piezas y componentes</h2>
+      <p>Landing para producción/OEM: tampografía + láser sobre geometrías difíciles, permanente y repetible.</p>
+      <span class="go">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="presupuesto.html">
+      <div class="tag"><span>Núcleo de conversión</span><span class="n">03</span></div>
+      <h2>Presupuesto (RFQ multipaso)</h2>
+      <p>Formulario técnico de 4 pasos: técnica, detalle + artwork, contacto y confirmación.</p>
+      <span class="go">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="capacidades-tampografia.html">
+      <div class="tag"><span>Página de capacidad</span><span class="n">04</span></div>
+      <h2>Capacidad · Tampografía</h2>
+      <p>Datos duros por técnica: sustratos, series, resistencia, ficha PDF y comparativa con láser.</p>
+      <span class="go">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="casos.html">
+      <div class="tag"><span>Galería de trabajos</span><span class="n">05</span></div>
+      <h2>Casos y trabajos</h2>
+      <p>Piezas reales marcadas en Alboraya, por técnica: tampografía, láser, fresado, gota de resina, DTF, serigrafía.</p>
+      <span class="go">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="nosotros.html">
+      <div class="tag"><span>El taller</span><span class="n">06</span></div>
+      <h2>Nosotros</h2>
+      <p>Más de 30 años en Alboraya, maquinaria propia, oficio convertido en control de proceso y medioambiente honesto.</p>
+      <span class="go">Abrir <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+
+  <div class="note">
+    <b>Nota para revisión.</b> Las fotos van marcadas como pendientes de una sesión real en el taller de Alboraya (no se usa banco de imágenes). Datos como plazos, mínimos de tirada, sectores y certificaciones aparecen como «consultar» hasta que Duato los confirme — la doctrina prohíbe inventarlos.
+  </div>
+  <footer>Serigrafía Duato S.L. · Camino del Mar 36, Alboraya (Valencia) · +34 96 186 02 75 · info@serigrafiaduato.es</footer>
+</div>
+</body>
+</html>

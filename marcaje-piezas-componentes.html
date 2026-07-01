@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcaje de piezas y componentes en Valencia · Serigrafía Duato</title>
+  <meta name="description" content="Tampografía sobre geometrías irregulares y láser sobre metal y plástico para tus piezas y componentes. Marcaje permanente, repetible y a tiempo para tu línea. Taller en Alboraya (Valencia), más de 30 años.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Sistema de diseño "Acero & Seguridad" · inline (single-file) -->
+  <style>
+/* ============================================================================
+   SERIGRAFÍA DUATO · v4 industrial · SISTEMA DE DISEÑO "Acero & Seguridad"
+   (inline desde _shared/design-system.css)
+============================================================================ */
+
+/* 1 · TOKENS */
+:root {
+  --surface:        #F4F5F7;
+  --surface-2:      #E7E9ED;
+  --ink:            #15181D;
+  --steel:          #4A525E;
+  --safety:         #E8590C;
+  --safety-2:       #FFB000;
+  --dark:           #16191E;
+
+  --ink-on-dark:    #F4F5F7;
+  --steel-on-dark:  #A8AFB9;
+  --line:           #CBD0D8;
+  --line-2:         #2A2F38;
+  --safety-hover:   #CF4D08;
+  --safety-press:   #B54206;
+  --safety-tint:    rgba(232, 89, 12, .10);
+  --safety-2-tint:  rgba(255, 176, 0, .14);
+  --focus-ring:     #1B6FE0;
+
+  --font-display: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --fs-display: clamp(2.25rem, 1.4rem + 4.2vw, 4rem);
+  --fs-h2:      clamp(1.75rem, 1.25rem + 2.5vw, 2.5rem);
+  --fs-h3:      clamp(1.375rem, 1.1rem + 1.4vw, 1.75rem);
+  --fs-lead:    clamp(1.125rem, 1rem + .6vw, 1.375rem);
+  --fs-body:    1.125rem;
+  --fs-sm:      0.9375rem;
+  --fs-eyebrow: 0.8125rem;
+  --fs-data:    1rem;
+
+  --lh-display: 1.05;
+  --lh-head:    1.12;
+  --lh-body:    1.6;
+  --lh-tight:   1.3;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  --tracking-eyebrow: 0.1em;
+  --tracking-head:   -0.01em;
+  --tracking-display:-0.02em;
+
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  --container:    1280px;
+  --container-sm: 1100px;
+  --gutter:       24px;
+  --gutter-mobile:16px;
+
+  --radius-0:  0px;
+  --radius-1:  2px;
+  --radius-2:  4px;
+  --radius-3:  8px;
+  --radius-pill: 999px;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 0 var(--line);
+  --shadow-2: 0 1px 2px rgba(21, 24, 29, .06), 0 0 0 1px var(--line);
+  --shadow-3: 0 2px 0 0 rgba(21, 24, 29, .08), 0 0 0 1px var(--line);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-1: 150ms;
+  --dur-2: 200ms;
+  --dur-3: 250ms;
+
+  --grid-line: rgba(21, 24, 29, .035);
+  --grid-line-dark: rgba(244, 245, 247, .045);
+  --grid-size: 24px;
+}
+
+/* 2 · RESET LIGERO */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+svg { fill: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; }
+
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: var(--radius-2); }
+
+/* 3 · TIPOGRAFÍA BASE */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tracking-head);
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-display); font-weight: var(--fw-black); line-height: var(--lh-display); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semi); }
+h4 { font-size: var(--fs-lead); font-weight: var(--fw-medium); }
+
+p { max-width: 68ch; }
+.lead { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--steel); max-width: 64ch; }
+small, .text-sm { font-size: var(--fs-sm); line-height: 1.5; }
+strong, b { font-weight: var(--fw-semi); }
+em, i { font-style: normal; font-weight: var(--fw-semi); }
+
+.mono, .data, .spec, td.num, .stat-value {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
+}
+.mono-unit { color: var(--steel); font-weight: var(--fw-regular); }
+
+/* 4 · UTILIDADES DE LAYOUT */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--narrow { max-width: var(--container-sm); }
+
+.section { padding-block: var(--sp-9); }
+.section--tight { padding-block: var(--sp-7); }
+.section--dark {
+  background: var(--dark);
+  color: var(--ink-on-dark);
+}
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--ink-on-dark); }
+.section--dark .lead { color: var(--steel-on-dark); }
+.section--surface-2 { background: var(--surface-2); }
+
+.grid { display: grid; gap: var(--gutter); grid-template-columns: repeat(12, 1fr); }
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+.grid-cards { display: grid; gap: var(--gutter); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-cards--2 { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+.stack > * + * { margin-top: var(--sp-4); }
+.stack-lg > * + * { margin-top: var(--sp-6); }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.between { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
+
+/* 5 · EYEBROW */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-text);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--steel);
+}
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--safety);
+  flex: none;
+}
+.section--dark .eyebrow { color: var(--steel-on-dark); }
+
+/* 6 · BOTONES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 48px;
+  padding: 0 var(--sp-5);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-2);
+  border: 1.5px solid transparent;
+  transition: background var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease),
+              color var(--dur-2) var(--ease),
+              transform var(--dur-1) var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn .icon { width: 18px; height: 18px; flex: none; }
+
+.btn-safety {
+  background: var(--safety);
+  color: #FFFFFF;
+  border-color: var(--safety);
+}
+.btn-safety:hover { background: var(--safety-hover); border-color: var(--safety-hover); }
+.btn-safety:active { background: var(--safety-press); border-color: var(--safety-press); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--steel);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.section--dark .btn-ghost { color: var(--ink-on-dark); border-color: var(--steel-on-dark); }
+.section--dark .btn-ghost:hover { background: var(--ink-on-dark); color: var(--ink); border-color: var(--ink-on-dark); }
+
+.btn-dark { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.btn-dark:hover { background: #000; border-color: #000; }
+
+.btn-block { width: 100%; }
+
+/* 7 · TARJETAS */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+  position: relative;
+}
+.card:hover { border-color: var(--steel); box-shadow: var(--shadow-3); }
+.card--accent { border-top: 3px solid var(--safety); }
+.card .card-icon { width: 32px; height: 32px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; }
+.card h3 { font-size: var(--fs-h3); }
+.card p { color: var(--steel); font-size: var(--fs-sm); }
+.card .card-meta {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--steel);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.card-link { margin-top: var(--sp-2); font-weight: var(--fw-semi); color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.card-link .icon { width: 16px; height: 16px; transition: transform var(--dur-2) var(--ease); }
+.card:hover .card-link .icon { transform: translateX(4px); }
+
+/* 8 · TABLA TÉCNICA */
+.spec-table {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  background: var(--surface);
+  font-size: var(--fs-sm);
+}
+.spec-table caption {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.spec-table th {
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semi);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.spec-table td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--ink);
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td.num, .spec-table .mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+}
+.spec-table tbody tr:hover { background: var(--surface-2); }
+
+/* 9 · BADGE NORMATIVA / PRL + PENDING */
+.badge-normativa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  background: var(--safety-2-tint);
+  border: 1px solid var(--safety-2);
+  border-radius: var(--radius-2);
+}
+.badge-normativa .icon { width: 14px; height: 14px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; flex: none; }
+
+.badge-pending {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 8px; font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.02em; color: var(--steel);
+  background: var(--surface-2); border: 1px dashed var(--steel); border-radius: var(--radius-2);
+}
+
+/* 10 · DISCLAIMER */
+.disclaimer {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--steel);
+  font-family: var(--font-text);
+}
+.disclaimer::before { content: "— "; }
+
+/* 11 · STAT */
+.stat { display: flex; flex-direction: column; gap: var(--sp-1); }
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem);
+  font-weight: var(--fw-semi);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-value .accent { color: var(--safety); }
+.stat-label {
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--steel);
+  font-weight: var(--fw-semi);
+}
+.section--dark .stat-value { color: var(--ink-on-dark); }
+.section--dark .stat-label { color: var(--steel-on-dark); }
+
+/* 12 · BLUEPRINT */
+.blueprint-bg {
+  position: relative;
+  isolation: isolate;
+}
+.blueprint-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+}
+.section--dark.blueprint-bg::before {
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+}
+
+/* 13 · MEDIA PENDING */
+.media-pending {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--surface-2);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}
+.media-pending::after {
+  content: "+";
+  position: absolute;
+  top: var(--sp-3); right: var(--sp-4);
+  font-family: var(--font-mono);
+  color: var(--steel);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.media-pending .media-label {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  background: linear-gradient(to top, rgba(231,233,237,.96), rgba(231,233,237,0));
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--steel);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.media-pending .media-label .icon { width: 16px; height: 16px; color: var(--steel); stroke: var(--steel); stroke-width: 1.5; flex: none; }
+.media-pending--dark {
+  background: var(--dark);
+  background-image:
+    linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  border-color: var(--line-2);
+}
+.media-pending--dark .media-label { color: var(--steel-on-dark); background: linear-gradient(to top, rgba(22,25,30,.96), rgba(22,25,30,0)); }
+.media-pending--dark .media-label .icon { color: var(--steel-on-dark); stroke: var(--steel-on-dark); }
+
+/* 14 · HEADER + NAV */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(244, 245, 247, .92);
+  backdrop-filter: saturate(120%) blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: var(--sp-5); }
+.brand { display: inline-flex; align-items: baseline; gap: var(--sp-2); font-family: var(--font-display); font-weight: var(--fw-black); font-size: 1.125rem; color: var(--ink); letter-spacing: -0.01em; }
+.brand .brand-sub { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: var(--fw-medium); text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel); }
+.nav { display: flex; align-items: center; gap: var(--sp-5); }
+.nav a { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--steel); padding: var(--sp-2) 0; border-bottom: 2px solid transparent; transition: color var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--safety); }
+.header-cta { display: flex; align-items: center; gap: var(--sp-3); }
+.nav-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--ink); }
+.nav-toggle .icon { width: 24px; height: 24px; stroke: var(--ink); stroke-width: 1.5; }
+
+/* 15 · FOOTER */
+.site-footer { background: var(--dark); color: var(--steel-on-dark); padding-block: var(--sp-8) var(--sp-6); }
+.site-footer a { color: var(--steel-on-dark); transition: color var(--dur-2) var(--ease); }
+.site-footer a:hover { color: var(--ink-on-dark); }
+.site-footer h4 { color: var(--ink-on-dark); font-size: var(--fs-eyebrow); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-text); font-weight: var(--fw-semi); margin-bottom: var(--sp-4); }
+.footer-grid { display: grid; gap: var(--sp-7); grid-template-columns: 1.4fr 1fr 1fr; }
+.footer-data { font-family: var(--font-mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; line-height: 1.9; }
+.footer-bottom { margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--line-2); display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: space-between; font-size: var(--fs-sm); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+
+/* 16 · WHATSAPP STICKY */
+.whatsapp-sticky {
+  display: none;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 200;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0 var(--sp-5);
+  min-height: 52px;
+  background: var(--ink);
+  color: var(--ink-on-dark);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  box-shadow: 0 4px 16px rgba(21,24,29,.28);
+}
+.whatsapp-sticky .icon { width: 22px; height: 22px; stroke: var(--ink-on-dark); stroke-width: 1.5; }
+
+/* 17 · RFQ / chips / fields (no usados en esta página, mantenidos por paridad) */
+.rfq-progress { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-6); }
+.rfq-progress .step { flex: 1; height: 4px; background: var(--line); border-radius: var(--radius-1); position: relative; }
+.rfq-progress .step.is-done { background: var(--steel); }
+.rfq-progress .step.is-active { background: var(--safety); }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 10px var(--sp-4);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-sm); font-weight: var(--fw-medium);
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease);
+}
+.chip:hover { border-color: var(--steel); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:has(input:checked), .chip.is-selected { border-color: var(--safety); background: var(--safety-tint); }
+.field { display: flex; flex-direction: column; gap: var(--sp-2); }
+.field label { font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--ink); }
+.field input, .field select, .field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px var(--sp-4);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-2);
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease);
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--steel); box-shadow: var(--shadow-focus); }
+
+/* 18 · HELPERS */
+.text-steel { color: var(--steel); }
+.text-safety { color: var(--safety); }
+.text-center { text-align: center; }
+.measure { max-width: 60ch; }
+.divider { height: 1px; background: var(--line); border: none; margin-block: var(--sp-6); }
+.section--dark .divider { background: var(--line-2); }
+
+/* 19 · MOTION */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* 20 · RESPONSIVE */
+@media (max-width: 980px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: span 6; }
+}
+
+@media (max-width: 760px) {
+  :root { --gutter: var(--gutter-mobile); }
+  .container { padding-inline: var(--gutter-mobile); }
+  .section { padding-block: var(--sp-7); }
+  .section--tight { padding-block: var(--sp-6); }
+
+  .nav { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .site-header .header-cta .btn-ghost { display: none; }
+
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .col-12, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: 1 / -1; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .footer-bottom { flex-direction: column; gap: var(--sp-3); }
+
+  .whatsapp-sticky { display: inline-flex; }
+
+  .spec-table.collapsible thead { display: none; }
+  .spec-table.collapsible, .spec-table.collapsible tbody, .spec-table.collapsible tr, .spec-table.collapsible td { display: block; width: 100%; }
+  .spec-table.collapsible tr { border-bottom: 1px solid var(--line); padding: var(--sp-2) 0; }
+  .spec-table.collapsible td { border-bottom: none; padding: 6px var(--sp-4); }
+  .spec-table.collapsible td[data-label]::before {
+    content: attr(data-label) " · ";
+    font-family: var(--font-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.6875rem;
+    font-weight: var(--fw-semi);
+    color: var(--steel);
+  }
+
+  body { padding-bottom: 84px; }
+}
+
+@media (max-width: 380px) {
+  :root { --fs-body: 1.0625rem; }
+  .btn { padding-inline: var(--sp-4); }
+}
+  </style>
+
+  <!-- Ajustes puntuales de esta página (solo tokens) -->
+  <style>
+    /* CTA primario · token de marca compartido (idéntico en home / capacidades).
+       Naranja seguridad --safety con texto --ink (oscuro): ratio AA cumplido y
+       coherencia total del botón de conversión entre todas las páginas. */
+    .btn-safety { background: var(--safety); color: var(--ink); border-color: var(--safety); }
+    .btn-safety:hover { background: var(--safety-hover); border-color: var(--safety-hover); color: var(--ink); }
+    .btn-safety:active { background: var(--safety-press); border-color: var(--safety-press); color: var(--ink); }
+    .btn-safety .icon { stroke: var(--ink); }
+
+    /* Nav móvil · panel desplegable (clase, no inline) */
+    .nav.is-open {
+      display: flex;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      padding: var(--sp-4) var(--gutter-mobile);
+      z-index: 99;
+      box-shadow: var(--shadow-2);
+    }
+    .nav.is-open a { padding: var(--sp-2) 0; min-height: 44px; display: flex; align-items: center; }
+
+    /* badge-normativa sobre sección oscura: texto claro + ámbar legible */
+    .section--dark .badge-normativa {
+      color: var(--safety-2);
+      background: rgba(255,176,0,.10);
+      border-color: var(--safety-2);
+    }
+    .section--dark .badge-normativa .icon { color: var(--safety-2); stroke: var(--safety-2); }
+
+    /* badge-pending sobre sección oscura (legibilidad en --dark) */
+    .section--dark .badge-pending {
+      color: var(--steel-on-dark);
+      background: rgba(244,245,247,.06);
+      border-color: var(--steel-on-dark);
+    }
+
+    /* HERO de solución */
+    .hero-sol { padding-block: var(--sp-9); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--sp-8); align-items: center; }
+    .hero-sol h1 { max-width: 18ch; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); margin-top: var(--sp-6); font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--steel-on-dark); }
+    .hero-meta span { display: inline-flex; align-items: center; gap: var(--sp-2); }
+    .hero-meta .dot { width: 6px; height: 6px; background: var(--safety); border-radius: 50%; flex: none; }
+
+    /* Bloque de dolor */
+    .pain-card { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--steel); border-radius: var(--radius-2); padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3); height: 100%; }
+    .pain-card .pain-icon { width: 28px; height: 28px; stroke: var(--ink); stroke-width: 1.5; color: var(--ink); }
+    .pain-card h3 { font-size: var(--fs-lead); }
+    .pain-card p { color: var(--steel); font-size: var(--fs-sm); }
+    .pain-tag { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel); }
+
+    /* Técnica recomendada */
+    .tech-block { display: grid; grid-template-columns: 64px 1fr; gap: var(--sp-5); }
+    .tech-num { font-family: var(--font-mono); font-size: 2rem; font-weight: var(--fw-semi); color: var(--safety); line-height: 1; }
+    .tech-list { display: flex; flex-direction: column; gap: var(--sp-2); margin-top: var(--sp-3); }
+    .tech-list li { display: flex; gap: var(--sp-3); align-items: flex-start; font-size: var(--fs-sm); color: var(--steel); }
+    .tech-list .check { width: 18px; height: 18px; flex: none; stroke: var(--safety); stroke-width: 1.5; margin-top: 3px; }
+
+    /* CTA final · jerarquía: muestra = dominante; presupuesto + WhatsApp = secundarios */
+    .cta-final { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-7); align-items: center; }
+    .cta-final .cta-actions { display: flex; flex-direction: column; gap: var(--sp-3); }
+    /* Variante reutilizable: botón que puede envolver a varias líneas sin descuadrar
+       (mantiene min-height de .btn y centra el texto). */
+    .btn-wrap { white-space: normal; text-align: center; line-height: 1.25; padding-block: var(--sp-3); }
+    /* CTA terciario discreto (WhatsApp): enlace de apoyo, no compite con el primario */
+    .cta-final .cta-actions .cta-whatsapp {
+      min-height: 44px;
+      background: transparent;
+      color: var(--steel);
+      border: none;
+      text-transform: none;
+      letter-spacing: 0;
+      font-family: var(--font-text);
+      font-weight: var(--fw-semi);
+      gap: var(--sp-2);
+    }
+    .cta-final .cta-actions .cta-whatsapp:hover { color: var(--ink); }
+    .cta-final .cta-actions .cta-whatsapp .icon { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.5; }
+
+    /* lista de sustratos como meta */
+    .substrate-note { display: flex; gap: var(--sp-3); align-items: flex-start; margin-top: var(--sp-5); padding: var(--sp-4); background: var(--surface-2); border-radius: var(--radius-2); }
+    .substrate-note .icon { width: 20px; height: 20px; flex: none; stroke: var(--steel); stroke-width: 1.5; margin-top: 2px; }
+
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: var(--sp-7); }
+      .cta-final { grid-template-columns: 1fr; gap: var(--sp-6); }
+    }
+    @media (max-width: 760px) {
+      .tech-block { grid-template-columns: 1fr; gap: var(--sp-3); }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/fx.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER (idéntico en todas las páginas) ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="home.html" aria-label="Serigrafía Duato, inicio">
+        <img class="brand-logo" src="assets/img/homepage__logo-v2-con-d-horiz.png" alt="Serigrafía Duato · marcaje industrial" width="184" height="61">
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Principal">
+        <a href="home.html#soluciones" aria-current="page">Soluciones</a>
+        <a href="home.html#capacidades">Capacidades</a>
+        <a href="casos.html">Casos</a>
+        <a href="home.html#calidad">Calidad</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="home.html#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="tel:+34961860275" title="Llamar al taller · +34 96 186 02 75">Hablar con un técnico</a>
+        <a class="btn btn-safety" href="presupuesto.html">Pedir presupuesto</a>
+        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO DE SOLUCIÓN ===================== -->
+    <section class="section section--dark blueprint-bg hero-sol">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Solución · Producción y OEM</span>
+            <h1 style="margin-top: var(--sp-5)">Marcamos tus piezas como las necesita tu cliente final.</h1>
+            <p class="lead" style="margin-top: var(--sp-5)">
+              Tampografía sobre geometrías irregulares y láser sobre metal y plástico.
+              Marcaje permanente, repetible y a tiempo para tu línea. La pieza 1 y la 10.000
+              salen idénticas, y la reposición de dentro de tres años también.
+            </p>
+
+            <div class="cluster" style="margin-top: var(--sp-7)">
+              <a class="btn btn-safety" href="presupuesto.html?intencion=muestra">
+                Pide muestra sobre tu pieza
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="tel:+34961860275" title="Llamar al taller · +34 96 186 02 75">Hablar con un técnico</a>
+            </div>
+
+            <div class="hero-meta">
+              <span><span class="dot"></span>Tampografía + láser</span>
+              <span><span class="dot"></span>Metal · ABS · PP · PE</span>
+              <span><span class="dot"></span>Taller en Alboraya · Valencia</span>
+            </div>
+          </div>
+
+          <div>
+            <figure class="media regmark scan" data-ar="3/4" data-fx="left" role="img" aria-label="Piezas técnicas marcadas por tampografía en el taller de Duato en Alboraya">
+              <span class="media-tag">Tampografía · pieza</span>
+              <img src="assets/img/casos-tampografia.jpg" alt="Piezas técnicas marcadas por tampografía en el taller de Duato" loading="eager">
+              <figcaption class="media-cap"><span class="dot"></span>Marcaje permanente sobre geometría irregular</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BLOQUE DE DOLOR ===================== -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">El problema de marcar piezas</span>
+        <h2 style="margin-top: var(--sp-4); max-width: 22ch">Tres formas de que el marcaje te rompa la producción.</h2>
+        <p class="lead" style="margin-top: var(--sp-4)">
+          No buscas un proveedor de impresión: buscas que la marca esté donde tiene que estar,
+          que aguante tu proceso y que llegue cuando tu línea la necesita. Si falla una de las tres,
+          el problema es tuyo, no del taller.
+        </p>
+
+        <div class="grid-cards" style="margin-top: var(--sp-7)">
+          <article class="pain-card reveal">
+            <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c3-1 5-4 5-7M9 7c2 3 5 4 8 4M6 19c4-2 8-2 12 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="pain-tag">Geometría</span>
+            <h3>Una forma que nadie sabe marcar.</h3>
+            <p>
+              Mandos, carcasas, conectores, paneles curvos, instrumental. Superficies cóncavas,
+              convexas o rugosas donde la impresión plana no llega. Pides presupuesto y te dicen
+              que «esa pieza no se puede hacer».
+            </p>
+          </article>
+
+          <article class="pain-card reveal">
+            <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M5 19L19 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="3" y="3" width="18" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="pain-tag">Permanencia</span>
+            <h3>Una marca que se borra en proceso.</h3>
+            <p>
+              El número de serie o la referencia se va con el ensamblaje, la limpieza, los aceites
+              o el roce de almacén. La pieza llega a tu cliente final ilegible, y vuelve como
+              no conformidad.
+            </p>
+          </article>
+
+          <article class="pain-card reveal">
+            <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="pain-tag">Plazo</span>
+            <h3>Un plazo que rompe tu línea.</h3>
+            <p>
+              El marcaje es el último paso antes de servir, así que cualquier retraso del proveedor
+              frena tu cadena entera. Necesitas un taller que entienda que tu fecha de entrega manda y que
+              te responda rápido al pedir presupuesto.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TÉCNICA RECOMENDADA ===================== -->
+    <section class="section section--surface-2">
+      <div class="container">
+        <span class="eyebrow">La técnica que lo resuelve</span>
+        <h2 style="margin-top: var(--sp-4); max-width: 24ch">Dos técnicas que marcan donde otros no pueden.</h2>
+        <p class="lead" style="margin-top: var(--sp-4)">
+          Para piezas y componentes hay dos respuestas, y la correcta depende de tu material, tu geometría
+          y de si necesitas color. Te decimos cuál encaja con tu pieza antes de que pidas nada.
+        </p>
+
+        <div class="grid" style="margin-top: var(--sp-7)">
+          <div class="col-6 reveal">
+            <div class="tech-block">
+              <span class="tech-num">01</span>
+              <div>
+                <h3>Tampografía sobre geometrías irregulares</h3>
+                <p style="color: var(--steel); margin-top: var(--sp-2)">
+                  El tampón de silicona se deforma y se adapta a la pieza, así que llega a superficies
+                  curvas, cóncavas, convexas y rugosas que la impresión plana no puede tocar. Es la técnica
+                  estándar para marcar mandos, paneles de control, instrumental y componentes de plástico técnico.
+                </p>
+                <ul class="tech-list">
+                  <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Llega a la geometría: curvas, recovecos, texturas.</li>
+                  <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Permite color e iconos finos, no solo monocromo.</li>
+                  <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Con tintas de dos componentes, aguanta abrasión, aceites y disolventes según el uso de la pieza.</li>
+                </ul>
+                <a class="card-link" href="capacidades-tampografia.html" style="margin-top: var(--sp-4)">
+                  Ver capacidad técnica de tampografía
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 reveal">
+            <div class="tech-block">
+              <span class="tech-num">02</span>
+              <div>
+                <h3>Láser sobre metal y plástico técnico</h3>
+                <p style="color: var(--steel); margin-top: var(--sp-2)">
+                  El láser altera la superficie del propio material: la marca forma parte de la pieza, sin tinta
+                  que se desprenda. Es la opción cuando necesitas que el número de serie, el lote o el código
+                  sobrevivan al proceso, al ensamblaje y a toda la vida útil del componente.
+                </p>
+                <ul class="tech-list">
+                  <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Marca indeleble: no hay tinta que borrar, es el material.</li>
+                  <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin presión mecánica: respeta piezas con tolerancias estrictas.</li>
+                  <li><svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Apto para número de serie único por pieza y códigos 2D legibles por escáner.</li>
+                </ul>
+                <p class="disclaimer" style="margin-top: var(--sp-4)">El láser produce marca monocroma. Si necesitas color corporativo exacto sobre la pieza, la respuesta es tampografía o serigrafía. Te lo decimos en el presupuesto, sin venderte de más.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="substrate-note">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <p class="text-sm" style="max-width: 80ch; margin: 0">
+            <strong>Sin máquina, no hay marca correcta.</strong> Lo importante no es la técnica que más nos guste a nosotros,
+            sino la que aguante tu proceso. Por eso lo decidimos sobre tu pieza, no sobre un catálogo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SUSTRATOS ADMITIDOS ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid" style="align-items: start">
+          <div class="col-5">
+            <span class="eyebrow">Materiales que marcamos</span>
+            <h2 style="margin-top: var(--sp-4); max-width: 16ch">Dinos de qué es tu pieza.</h2>
+            <p class="lead" style="margin-top: var(--sp-4)">
+              Trabajamos los materiales habituales de componente industrial. Los plásticos de baja energía
+              superficial (PP, PE) llevan tratamiento previo para que la marca agarre: forma parte del proceso,
+              no es un extra que descubras tarde.
+            </p>
+            <a class="btn btn-dark" href="presupuesto.html?intencion=muestra" style="margin-top: var(--sp-6)">Pide muestra sobre tu pieza</a>
+          </div>
+
+          <div class="col-7">
+            <table class="spec-table collapsible">
+              <caption>Sustratos admitidos × técnica recomendada</caption>
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Técnica principal</th>
+                  <th>Nota de proceso</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Material" class="mono">Acero inox.</td>
+                  <td data-label="Técnica">Láser de fibra</td>
+                  <td data-label="Nota">Marca indeleble, alto contraste</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">Aluminio</td>
+                  <td data-label="Técnica">Láser / tampografía</td>
+                  <td data-label="Nota">Según contraste y color requerido</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">Latón / cobre</td>
+                  <td data-label="Técnica">Láser / tampografía</td>
+                  <td data-label="Nota">Consultar acabado de la pieza</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">ABS</td>
+                  <td data-label="Técnica">Tampografía</td>
+                  <td data-label="Nota">Iconos, leyendas y color</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">PP / PE</td>
+                  <td data-label="Técnica">Tampografía</td>
+                  <td data-label="Nota">Tratamiento corona/plasma previo</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">PVC / PET</td>
+                  <td data-label="Técnica">Tampografía</td>
+                  <td data-label="Nota">Tintas según uso de la pieza</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">Plástico técn.</td>
+                  <td data-label="Técnica">Láser / tampografía</td>
+                  <td data-label="Nota">POM, PA, PBT — consultar</td>
+                </tr>
+                <tr>
+                  <td data-label="Material" class="mono">Vidrio / cerám.</td>
+                  <td data-label="Técnica">Tampografía</td>
+                  <td data-label="Nota">Tintas epóxicas bicomponente</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="disclaimer" style="margin-top: var(--sp-3)">Orientación general de proceso, sujeta a sustrato, geometría y uso real de tu pieza. Estimación orientativa, no vinculante.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TABLA TÉCNICA × RESISTENCIA ===================== -->
+    <section class="section section--surface-2">
+      <div class="container">
+        <span class="eyebrow">Aguante de la marca</span>
+        <h2 style="margin-top: var(--sp-4); max-width: 26ch">Qué resiste cada técnica en tu pieza.</h2>
+        <p class="lead" style="margin-top: var(--sp-4); margin-bottom: var(--sp-7)">
+          La resistencia real depende del material, de la tinta y de tu proceso. No inflamos cifras:
+          lo que no podemos confirmar sin ver tu pieza lo marcamos como «consultar» y lo validamos
+          con una muestra antes de producir.
+        </p>
+
+        <table class="spec-table collapsible">
+          <caption>Técnica × resistencia (orientativo · validar con muestra)</caption>
+          <thead>
+            <tr>
+              <th>Técnica</th>
+              <th>Material típico</th>
+              <th>Abrasión</th>
+              <th>Disolventes / aceites</th>
+              <th>Intemperie</th>
+              <th>Permanencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Técnica">Láser de fibra</td>
+              <td data-label="Material" class="mono">Inox · aluminio</td>
+              <td data-label="Abrasión" class="num">muy alta</td>
+              <td data-label="Disolventes / aceites" class="num">muy alta</td>
+              <td data-label="Intemperie" class="num">muy alta</td>
+              <td data-label="Permanencia" class="num">es el material</td>
+            </tr>
+            <tr>
+              <td data-label="Técnica">Tampografía · tinta 2K</td>
+              <td data-label="Material" class="mono">ABS · metal</td>
+              <td data-label="Abrasión" class="num">alta</td>
+              <td data-label="Disolventes / aceites" class="num">alta</td>
+              <td data-label="Intemperie" class="num">consultar</td>
+              <td data-label="Permanencia" class="num">alta</td>
+            </tr>
+            <tr>
+              <td data-label="Técnica">Tampografía · PP / PE</td>
+              <td data-label="Material" class="mono">PP · PE</td>
+              <td data-label="Abrasión" class="num">consultar</td>
+              <td data-label="Disolventes / aceites" class="num">consultar</td>
+              <td data-label="Intemperie" class="num">consultar</td>
+              <td data-label="Permanencia" class="num">tratam. previo</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="disclaimer" style="margin-top: var(--sp-3)">Valores cualitativos orientativos. La resistencia «muy alta» del láser describe una propiedad física —la marca es alteración del propio material, no una capa que se desprenda—, no un ensayo propio certificado. Los marcados «consultar» dependen del sistema tinta-catalizador y de tu sustrato exacto; se confirman con muestra. Estimación orientativa, sujeta a brief, no vinculante.</p>
+      </div>
+    </section>
+
+    <!-- ===================== PRUEBA · SERIE REAL ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid" style="align-items: center">
+          <div class="col-6">
+            <figure class="media regmark scan" data-ar="4/3" data-fx="right" role="img" aria-label="Serie de piezas marcadas de forma idéntica producidas en el taller de Duato">
+              <span class="media-tag">Serie · repetible</span>
+              <img src="assets/img/repetibilidad.jpg" alt="Serie de piezas marcadas de forma idéntica producidas en Alboraya" loading="lazy">
+              <figcaption class="media-cap"><span class="dot"></span>Pieza 1 y pieza 10.000, idénticas</figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <span class="eyebrow">La prueba</span>
+            <h2 style="margin-top: var(--sp-4); max-width: 20ch">La pieza 1 y la última salen idénticas.</h2>
+            <p style="margin-top: var(--sp-4)">
+              Lo que diferencia a un taller de 30 años no es saber marcar una pieza: es repetir la misma
+              marca, en la misma posición, pedido tras pedido. Archivamos la ficha de proceso de tu trabajo,
+              así la reposición de dentro de tres años sale exactamente igual que la primera serie.
+            </p>
+
+            <div class="cluster" style="gap: var(--sp-8); margin-top: var(--sp-7)">
+              <div class="stat">
+                <span class="stat-value"><span class="accent">+</span>30</span>
+                <span class="stat-label">Años de oficio</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">12</span>
+                <span class="stat-label">Técnicas bajo un techo</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">Alboraya</span>
+                <span class="stat-label">Valencia · taller propio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NORMATIVA / TRAZABILIDAD LIGERO ===================== -->
+    <section class="section section--dark blueprint-bg section--tight">
+      <div class="container">
+        <div class="grid" style="align-items: center">
+          <div class="col-7">
+            <span class="eyebrow">Permanencia y trazabilidad</span>
+            <h2 style="margin-top: var(--sp-4); max-width: 24ch">Cuando la marca tiene que durar y dejar rastro.</h2>
+            <p class="lead" style="margin-top: var(--sp-4)">
+              Si tu cliente final pide número de serie, lote o código permanente —para automoción, calidad
+              o trazabilidad de componente—, el marcaje láser deja una marca que sobrevive al proceso y se
+              lee durante toda la vida útil de la pieza.
+            </p>
+            <p class="text-sm" style="color: var(--steel-on-dark); margin-top: var(--sp-4); max-width: 70ch">
+              Para requisitos de trazabilidad regulada (por ejemplo IATF 16949 en automoción, o UDI en
+              dispositivos médicos), hablamos del caso concreto y validamos la marca con una muestra antes
+              de lanzar la serie.
+            </p>
+          </div>
+          <div class="col-5">
+            <!-- Capacidad técnica real del láser: códigos legibles por escáner -->
+            <div class="cluster" style="gap: var(--sp-3); margin-bottom: var(--sp-4)">
+              <span class="badge-normativa">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z" stroke="currentColor" stroke-width="1.5"/></svg>
+                Código DataMatrix · QR
+              </span>
+              <span class="badge-normativa">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 7v10M4 17h16M20 7v10M7 9v6M10 9v6M13.5 9v6M17 9v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Número de serie · lote
+              </span>
+            </div>
+            <!-- Requisitos de sector regulado · marcados como NO confirmados (doctrina certeza de datos) -->
+            <p class="text-sm" style="color: var(--steel-on-dark); margin-bottom: var(--sp-3); font-size: 0.8125rem">Preparamos la marca legible por escáner para tus requisitos de trazabilidad. Si tu sector exige una norma concreta, lo confirmamos contigo antes de la serie:</p>
+            <div class="cluster" style="gap: var(--sp-2)">
+              <span class="badge-pending">
+                <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                IATF 16949 · a confirmar
+              </span>
+              <span class="badge-pending">
+                <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                UDI · MDR 2017/745 · a confirmar
+              </span>
+              <span class="badge-pending">
+                <svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Capacidad por sector · a confirmar con el taller
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FUERTE + ENLACE A PRESUPUESTO ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-final">
+          <div>
+            <span class="eyebrow">El siguiente paso</span>
+            <h2 style="margin-top: var(--sp-4); max-width: 18ch">Pide una muestra de marcaje sobre tu pieza.</h2>
+            <p class="lead" style="margin-top: var(--sp-4)">
+              Es el modo más rápido de salir de dudas: nos envías tu pieza o el plano, decidimos la técnica
+              que aguanta tu proceso y te devolvemos una muestra marcada para que la valides antes de comprometer
+              una serie. Si lo prefieres, vas directo al presupuesto con la técnica ya preseleccionada.
+            </p>
+            <p class="disclaimer" style="margin-top: var(--sp-5)">Te respondemos lo antes posible en horario de taller. Plazos y mínimos de tirada se confirman con tu brief; estimación orientativa, no vinculante.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-safety btn-block btn-wrap" href="presupuesto.html?intencion=muestra">
+              Pide muestra sobre tu pieza
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-block" href="presupuesto.html">Ir al presupuesto técnico</a>
+            <a class="btn btn-block btn-wrap cta-whatsapp" href="https://wa.me/34961860275">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              ¿Plazo crítico? Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (idéntico en todas las páginas) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="home.html" style="color: var(--ink-on-dark)">
+            Serigrafía Duato
+            <span class="brand-sub" style="color: var(--steel-on-dark)">Marcaje industrial</span>
+          </a>
+          <p class="text-sm" style="margin-top: var(--sp-4); max-width: 42ch; color: var(--steel-on-dark)">
+            Taller de marcaje industrial multitécnica en Alboraya (Valencia).
+            12 técnicas bajo un techo, más de 30 años de oficio.
+          </p>
+          <p class="text-sm" style="margin-top: var(--sp-4); color: var(--steel-on-dark)">
+            Tratamiento de aguas en circuito cerrado. Partner de reciclaje RECICLAMAS.
+          </p>
+        </div>
+
+        <div>
+          <h4>Contacto</h4>
+          <address class="footer-data" style="font-style: normal">
+            Camino del Mar 36<br>
+            46120 Alboraya · Valencia<br>
+            <a href="tel:+34961860275">+34 96 186 02 75</a><br>
+            <a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a>
+          </address>
+        </div>
+
+        <div>
+          <h4>Capacidades</h4>
+          <ul class="stack" style="--sp-4: 8px">
+            <li><a href="marcaje-piezas-componentes.html">Piezas y componentes</a></li>
+            <li><span aria-disabled="true" style="opacity:.6">Trazabilidad industrial <span class="text-sm">· en preparación</span></span></li>
+            <li><span aria-disabled="true" style="opacity:.6">Envases y cilíndrico <span class="text-sm">· en preparación</span></span></li>
+            <li><span aria-disabled="true" style="opacity:.6">Ropa laboral y EPI <span class="text-sm">· en preparación</span></span></li>
+            <li><a href="capacidades-tampografia.html">Todas las técnicas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span class="mono">2026</span> Serigrafía Duato S.L.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <span aria-disabled="true" style="opacity:.6">Aviso legal</span>
+          <span aria-disabled="true" style="opacity:.6">Privacidad</span>
+          <span aria-disabled="true" style="opacity:.6">Cookies</span>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== WHATSAPP STICKY (móvil) ===================== -->
+  <a class="whatsapp-sticky" href="https://wa.me/34961860275" aria-label="Escríbenos por WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    WhatsApp
+  </a>
+
+  <!-- ===================== MOTION MÍNIMO ===================== -->
+  <script>
+    const rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!rm && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
+    }
+
+    // Nav móvil · panel desplegable por clase (no inline)
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      // Cerrar al pulsar un enlace
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+  </script>
+  <script src="assets/fx.js" defer></script>
+</body>
+</html>

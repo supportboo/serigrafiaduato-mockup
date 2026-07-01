@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+<title>Serigrafía Duato · ALT · Risograph editorial</title>
+<meta name="description" content="Variante estilística risograph editorial. 12 técnicas, mismo polígono desde 1992." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Tipografía radicalmente distinta: Instrument Serif (alt a Editorial New) + Bricolage Grotesque + Departure Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Departure+Mono&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  /* PALETA RISO DUATO · naranja Duato + cobalto riso + amarillo riso paper */
+  --paper:#FFF1D6;
+  --paper-deep:#F4E4BD;
+  --ink:#0E0E12;
+  --spot:#F25F0C;        /* naranja Duato saturado */
+  --spot-deep:#C84304;
+  --riso-blue:#1E3FFF;   /* cobalto riso clásico */
+  --riso-blue-deep:#0B1F8A;
+  --c:#00B3E6;
+  --m:#E94C9B;
+  --y:#FFDD2E;
+  --mute:#6D6A60;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06  0 0 0 0 0.06  0 0 0 0 0.06  0 0 0 0.6 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Bricolage Grotesque","Inter",sans-serif;
+  font-feature-settings:"ss01";
+  overflow-x:hidden;
+  cursor:default;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:var(--grain);background-size:240px;
+  opacity:.45;mix-blend-mode:multiply;
+}
+::selection{background:var(--riso-blue);color:var(--paper)}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+
+/* TIPOGRAFÍA · contrast extreme — Instrument Serif italic + Bricolage condensed */
+.f{font-family:"Instrument Serif",ui-serif,Georgia,serif;font-style:italic}
+.f-r{font-family:"Instrument Serif",serif;font-style:normal}
+.bg{font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"opsz" 96,"wght" 800}
+.bg-display{font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"opsz" 96,"wght" 200;font-size:clamp(72px,12vw,180px);line-height:.85;letter-spacing:-0.06em}
+.bg-cond{font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"opsz" 12,"wght" 700;letter-spacing:-0.01em}
+.mono{font-family:"Departure Mono",ui-monospace,monospace}
+
+/* DUOTONE blend overlays · firmas del riso */
+.duotone{
+  filter:contrast(1.18) saturate(.7);
+  mix-blend-mode:multiply;
+}
+
+/* NAV brutalista */
+nav.top{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;
+  padding:18px 24px;
+  background:var(--paper);
+  border-bottom:1px solid var(--ink);
+  mix-blend-mode:multiply;
+}
+.brand{display:flex;align-items:baseline;gap:8px}
+.brand-d{
+  font-family:"Instrument Serif";font-style:italic;
+  font-size:32px;line-height:1;
+  color:var(--spot);
+}
+.brand-text{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 12,"wght" 700;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+}
+.nav-links{display:none;align-items:center;gap:0;justify-self:center}
+.nav-links a{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 12,"wght" 600;
+  font-size:13px;letter-spacing:.05em;text-transform:lowercase;
+  padding:10px 18px;
+  position:relative;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:18px;right:18px;bottom:6px;height:2px;background:var(--riso-blue);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:12px 16px;
+  background:var(--ink);color:var(--paper);
+  border:1px solid var(--ink);
+  position:relative;
+  transition:transform .15s;
+}
+.nav-cta::after{
+  content:"";position:absolute;left:4px;top:4px;right:-4px;bottom:-4px;
+  background:var(--spot);z-index:-1;
+}
+.nav-cta:hover{transform:translate(2px,2px)}
+.nav-cta:hover::after{left:0;top:0;right:0;bottom:0}
+@media(min-width:900px){.nav-links{display:flex}}
+
+/* HERO · grid roto editorial · sin centrado */
+section.hero{
+  position:relative;
+  min-height:100vh;
+  padding:120px 24px 60px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+  align-items:start;
+  overflow:hidden;
+}
+@media(min-width:1024px){
+  section.hero{
+    grid-template-columns:1.4fr 1fr;
+    padding:140px 56px 60px;
+    gap:64px;
+  }
+}
+
+.hero-mark{
+  position:absolute;
+  top:120px;right:48px;
+  width:120px;height:120px;
+  border:1px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;
+  font-family:"Departure Mono",monospace;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);
+  z-index:5;
+  mix-blend-mode:multiply;
+  animation:markSpin 22s linear infinite;
+}
+.hero-mark::before{
+  content:"";position:absolute;inset:8px;
+  border:1px dashed var(--ink);border-radius:50%;
+}
+.hero-mark span{position:absolute;font-size:9px;letter-spacing:.32em}
+.hero-mark .a{top:14px}
+.hero-mark .b{bottom:14px;color:var(--spot)}
+@keyframes markSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.hero-eyebrow{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--mute);
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:36px;
+}
+.hero-eyebrow::before{
+  content:"";width:36px;height:1px;background:var(--ink);
+}
+.hero-eyebrow b{color:var(--spot);font-weight:400}
+
+.hero-h1{
+  font-family:"Instrument Serif",serif;
+  font-style:italic;font-weight:400;
+  font-size:clamp(64px,11vw,180px);
+  line-height:.88;letter-spacing:-0.04em;
+  color:var(--ink);
+  margin:0;
+  position:relative;
+}
+.hero-h1 span.alt{
+  display:block;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-variation-settings:"opsz" 96,"wght" 700;
+  font-style:normal;
+  font-size:.88em;line-height:.88;letter-spacing:-0.04em;
+  color:var(--ink);
+}
+.hero-h1 em{color:var(--spot);font-style:italic}
+.hero-h1 .underline{
+  position:relative;display:inline-block;
+}
+.hero-h1 .underline::after{
+  content:"";position:absolute;left:0;right:0;bottom:.08em;
+  height:.1em;background:var(--riso-blue);
+  z-index:-1;
+  transform:skewX(-4deg);
+}
+
+.hero-sub{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:clamp(17px,1.5vw,22px);line-height:1.45;
+  max-width:540px;
+  margin:40px 0;
+  color:var(--ink);
+}
+.hero-sub strong{
+  font-variation-settings:"opsz" 96,"wght" 700;
+}
+
+.hero-meta{
+  display:grid;grid-template-columns:repeat(3,auto);gap:32px;
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  border-top:1px dashed var(--ink);
+  padding-top:22px;
+  margin-top:32px;
+  max-width:540px;
+}
+.hero-meta-stat{display:flex;flex-direction:column;gap:6px}
+.hero-meta-stat .v{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:48px;line-height:.95;letter-spacing:-0.04em;
+  color:var(--ink);
+  text-transform:none;
+}
+.hero-meta-stat .v em{color:var(--spot)}
+.hero-meta-stat .l{color:var(--mute);max-width:160px}
+
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.cta-brut{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:18px 26px;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-variation-settings:"opsz" 12,"wght" 700;
+  font-size:14px;letter-spacing:.04em;text-transform:lowercase;
+  background:var(--ink);color:var(--paper);
+  border:1px solid var(--ink);
+  position:relative;cursor:pointer;
+  transition:transform .15s;
+}
+.cta-brut::after{
+  content:"";position:absolute;left:6px;top:6px;right:-6px;bottom:-6px;
+  background:var(--riso-blue);z-index:-1;
+  transition:all .15s;
+}
+.cta-brut:hover{transform:translate(3px,3px)}
+.cta-brut:hover::after{left:0;top:0;right:0;bottom:0;background:var(--spot)}
+.cta-brut.alt{background:var(--paper);color:var(--ink)}
+.cta-brut.alt::after{background:var(--spot)}
+.cta-brut.alt:hover{background:var(--spot);color:var(--paper)}
+.cta-brut .arrow{
+  display:inline-flex;width:18px;height:18px;
+  border:1px solid currentColor;border-radius:50%;
+  align-items:center;justify-content:center;
+  font-size:10px;
+}
+
+/* HERO VIDEO RISO-STYLE */
+.hero-visual{
+  position:relative;
+  min-height:520px;
+}
+.hero-visual .frame{
+  position:relative;
+  width:100%;aspect-ratio:4/5;
+  background:var(--ink);
+  overflow:hidden;
+  border:1px solid var(--ink);
+  box-shadow:8px 8px 0 var(--spot);
+  transition:transform .25s;
+}
+.hero-visual .frame:hover{transform:translate(-2px,-2px)}
+.hero-visual .frame:hover{box-shadow:10px 10px 0 var(--spot)}
+.hero-visual video{
+  width:100%;height:100%;object-fit:cover;
+  filter:contrast(1.05);
+  /* RISO duotone overlay con orange+blue blend */
+}
+.hero-visual .frame::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg, rgba(242,95,12,0.32) 0%, transparent 35%, transparent 65%, rgba(30,63,255,0.32) 100%);
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+.hero-visual .frame::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(10,10,10,.16) 1px, transparent 1.4px);
+  background-size:6px 6px;
+  mix-blend-mode:multiply;
+  z-index:2;pointer-events:none;
+}
+.hero-visual .meta{
+  position:absolute;left:-1px;bottom:-1px;
+  background:var(--paper);color:var(--ink);
+  border:1px solid var(--ink);
+  padding:10px 16px;
+  font-family:"Departure Mono",monospace;
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  z-index:3;
+}
+.hero-visual .meta b{color:var(--spot);font-weight:400}
+
+.hero-visual .stamp{
+  position:absolute;top:-22px;right:-22px;
+  width:120px;height:120px;
+  background:var(--spot);color:var(--paper);
+  border:1px solid var(--ink);
+  border-radius:50%;
+  display:grid;place-items:center;text-align:center;
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:16px;line-height:1;
+  z-index:4;
+  transform:rotate(-12deg);
+  padding:18px;
+}
+.hero-visual .stamp small{
+  display:block;
+  font-family:"Departure Mono",monospace;font-style:normal;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  margin-top:4px;
+}
+
+/* RUNNING HEADER · sustituye marquee */
+.running-header{
+  border-block:1px solid var(--ink);
+  background:var(--paper-deep);
+  padding:14px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+  padding-inline:24px;
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.25em;text-transform:uppercase;
+  overflow:hidden;
+}
+.running-header b{color:var(--spot);font-weight:400}
+
+/* SECCIÓN · OFICIO RISO style */
+section.oficio{
+  padding:120px 24px 80px;
+  position:relative;
+}
+.oficio-num{
+  position:absolute;top:60px;right:32px;
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:clamp(180px,28vw,420px);
+  line-height:.7;letter-spacing:-0.07em;
+  color:var(--spot);
+  opacity:.16;
+  pointer-events:none;z-index:0;
+}
+.oficio-inner{
+  max-width:1080px;margin:0 auto;
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr;gap:48px;
+}
+@media(min-width:900px){.oficio-inner{grid-template-columns:1.2fr 1fr;gap:80px}}
+.oficio-eyebrow{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:18px;
+  display:flex;align-items:center;gap:14px;
+}
+.oficio-eyebrow::before{
+  content:"";width:36px;height:1px;background:var(--ink);
+}
+.oficio h2{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:clamp(44px,7vw,96px);line-height:.92;letter-spacing:-0.02em;
+  margin-bottom:32px;color:var(--ink);
+}
+.oficio h2 em{color:var(--spot)}
+.oficio h2 b{
+  font-family:"Bricolage Grotesque",sans-serif;font-style:normal;
+  font-variation-settings:"opsz" 96,"wght" 700;
+  display:inline-block;background:var(--riso-blue);color:var(--paper);
+  padding:0 .15em;line-height:1.06;
+}
+.manifesto p{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:17px;line-height:1.55;
+  margin-bottom:18px;color:var(--ink);
+  max-width:520px;
+}
+.manifesto p:first-of-type{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:24px;line-height:1.35;
+}
+.timeline{position:relative;padding-left:0;display:grid;gap:0}
+.tl-item{
+  position:relative;
+  display:grid;grid-template-columns:80px 1fr;gap:24px;
+  padding:20px 0;
+  border-bottom:1px dashed var(--ink);
+}
+.tl-item:last-child{border-bottom:none}
+.tl-year{
+  font-family:"Departure Mono",monospace;
+  font-size:14px;letter-spacing:.1em;
+  color:var(--riso-blue);
+  align-self:start;padding-top:6px;
+}
+.tl-item h4{
+  font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"opsz" 12,"wght" 700;
+  font-size:18px;letter-spacing:-0.01em;line-height:1.2;margin-bottom:6px;
+}
+.tl-item p{
+  font-family:"Bricolage Grotesque",sans-serif;font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:14px;color:var(--mute);line-height:1.5;
+}
+
+/* TÉCNICAS · grid 12 chunks · estilo poster zine */
+section.tecnicas{
+  padding:120px 24px 100px;
+  background:var(--ink);
+  color:var(--paper);
+  position:relative;overflow:hidden;
+}
+section.tecnicas::before{
+  content:"";position:absolute;inset:0;
+  background:var(--grain);background-size:200px;
+  opacity:.35;mix-blend-mode:screen;
+}
+.tec-head-alt{
+  max-width:1280px;margin:0 auto 64px;position:relative;z-index:2;
+}
+.tec-head-alt .ey{
+  font-family:"Departure Mono",monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--y);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+}
+.tec-head-alt .ey::before{
+  content:"";width:36px;height:1px;background:var(--y);
+}
+.tec-head-alt h2{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:clamp(48px,8vw,124px);line-height:.92;letter-spacing:-0.03em;
+}
+.tec-head-alt h2 em{color:var(--spot)}
+.tec-head-alt h2 b{
+  font-family:"Bricolage Grotesque",sans-serif;font-style:normal;
+  font-variation-settings:"opsz" 96,"wght" 700;
+  background:var(--y);color:var(--ink);padding:0 .12em;line-height:1.06;
+}
+.tec-head-alt .sub{
+  margin-top:18px;color:var(--paper);
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:16px;max-width:540px;
+}
+
+.tec-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(1,1fr);
+  gap:0;border:1px solid var(--paper);
+}
+@media(min-width:600px){.tec-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.tec-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1280px){.tec-grid{grid-template-columns:repeat(4,1fr)}}
+.tec-cell{
+  position:relative;
+  background:var(--ink);
+  border:1px solid var(--paper);margin:-1px 0 0 -1px;
+  padding:24px;
+  min-height:280px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:background .3s;
+}
+.tec-cell:hover{background:var(--paper);color:var(--ink)}
+.tec-cell:hover .tec-num{color:var(--spot)}
+.tec-cell:hover .tec-cat{color:var(--ink)}
+.tec-cell:hover .tec-bg-video{opacity:.7}
+.tec-bg-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  opacity:0;
+  filter:contrast(1.05) sepia(.05);
+  transition:opacity .5s;
+  z-index:0;pointer-events:none;
+}
+.tec-cell::after{
+  content:"";position:absolute;inset:0;
+  background:rgba(255,241,214,.92);
+  opacity:0;transition:opacity .3s;
+  pointer-events:none;
+}
+.tec-cell:hover::after{opacity:.86}
+.tec-cell > *{position:relative;z-index:2}
+.tec-num{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.32em;
+  color:var(--mute);transition:color .3s;
+}
+.tec-cat{
+  font-family:"Departure Mono",monospace;
+  font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--y);transition:color .3s;
+  margin-top:6px;
+}
+.tec-cell h3{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:34px;line-height:.95;letter-spacing:-0.02em;
+  margin:24px 0 18px;
+}
+.tec-cell h3 em{color:var(--spot)}
+.tec-cell .desc{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 12,"wght" 400;
+  font-size:14px;line-height:1.5;
+  color:var(--paper);transition:color .3s;
+}
+.tec-cell:hover .desc{color:var(--ink)}
+.tec-cell .read{
+  font-family:"Departure Mono",monospace;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  margin-top:18px;
+  display:flex;align-items:center;gap:10px;
+  color:var(--spot);
+}
+.tec-cell .read::after{content:"→"}
+
+/* CASOS estilo CATÁLOGO POSTAL */
+section.casos{
+  padding:120px 24px;
+  background:var(--paper-deep);
+}
+.casos-head{max-width:1280px;margin:0 auto 56px}
+.casos-head .ey{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:18px;
+  display:flex;align-items:center;gap:14px;
+}
+.casos-head .ey::before{
+  content:"";width:36px;height:1px;background:var(--ink);
+}
+.casos-head h2{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:clamp(44px,7vw,96px);line-height:.95;letter-spacing:-0.02em;
+  margin-bottom:18px;
+}
+.casos-head h2 em{color:var(--spot)}
+.casos-head p{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:17px;line-height:1.5;max-width:540px;color:var(--ink);
+}
+.casos-filter{margin-top:32px;display:flex;gap:8px;flex-wrap:wrap}
+.casos-filter button{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  background:transparent;color:var(--ink);
+  border:1px solid var(--ink);
+  padding:10px 18px;
+  cursor:pointer;
+  transition:background .2s, color .2s;
+}
+.casos-filter button.active,
+.casos-filter button:hover{background:var(--ink);color:var(--paper)}
+
+.casos-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:24px;
+}
+@media(min-width:720px){.casos-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.casos-grid{grid-template-columns:repeat(3,1fr)}}
+.caso{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  overflow:hidden;
+  transition:transform .25s, box-shadow .25s;
+}
+.caso:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--spot)}
+.caso .img{position:relative;aspect-ratio:4/5;background:var(--ink);overflow:hidden}
+.caso .img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:contrast(1.05) sepia(.05);
+  transition:filter .5s, transform .5s;
+}
+.caso .img::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(10,10,10,.14) 1px, transparent 1.4px);
+  background-size:6px 6px;
+  mix-blend-mode:multiply;pointer-events:none;
+}
+.caso:hover .img img{filter:contrast(1) sepia(0);transform:scale(1.04)}
+.caso .body{padding:20px 22px 24px}
+.caso .tag{
+  font-family:"Departure Mono",monospace;
+  font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--riso-blue);margin-bottom:6px;
+}
+.caso h3{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:24px;line-height:1.15;letter-spacing:-0.01em;
+  margin-bottom:6px;
+}
+.caso .desc{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:14px;line-height:1.5;color:var(--mute);
+}
+.caso .meta{
+  margin-top:14px;display:flex;gap:14px;
+  font-family:"Departure Mono",monospace;
+  font-size:10px;letter-spacing:.18em;color:var(--mute);
+}
+.caso .meta span::before{content:"·";margin-right:8px;color:var(--spot)}
+.caso .meta span:first-child::before{display:none}
+
+/* FOOTER */
+footer{
+  background:var(--ink);color:var(--paper);
+  padding:96px 24px 36px;position:relative;overflow:hidden;
+}
+.ft-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:800px){.ft-grid{grid-template-columns:2fr 1fr 1fr}}
+.ft-brand{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:56px;letter-spacing:-0.03em;
+}
+.ft-brand b{color:var(--spot);font-weight:400}
+.ft-tag{
+  font-family:"Bricolage Grotesque";font-variation-settings:"opsz" 96,"wght" 400;
+  font-size:14px;color:var(--paper-deep);max-width:340px;margin-top:14px;line-height:1.5;
+}
+.ft-col h5{
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--y);margin-bottom:18px;
+}
+.ft-col li{
+  list-style:none;font-family:"Bricolage Grotesque";font-size:14px;margin-bottom:10px;
+  font-variation-settings:"opsz" 96,"wght" 400;
+}
+.ft-col a:hover{color:var(--spot)}
+.ft-mega{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:clamp(120px,22vw,360px);line-height:.85;
+  text-align:center;letter-spacing:-0.06em;
+  color:var(--paper);
+  margin:80px auto 32px;max-width:1280px;
+  position:relative;
+}
+.ft-mega::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle, var(--ink) 1px, transparent 1.5px);
+  background-size:6px 6px;
+  mix-blend-mode:multiply;
+}
+.ft-mega b{color:var(--spot);font-weight:400}
+.ft-bottom{
+  max-width:1280px;margin:48px auto 0;padding-top:24px;
+  border-top:1px solid var(--paper-deep);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;
+  font-family:"Departure Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--paper-deep);
+}
+
+/* =========================================================
+   STORYTELLING LAYER · 8 elementos
+   ========================================================= */
+
+/* 1 · BRUSH STROKE vertical · pintando con scroll */
+.ink-vein{
+  position:fixed;top:0;bottom:0;left:18px;width:36px;
+  z-index:80;pointer-events:none;
+}
+.ink-vein .track{
+  position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:rgba(14,14,18,.10);
+  transform:translateX(-50%);
+}
+/* Brocha SVG masked · bordes irregulares + drips + texture */
+.ink-vein svg.brush{
+  position:absolute;
+  left:50%;top:0;
+  width:32px;height:100vh;
+  transform:translateX(-50%);
+  overflow:visible;
+}
+.ink-vein svg.brush .stroke{
+  fill:url(#brushGrad);
+  filter:url(#brushNoise);
+}
+.ink-vein .drip{
+  position:absolute;left:50%;width:18px;height:24px;
+  background:
+    radial-gradient(circle at 50% 28%, var(--spot) 0%, var(--spot) 36%, transparent 42%),
+    radial-gradient(circle at 35% 70%, var(--spot) 0%, var(--spot) 28%, transparent 32%),
+    radial-gradient(circle at 60% 85%, var(--spot-deep) 0%, var(--spot-deep) 22%, transparent 26%);
+  transform:translate(-50%,-12px);
+  filter:drop-shadow(0 2px 4px rgba(242,95,12,.55)) blur(.3px);
+  mix-blend-mode:multiply;
+}
+.ink-vein .splash{
+  position:absolute;left:50%;
+  width:8px;height:8px;
+  background:var(--spot);
+  border-radius:50%;
+  transform:translate(-50%,0);
+  opacity:0;
+  mix-blend-mode:multiply;
+  pointer-events:none;
+}
+@media(max-width:700px){.ink-vein{display:none}}
+
+/* 2 · Folio counter · sticky top-right */
+.folio{
+  position:fixed;top:96px;right:24px;
+  z-index:80;
+  font-family:"Departure Mono",monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+  mix-blend-mode:multiply;
+}
+.folio .num{
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:48px;line-height:.85;letter-spacing:-0.04em;
+  color:var(--spot);
+}
+.folio .total{color:var(--mute)}
+.folio .ch{
+  max-width:160px;text-align:right;
+  font-size:9px;letter-spacing:.2em;color:var(--ink);
+  margin-top:6px;
+}
+@media(max-width:900px){.folio{top:78px;right:14px}.folio .num{font-size:30px}}
+
+/* 3 · Cursor risograph duotone */
+#cur-r,#cur-b{
+  position:fixed;left:0;top:0;
+  width:24px;height:24px;border-radius:50%;
+  pointer-events:none;z-index:9999;
+  mix-blend-mode:multiply;
+  transition:transform .12s, width .25s, height .25s;
+  will-change:transform;
+}
+#cur-r{background:var(--spot);opacity:.55}
+#cur-b{background:var(--riso-blue);opacity:.5}
+#cur-r.big,#cur-b.big{width:64px;height:64px}
+@media(hover:none){body{cursor:auto}#cur-r,#cur-b{display:none}}
+
+/* 4 · Stamp rotating "MARCAJE · ALBORAYA · 1992" */
+.stamp-circle{
+  position:relative;width:140px;height:140px;
+  font-family:"Departure Mono",monospace;
+  display:inline-block;
+}
+.stamp-circle svg{width:100%;height:100%;animation:stampSpin 26s linear infinite}
+.stamp-circle .inner{
+  position:absolute;inset:0;display:grid;place-items:center;
+  text-align:center;font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:22px;line-height:1;color:var(--ink);
+}
+@keyframes stampSpin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+
+/* 5 · BANNER cinemático entre actos */
+.between{
+  position:relative;
+  overflow:hidden;
+  border-block:1px solid var(--ink);
+  background:var(--ink);
+  display:grid;align-items:center;
+  min-height:340px;
+}
+@media(min-width:900px){.between{min-height:420px}}
+.between video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  filter:contrast(1.1) sepia(.06);
+  opacity:.42;
+}
+.between::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(255,241,214,.12) 1px, transparent 1.4px);
+  background-size:6px 6px;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+.between::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg, rgba(242,95,12,.32) 0%, transparent 35%, transparent 65%, rgba(30,63,255,.30) 100%);
+  mix-blend-mode:screen;pointer-events:none;
+}
+.between-inner{
+  position:relative;z-index:2;
+  max-width:1080px;width:100%;margin:0 auto;
+  padding:48px 32px;text-align:center;
+}
+.between .num-ch{
+  font-family:"Departure Mono",monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--y);margin-bottom:14px;
+}
+.between blockquote{
+  font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+  font-size:clamp(32px,4.6vw,72px);line-height:1.05;letter-spacing:-0.02em;
+  color:var(--paper);max-width:980px;margin:0 auto;
+}
+.between blockquote em{color:var(--spot)}
+.between blockquote b{
+  font-family:"Bricolage Grotesque",sans-serif;font-style:normal;
+  font-variation-settings:"opsz" 96,"wght" 700;
+  background:var(--y);color:var(--ink);padding:0 .12em;line-height:1.06;
+}
+.between cite{
+  display:block;
+  font-family:"Departure Mono",monospace;font-style:normal;
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--paper-deep);margin-top:32px;
+}
+
+/* 6 · PRINT PROOF MARKS sobre casos · corner crops */
+.caso .img::before{
+  content:"";position:absolute;
+  width:14px;height:14px;
+  border-color:var(--paper);border-style:solid;border-width:0;
+  z-index:3;pointer-events:none;
+}
+.caso .img > .crops{position:absolute;inset:8px;pointer-events:none;z-index:3}
+.caso .img > .crops::before,
+.caso .img > .crops::after,
+.caso .img > .crops > i::before,
+.caso .img > .crops > i::after{
+  content:"";position:absolute;background:var(--paper);
+}
+.caso .img > .crops::before{left:0;top:0;width:14px;height:1px;box-shadow:0 13px 0 var(--paper)}
+.caso .img > .crops::after{left:0;top:0;width:1px;height:14px;box-shadow:13px 0 0 var(--paper)}
+.caso .img > .crops > i{position:absolute;right:0;top:0;bottom:0;width:14px}
+.caso .img > .crops > i::before{right:0;top:0;width:14px;height:1px;box-shadow:0 13px 0 var(--paper)}
+.caso .img > .crops > i::after{right:0;top:0;width:1px;height:14px;box-shadow:-13px 0 0 var(--paper)}
+
+/* 7 · Text scramble · char span styling */
+.scramble-wrap > span{display:inline-block;will-change:transform,opacity}
+
+/* 8 · Stamps decorative en sub-secciones */
+.section-stamp{
+  position:absolute;
+  width:120px;height:120px;
+  pointer-events:none;z-index:3;
+}
+.section-stamp.tl{top:40px;left:24px}
+.section-stamp.tr{top:40px;right:24px}
+.section-stamp.bl{bottom:40px;left:24px}
+.section-stamp.br{bottom:40px;right:24px}
+.section-stamp svg{width:100%;height:100%}
+.section-stamp .center{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:"Instrument Serif",serif;font-style:italic;
+  font-size:30px;color:var(--spot);line-height:.9;text-align:center;
+}
+
+/* HOVERS · cursor states upgrade */
+a, button, .cta-brut, .nav-cta, .caso, .tec-cell{cursor:none}
+
+/* =========================================================
+   WOW LAYER 2 · 4 efectos cinematográficos top
+   ========================================================= */
+
+/* WOW 1 · CMYK SEPARATION reveal en H2 al scroll
+   K SIEMPRE visible. Las capas CMY ghost aparecen separadas al entrar
+   al viewport, se mueven al centro y se desvanecen sobre el K negro.
+   El título nunca queda oculto. */
+.cmyk-sep{position:relative;display:inline-block}
+.cmyk-sep .layer.k{
+  position:relative;
+  color:inherit;
+}
+.cmyk-sep .layer.c,
+.cmyk-sep .layer.m,
+.cmyk-sep .layer.y{
+  position:absolute;left:0;top:0;
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  opacity:0;
+  transform:translate(0,0);
+  transition:transform .8s cubic-bezier(.32,.72,0,1), opacity .8s;
+  will-change:transform, opacity;
+}
+.cmyk-sep .layer.c{color:#00B3E6}
+.cmyk-sep .layer.m{color:#E94C9B}
+.cmyk-sep .layer.y{color:#FFDD2E}
+/* "apart" · ghost layers visibles + desplazadas */
+.cmyk-sep[data-state="apart"] .layer.c{opacity:.55;transform:translate(-22px,-12px)}
+.cmyk-sep[data-state="apart"] .layer.m{opacity:.55;transform:translate(18px,8px)}
+.cmyk-sep[data-state="apart"] .layer.y{opacity:.55;transform:translate(-2px,16px)}
+/* "aligned" · ghosts convergen al centro y desaparecen */
+.cmyk-sep[data-state="aligned"] .layer.c,
+.cmyk-sep[data-state="aligned"] .layer.m,
+.cmyk-sep[data-state="aligned"] .layer.y{opacity:0;transform:translate(0,0)}
+
+/* WOW 2 · HERO H1 letter-by-letter print imprint */
+.hero-h1 .letter{
+  display:inline-block;
+  position:relative;
+  opacity:0;
+  transform:translate(var(--lx,0px), var(--ly,0px)) rotate(var(--lr,0deg));
+  will-change:transform, opacity;
+}
+.hero-h1 .letter.imprinted{
+  opacity:1;
+  transform:translate(0,0) rotate(0);
+  transition:transform .55s cubic-bezier(.32,.72,0,1), opacity .35s;
+}
+.hero-h1 .letter::before{
+  content:attr(data-c);
+  position:absolute;left:0;top:0;
+  color:#00B3E6;mix-blend-mode:multiply;
+  transform:translate(var(--cx,0px), var(--cy,0px));
+  opacity:0;
+}
+.hero-h1 .letter::after{
+  content:attr(data-c);
+  position:absolute;left:0;top:0;
+  color:#E94C9B;mix-blend-mode:multiply;
+  transform:translate(var(--mx,0px), var(--my,0px));
+  opacity:0;
+}
+.hero-h1 .letter.imprinted::before,
+.hero-h1 .letter.imprinted::after{opacity:.42;transition:opacity .8s ease}
+
+/* WOW 3 · STICKER PEEL hover casos */
+.caso{
+  perspective:1400px;
+  transform-style:preserve-3d;
+}
+.caso .img{
+  position:relative;
+  transform-origin:bottom left;
+  transform-style:preserve-3d;
+  transition:transform .7s cubic-bezier(.32,.72,0,1);
+  z-index:2;
+}
+.caso .peel-shadow{
+  position:absolute;inset:0;
+  background:linear-gradient(140deg, rgba(10,10,10,.45) 0%, transparent 45%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .5s;
+  z-index:1;
+}
+.caso .peel-corner{
+  position:absolute;top:0;right:0;
+  width:0;height:0;
+  border-style:solid;
+  border-width:0 0 0 0;
+  border-color:transparent var(--paper-deep) transparent transparent;
+  transform-origin:top right;
+  transition:border-width .55s cubic-bezier(.32,.72,0,1);
+  z-index:4;pointer-events:none;
+  filter:drop-shadow(-3px 3px 4px rgba(10,10,10,.3));
+}
+.caso:hover .img{
+  transform:perspective(1200px) rotateX(0deg);
+}
+.caso:hover .peel-corner{
+  border-width:0 80px 80px 0;
+}
+.caso:hover .peel-shadow{opacity:1}
+.caso .img > img{
+  transition:filter .6s, transform .6s, clip-path .55s cubic-bezier(.32,.72,0,1);
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.caso:hover .img > img{
+  clip-path:polygon(0 0, calc(100% - 80px) 0, 100% 80px, 100% 100%, 0 100%);
+}
+
+/* WOW 4 · DRAG SMUDGE layer */
+#smudge-canvas{
+  position:fixed;inset:0;
+  z-index:9990;
+  pointer-events:none;
+  mix-blend-mode:multiply;
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 · BRUSH STROKE vertical · pintando con scroll -->
+<div class="ink-vein" aria-hidden="true">
+  <div class="track"></div>
+  <svg class="brush" viewBox="0 0 32 1000" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="brushGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F25F0C"/>
+        <stop offset="60%" stop-color="#F25F0C"/>
+        <stop offset="100%" stop-color="#C84304"/>
+      </linearGradient>
+      <filter id="brushNoise" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85 0.35" numOctaves="2" seed="3"/>
+        <feDisplacementMap in="SourceGraphic" scale="3"/>
+      </filter>
+      <clipPath id="brushClip">
+        <path id="brushPath" d="M16 0
+          C 18 30, 12 60, 17 90
+          C 22 120, 11 150, 16 180
+          C 20 210, 13 240, 18 270
+          C 14 300, 19 330, 15 360
+          C 21 390, 12 420, 17 450
+          C 19 480, 13 510, 18 540
+          C 14 570, 20 600, 16 630
+          C 22 660, 11 690, 17 720
+          C 19 750, 12 780, 18 810
+          C 14 840, 20 870, 16 900
+          C 18 930, 12 960, 17 1000
+          L 28 1010 L 8 1010 Z"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#brushClip)">
+      <rect id="brushFill" class="stroke" x="0" y="0" width="32" height="0"/>
+    </g>
+  </svg>
+  <div class="drip" id="ink-drop" style="top:0"></div>
+</div>
+
+<!-- WOW 4 · DRAG SMUDGE canvas (drawn on mouse drag) -->
+<canvas id="smudge-canvas" aria-hidden="true"></canvas>
+
+<!-- 2 · FOLIO sticky -->
+<div class="folio" id="folio" aria-hidden="true">
+  <div>FOLIO <span class="num" id="folio-num">01</span></div>
+  <div class="total">/ 06</div>
+  <div class="ch" id="folio-ch">Apertura</div>
+</div>
+
+<!-- 3 · CURSOR risograph dual -->
+<div id="cur-r" aria-hidden="true"></div>
+<div id="cur-b" aria-hidden="true"></div>
+
+<nav class="top">
+  <a href="#" class="brand">
+    <span class="brand-d">D</span>
+    <span class="brand-text">Serigrafía Duato · 1992</span>
+  </a>
+  <div class="nav-links">
+    <a href="#oficio">oficio</a>
+    <a href="#tecnicas">técnicas</a>
+    <a href="#casos">casos</a>
+    <a href="#calc">presupuesto</a>
+    <a href="#contact">contacto</a>
+  </div>
+  <a href="#calc" class="nav-cta">Pide&nbsp;PMS&nbsp;165&nbsp;C</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mark" aria-hidden="true">
+    <span class="a">·· Marcaje ··</span>
+    <span class="b">Alboraya · ES</span>
+  </div>
+  <div>
+    <p class="hero-eyebrow"><b>vol·01</b> · catálogo de tinta · primavera 2026</p>
+    <h1 class="hero-h1">
+      <span><em>Tinta</em></span>
+      <span class="alt">que cuenta</span>
+      <span class="underline"><em>historias</em></span>
+      <span class="alt">treinta&nbsp;años después.</span>
+    </h1>
+    <p class="hero-sub">
+      Serigrafía textil, tampografía, láser CO₂, DTF, sublimación.
+      <strong>Doce técnicas en el mismo polígono.</strong>
+      Mismo equipo desde que abrimos.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#calc" class="cta-brut">Pide presupuesto <span class="arrow">→</span></a>
+      <a href="#oficio" class="cta-brut alt">El oficio <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-stat">
+        <div class="v"><em>30</em>+</div>
+        <div class="l">Años en el mismo polígono industrial</div>
+      </div>
+      <div class="hero-meta-stat">
+        <div class="v"><em>12</em></div>
+        <div class="l">Técnicas bajo el mismo techo</div>
+      </div>
+      <div class="hero-meta-stat">
+        <div class="v"><em>4</em>h</div>
+        <div class="l">Tiempo respuesta presupuesto*</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="stamp">
+      <span>Pantone<br>165 C<small>SPOT INK · 2026</small></span>
+    </div>
+    <!-- Stamp rotating decorativo: MARCAJE · ALBORAYA · 1992 -->
+    <div class="stamp-circle" style="position:absolute;bottom:-40px;left:-40px;z-index:5">
+      <svg viewBox="0 0 140 140">
+        <defs><path id="stamp-path" d="M70,70 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0" /></defs>
+        <text font-family="Departure Mono" font-size="11.5" letter-spacing="3.5" fill="#0E0E12">
+          <textPath href="#stamp-path">MARCAJE · ALBORAYA · 1992 · MARCAJE · ALBORAYA · 1992 · </textPath>
+        </text>
+        <circle cx="70" cy="70" r="48" fill="none" stroke="#0E0E12" stroke-width="1" stroke-dasharray="2 4"/>
+      </svg>
+      <div class="inner">D<sup style="color:#F25F0C;font-size:18px;vertical-align:super">·</sup></div>
+    </div>
+    <div class="frame">
+      <video autoplay muted loop playsinline>
+        <source src="assets/hero/screen-print-flow.mp4" type="video/mp4">
+      </video>
+      <div class="meta">
+        <b>Hoja Nº01</b> · en prensa · 39.50N · 0.34W
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RUNNING HEADER · sustituye marquee -->
+<div class="running-header">
+  <span>Folio 01 / 06</span>
+  <span>SERIGRAFÍA · TAMPOGRAFÍA · LÁSER · DTF · SUBLIMACIÓN · UV · LÁTEX · FRESADO · GOTA · CILÍNDRICA</span>
+  <span><b>Alboraya, Valencia · 46120</b></span>
+</div>
+
+<!-- BANNER A · entre HERO y OFICIO · paper-fold -->
+<section class="between" data-section="banner-a" aria-label="Intermezzo · 1992 abrimos">
+  <video autoplay muted loop playsinline><source src="assets/banners/b2-paper-fold.mp4" type="video/mp4"></video>
+  <div class="between-inner">
+    <div class="num-ch">Capítulo · 02</div>
+    <blockquote>
+      "El primer día abrimos con una pantalla<br>
+      y dos personas. Lo demás <em>vino después</em>."
+    </blockquote>
+    <cite>Vicente Duato · fundador · 1992</cite>
+  </div>
+</section>
+
+<!-- OFICIO -->
+<section class="oficio" id="oficio">
+  <div class="oficio-num" aria-hidden="true">02</div>
+  <div class="oficio-inner">
+    <div>
+      <p class="oficio-eyebrow">El oficio · 1992 → presente</p>
+      <h2>Treinta años. <em>Mismo</em><br><b>polígono</b>.</h2>
+      <div class="manifesto">
+        <p>No hemos crecido subcontratando. Hemos crecido aprendiendo.</p>
+        <p>En 1992 abrimos con una sola pantalla de serigrafía manual. Hoy tenemos doce técnicas distintas bajo el mismo techo. Lo único que no cambió es quién mira la pieza antes de salir del taller.</p>
+        <p>Eso lo hace una persona. Siempre la misma persona. Lo va a hacer mañana también.</p>
+      </div>
+    </div>
+    <div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">1992</div><div><h4>Apertura · Camino del Mar 36</h4><p>Serigrafía manual sobre textil. Una pantalla, dos personas.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1998</div><div><h4>Primer pulpo automático</h4><p>Seis brazos. Producción multiplicada por seis.</p></div></div>
+        <div class="tl-item"><div class="tl-year">2005</div><div><h4>Tampografía industrial</h4><p>Lo que la pantalla no podía tocar.</p></div></div>
+        <div class="tl-item"><div class="tl-year">2012</div><div><h4>Láser CO₂</h4><p>Premium signage y regalo corporativo de oficio.</p></div></div>
+        <div class="tl-item"><div class="tl-year">2018</div><div><h4>DTF, sublimación, látex</h4><p>La era del drop D2C empezaba.</p></div></div>
+        <div class="tl-item"><div class="tl-year">2024</div><div><h4>Circuito cerrado de aguas</h4><p>100% del agua de lavado reciclada.</p></div></div>
+        <div class="tl-item"><div class="tl-year">2026</div><div><h4>Esta web</h4><p>Contar el oficio en condiciones.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER B · entre OFICIO y TÉCNICAS · halftone CMYK pulse -->
+<section class="between" data-section="banner-b" aria-label="Intermezzo · CMYK">
+  <video autoplay muted loop playsinline><source src="assets/banners/b1-halftone.mp4" type="video/mp4"></video>
+  <div class="between-inner">
+    <div class="num-ch">Capítulo · 03</div>
+    <blockquote>
+      Doce maneras<br>de dejar <b>marca</b>.<br>
+      <em>Las contamos una a una.</em>
+    </blockquote>
+    <cite>Catálogo técnico Duato · primavera 2026</cite>
+  </div>
+</section>
+
+<!-- TÉCNICAS · 12 cells poster grid -->
+<section class="tecnicas" id="tecnicas">
+  <div class="tec-head-alt">
+    <p class="ey">Catálogo técnico · vol·01</p>
+    <h2><em>Doce</em> maneras<br>de dejar <b>marca</b>.</h2>
+    <p class="sub">Pasa el cursor sobre cada técnica para ver el vídeo macro real del taller.</p>
+  </div>
+  <div class="tec-grid" id="tec-grid"></div>
+</section>
+
+<!-- BANNER C · entre TÉCNICAS y CASOS · ink flow CMYK -->
+<section class="between" data-section="banner-c" aria-label="Intermezzo · ink flow">
+  <video autoplay muted loop playsinline><source src="assets/banners/b3-ink-flow.mp4" type="video/mp4"></video>
+  <div class="between-inner">
+    <div class="num-ch">Capítulo · 04</div>
+    <blockquote>
+      "La pieza que sale del taller<br>
+      lleva mi <em>nombre</em>. Aunque<br>
+      no lo veas escrito."
+    </blockquote>
+    <cite>Manifiesto Duato · sin fecha</cite>
+  </div>
+</section>
+
+<!-- CASOS -->
+<section class="casos" id="casos">
+  <div class="casos-head">
+    <p class="ey">Trabajos reales · vol·01</p>
+    <h2>Cada uno con<br>su <em>historia</em>.</h2>
+    <p>Cada uno con su cliente real. Logotipos pixelados o sustituidos cuando no están autorizados.</p>
+    <div class="casos-filter">
+      <button data-icp="all" class="active">Todos</button>
+      <button data-icp="agencia">Agencias</button>
+      <button data-icp="empresa">Empresas</button>
+      <button data-icp="d2c">D2C</button>
+      <button data-icp="evento">Eventos</button>
+    </div>
+  </div>
+  <div class="casos-grid" id="casos-grid"></div>
+</section>
+
+<!-- BANNER D · entre CASOS y FOOTER · clothesline (industrial pause) -->
+<section class="between" data-section="banner-d" aria-label="Intermezzo · clothesline">
+  <video autoplay muted loop playsinline><source src="assets/banners/b4-clothesline.mp4" type="video/mp4"></video>
+  <div class="between-inner">
+    <div class="num-ch">Capítulo · 05</div>
+    <blockquote>
+      Treinta años después,<br>
+      seguimos contando<br>
+      la <em>misma</em> historia.<br>
+      <b>Distinta</b> cada vez.
+    </blockquote>
+    <cite>Hasta el siguiente capítulo · Alboraya · 39.50N 0.34W</cite>
+  </div>
+</section>
+
+<!-- Crops marks helpers en cada caso -->
+<script>document.querySelectorAll(".caso .img").forEach(el=>{const i=document.createElement("div");i.className="crops";i.innerHTML="<i></i>";el.prepend(i);});</script>
+
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand">Serigrafía <b>Duato</b></div>
+      <p class="ft-tag">Marcaje profesional desde 1992. Camino del Mar 36, Polígono Industrial III, 46120 Alboraya · Valencia.</p>
+    </div>
+    <div class="ft-col">
+      <h5>Sitio</h5>
+      <ul>
+        <li><a href="#oficio">Oficio</a></li>
+        <li><a href="#tecnicas">Técnicas</a></li>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#calc">Presupuesto</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="tel:+34961860275">+34 96 186 02 75</a></li>
+        <li><a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a></li>
+        <li>L-V 08:00 — 17:00</li>
+        <li>Visitas con cita previa</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-mega"><b>Duato</b></div>
+  <div class="ft-bottom">
+    <div>© 2026 SERIGRAFÍA DUATO S.L.</div>
+    <div>VARIANTE ALT · RISOGRAPH EDITORIAL · BOOMATIK</div>
+    <div>VALENCIA · ES</div>
+  </div>
+</footer>
+
+<!-- LENIS smooth scroll CDN -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+const TECHS = [
+  {slug:"01-serigrafia-textil",num:"01",name:"Serigrafía",emTitle:"textil",cat:"textil",desc:"Sobre algodón, mezcla, poliéster. Tintas plastisol o base agua. Aguanta lavados industriales."},
+  {slug:"02-tampografia",num:"02",name:"Tampografía",emTitle:"",cat:"industrial",desc:"La técnica de las curvas. Bolígrafos, llaveros, tapas de termo, piezas curvas."},
+  {slug:"03-laser-co2",num:"03",name:"Láser CO₂",emTitle:"",cat:"premium",desc:"Corta, marca, graba. Sobre metacrilato, madera, cuero. Precisión 0,1 mm."},
+  {slug:"04-laser-fibra",num:"04",name:"Láser fibra",emTitle:"",cat:"industrial",desc:"Para metal y plásticos técnicos. Marca permanente sin tinta."},
+  {slug:"05-dtf",num:"05",name:"DTF",emTitle:"",cat:"textil",desc:"Cualquier diseño, cualquier color, cualquier prenda. Sin pre-tratado."},
+  {slug:"06-sublimacion",num:"06",name:"Sublimación",emTitle:"",cat:"textil",desc:"La tinta entra dentro del tejido. Sobre poliéster blanco. Color total sin tacto."},
+  {slug:"07-rotulacion",num:"07",name:"Rotulación",emTitle:"",cat:"industrial",desc:"Vinilo cortado o impreso. Vehículos, escaparates, carpas, paneles."},
+  {slug:"08-uvi",num:"08",name:"Tinta",emTitle:"UV",cat:"premium",desc:"Tinta sólida que cura con luz UV. Sobre PVC, metacrilato, madera, metal, vidrio."},
+  {slug:"09-latex",num:"09",name:"Tinta látex",emTitle:"",cat:"industrial",desc:"Sin disolventes, sin olor. Apta para interiores sensibles."},
+  {slug:"10-fresado",num:"10",name:"Fresado",emTitle:"",cat:"premium",desc:"Corte 3D sobre acrílico. Volumen, profundidad, piezas a medida."},
+  {slug:"11-gota-resina",num:"11",name:"Gota de",emTitle:"resina",cat:"premium",desc:"Capa transparente sobre el marcaje. Volumen, brillo, tacto premium."},
+  {slug:"12-cilindrica",num:"12",name:"Cilíndrica",emTitle:"",cat:"industrial",desc:"Para superficies redondas. Tazas, vasos, botellas, termos."}
+];
+
+const grid = document.getElementById("tec-grid");
+TECHS.forEach(t => {
+  const cell = document.createElement("div");
+  cell.className = "tec-cell";
+  cell.innerHTML = `
+    <video class="tec-bg-video" autoplay muted loop playsinline preload="none">
+      <source src="assets/tecnicas/${t.slug}.mp4" type="video/mp4">
+    </video>
+    <div>
+      <div class="tec-num">N° ${t.num}</div>
+      <div class="tec-cat">${t.cat.toUpperCase()}</div>
+    </div>
+    <div>
+      <h3>${t.emTitle ? `${t.name} <em>${t.emTitle}</em>` : t.name}</h3>
+      <div class="desc">${t.desc}</div>
+      <div class="read">leer más</div>
+    </div>
+  `;
+  grid.appendChild(cell);
+});
+
+const CASOS = [
+  {icp:"agencia",img:"c1-kit-congreso.png",alt:"Kit congresista",tag:"Agencia · Merch evento",title:"Kit congresista IBM Cloud",desc:"Estuche, libreta, polo y tote. Cuatro técnicas en un único lote.",meta:["Madrid 2025","1.500 ud","4 técnicas"]},
+  {icp:"empresa",img:"c2-uniforme.png",alt:"Uniforme operarios",tag:"Empresa · Ropa laboral",title:"Uniforme 80 operarios",desc:"Polos piqué, sudaderas polares y chalecos reflectantes AENOR.",meta:["Castellón 2024","80 prendas","Serigrafía"]},
+  {icp:"d2c",img:"c3-drop-d2c.png",alt:"Drop camiseta D2C",tag:"D2C · Drop edición limitada",title:"Cápsula 200 camisetas",desc:"Algodón orgánico 200 g, ilustración 3 colores. Sold out 48h.",meta:["Valencia 2025","200 ud","Serigrafía"]},
+  {icp:"evento",img:"c4-festival.png",alt:"Festival merch",tag:"Evento · Festival música",title:"Festival GranRiu · merch",desc:"Camisetas, tote, pulseras, acreditaciones, lonas escenario.",meta:["Sagunto 2025","3.200 ud","5 técnicas"]},
+  {icp:"agencia",img:"c5-welcome-kit.png",alt:"Welcome kit bebidas",tag:"Agencia · Brand launch",title:"Welcome kit marca de bebidas",desc:"Lona serigrafiada, libreta UV, vaso cilíndrica, parche resina.",meta:["Barcelona 2025","250 ud","4 técnicas"]},
+  {icp:"empresa",img:"c6-senaletica.png",alt:"Señalética planta",tag:"Empresa · Señalética interior",title:"Señalética planta 4 plantas",desc:"Direccional, evacuación, identificación. PVC compacto + UV.",meta:["Paterna 2024","180 piezas","UV + láser"]}
+];
+
+const casosGrid = document.getElementById("casos-grid");
+function renderCasos(filter="all"){
+  casosGrid.innerHTML = "";
+  CASOS.filter(c => filter==="all" || c.icp===filter).forEach(c => {
+    const div = document.createElement("article");
+    div.className = "caso";
+    div.innerHTML = `
+      <div class="img"><img src="assets/casos/${c.img}" alt="${c.alt}" loading="lazy"/></div>
+      <div class="body">
+        <div class="tag">${c.tag}</div>
+        <h3>${c.title}</h3>
+        <div class="desc">${c.desc}</div>
+        <div class="meta">${c.meta.map(m=>`<span>${m}</span>`).join("")}</div>
+      </div>
+    `;
+    casosGrid.appendChild(div);
+  });
+}
+renderCasos();
+
+document.querySelectorAll(".casos-filter button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.querySelectorAll(".casos-filter button").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    renderCasos(b.dataset.icp);
+  });
+});
+
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ==== LENIS smooth scroll ==== */
+let lenis = null;
+if(!reduced){
+  lenis = new Lenis({
+    duration: 1.4,
+    smoothWheel: true,
+    smoothTouch: false,
+    wheelMultiplier: 0.85,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10*t))
+  });
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+}
+
+/* ==== 1 · CURSOR RISOGRAPH DUAL ==== */
+const cr = document.getElementById("cur-r");
+const cb = document.getElementById("cur-b");
+let mx=0,my=0, rx=0,ry=0, bx=0,by=0;
+addEventListener("pointermove", e=>{ mx=e.clientX; my=e.clientY; });
+function curRaf(){
+  rx += (mx-rx)*0.22;
+  ry += (my-ry)*0.22;
+  bx += (mx-bx)*0.12;
+  by += (my-by)*0.12;
+  cr.style.transform = `translate(${rx-12}px,${ry-12}px)`;
+  cb.style.transform = `translate(${bx-12}px,${by-12}px)`;
+  requestAnimationFrame(curRaf);
+}
+if(!reduced){ requestAnimationFrame(curRaf); }
+document.querySelectorAll("a, button, .cta-brut, .caso, .tec-cell, .frame").forEach(el=>{
+  el.addEventListener("mouseenter", ()=>{ cr.classList.add("big"); cb.classList.add("big"); });
+  el.addEventListener("mouseleave", ()=>{ cr.classList.remove("big"); cb.classList.remove("big"); });
+});
+
+/* ==== 2 · BRUSH STROKE vertical scroll-painting ==== */
+const brushFill = document.getElementById("brushFill");
+const inkDrop = document.getElementById("ink-drop");
+let lastBrushP = 0;
+function updateBrush(){
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const p = Math.min(1, Math.max(0, scrollY/max));
+  // Set height of brush fill (0 → 1000)
+  brushFill.setAttribute("height", String(p * 1000));
+  inkDrop.style.top = (p * 100) + "vh";
+  // Splash: cada vez que cruzamos 5% extra, dejamos una salpicadura
+  if(Math.floor(p*20) > Math.floor(lastBrushP*20)){
+    spawnSplash(p);
+  }
+  lastBrushP = p;
+}
+function spawnSplash(p){
+  const vein = document.querySelector(".ink-vein");
+  if(!vein) return;
+  const sp = document.createElement("div");
+  sp.className = "splash";
+  const offsetX = (Math.random()-0.5) * 50;
+  const offsetY = (Math.random()-0.5) * 20;
+  const size = 4 + Math.random()*8;
+  sp.style.cssText = `left:${offsetX+18}px;top:${p*100}vh;width:${size}px;height:${size}px;background:var(--spot);border-radius:50%;position:absolute;mix-blend-mode:multiply;opacity:.55;animation:splashOut 1.4s ease forwards;`;
+  vein.appendChild(sp);
+  setTimeout(()=> sp.remove(), 1500);
+}
+addEventListener("scroll", updateBrush, {passive:true});
+addEventListener("resize", updateBrush);
+updateBrush();
+const splashStyle = document.createElement("style");
+splashStyle.textContent = `@keyframes splashOut{0%{opacity:.55;transform:translate(-50%,0) scale(.4)}100%{opacity:0;transform:translate(-50%,${(Math.random()-0.5)*30}px) scale(1.2)}}`;
+document.head.appendChild(splashStyle);
+
+/* ==== 3 · FOLIO counter · scroll-spy de capítulos ==== */
+const folioNum = document.getElementById("folio-num");
+const folioCh = document.getElementById("folio-ch");
+const CHAPTERS = [
+  {sel:".hero", num:"01", title:"Apertura"},
+  {sel:'[data-section="banner-a"]', num:"02", title:"El primer día"},
+  {sel:"#oficio", num:"02", title:"El oficio"},
+  {sel:'[data-section="banner-b"]', num:"03", title:"Doce maneras"},
+  {sel:"#tecnicas", num:"03", title:"Catálogo técnico"},
+  {sel:'[data-section="banner-c"]', num:"04", title:"Manifiesto"},
+  {sel:"#casos", num:"04", title:"Trabajos reales"},
+  {sel:'[data-section="banner-d"]', num:"05", title:"Outro"},
+  {sel:"footer", num:"06", title:"Contacto · Cierre"}
+];
+const sections = CHAPTERS.map(c => ({...c, el: document.querySelector(c.sel)})).filter(c=>c.el);
+function updateFolio(){
+  const y = scrollY + innerHeight*0.35;
+  let active = sections[0];
+  sections.forEach(s => { if(s.el.offsetTop <= y) active = s; });
+  folioNum.textContent = active.num;
+  folioCh.textContent = active.title;
+}
+addEventListener("scroll", updateFolio, {passive:true});
+updateFolio();
+
+/* ==== 4 · TEXT SCRAMBLE reveal en H2 de las between/secciones ==== */
+const GLYPHS = "▓▒░◢◣◤◥▰▱∎▣◈▩";
+function scrambleEl(el){
+  const original = el.textContent.trim();
+  const len = original.length;
+  let frame = 0;
+  const total = 18;
+  const tick = ()=>{
+    frame++;
+    const progress = Math.min(1, frame/total);
+    let out = "";
+    for(let i=0;i<len;i++){
+      const ch = original[i];
+      const reveal = i/len;
+      if(progress >= reveal) out += ch;
+      else if(ch === " " || ch === "\n") out += ch;
+      else out += GLYPHS[(frame*3 + i) % GLYPHS.length];
+    }
+    el.textContent = out;
+    if(frame < total) requestAnimationFrame(tick);
+    else el.textContent = original;
+  };
+  tick();
+}
+const scrambled = new WeakSet();
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !scrambled.has(e.target)){
+      scrambled.add(e.target);
+      const tag = e.target.tagName;
+      if(tag === "BLOCKQUOTE") {
+        // skip blockquote (multi-line, romperia)
+      } else {
+        const txt = e.target.querySelector(".scram-target");
+        if(txt) scrambleEl(txt);
+      }
+    }
+  });
+}, {threshold:0.4});
+document.querySelectorAll(".oficio h2, .casos-head h2, .tec-head-alt h2, .hero-h1").forEach(el=>{
+  // Targetear sólo el último span (para no romper el H1 multiline)
+  const spans = el.querySelectorAll("span");
+  if(spans.length){
+    const last = spans[spans.length-1];
+    last.classList.add("scram-target");
+    obs.observe(last.parentElement);
+  }
+});
+
+/* ==== 5 · BETWEEN banner blockquote reveal on view ==== */
+const betweenObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity = "1";
+      e.target.style.transform = "translateY(0)";
+    }
+  });
+}, {threshold:0.3});
+document.querySelectorAll(".between blockquote, .between cite, .between .num-ch").forEach(el=>{
+  el.style.opacity = "0";
+  el.style.transform = "translateY(20px)";
+  el.style.transition = "opacity .9s cubic-bezier(.32,.72,0,1), transform .9s cubic-bezier(.32,.72,0,1)";
+  betweenObs.observe(el);
+});
+
+/* ============ WOW 1 · CMYK SEPARATION en H2 catedral ============
+   Cada H2 grande de sección se renderiza con 4 capas: K (negro normal)
+   + C + M + Y. Al hacer scroll cerca, las capas CMY se desplazan
+   ("error de registro"), luego se realinean. */
+function wrapCMYK(h){
+  const html = h.innerHTML;
+  const wrap = document.createElement("span");
+  wrap.className = "cmyk-sep";
+  // Sin data-state inicial · ghosts invisibles + K visible · título legible siempre
+  const c = document.createElement("span"); c.className="layer c"; c.innerHTML = html;
+  const m = document.createElement("span"); m.className="layer m"; m.innerHTML = html;
+  const y = document.createElement("span"); y.className="layer y"; y.innerHTML = html;
+  const k = document.createElement("span"); k.className="layer k"; k.innerHTML = html;
+  h.innerHTML = "";
+  wrap.appendChild(c);
+  wrap.appendChild(m);
+  wrap.appendChild(y);
+  wrap.appendChild(k);
+  h.appendChild(wrap);
+  return wrap;
+}
+document.querySelectorAll(".oficio h2, .tec-head-alt h2, .casos-head h2").forEach(h=>{
+  wrapCMYK(h);
+});
+const cmykSeen = new WeakSet();
+const cmykObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    const wrap = e.target.querySelector(".cmyk-sep");
+    if(!wrap || cmykSeen.has(wrap)) return;
+    if(e.isIntersecting){
+      cmykSeen.add(wrap);
+      // Disparo único · apart 80ms → aligned tras 720ms
+      wrap.dataset.state = "apart";
+      setTimeout(()=>{ wrap.dataset.state = "aligned"; }, 720);
+    }
+  });
+}, {threshold:0.35});
+document.querySelectorAll(".oficio h2, .tec-head-alt h2, .casos-head h2").forEach(h=> cmykObs.observe(h));
+
+/* ============ WOW 2 · HERO H1 letter-by-letter imprint ============
+   Reemplazamos cada char por <span class="letter"> con --lx/ly/lr
+   aleatorios. IntersectionObserver al cargar dispara stagger imprint. */
+function letterize(el){
+  // Solo top-level text nodes son letterizados. Conservamos em.
+  const fragments = [];
+  el.childNodes.forEach(node => {
+    if(node.nodeType === Node.TEXT_NODE){
+      const text = node.textContent;
+      const wrap = document.createDocumentFragment();
+      for(const ch of text){
+        if(ch === " "){
+          wrap.appendChild(document.createTextNode(" "));
+        } else {
+          const s = document.createElement("span");
+          s.className = "letter";
+          s.textContent = ch;
+          s.dataset.c = ch;
+          // Posiciones aleatorias de "estampado mal alineado"
+          s.style.setProperty("--lx", ((Math.random()-.5)*16).toFixed(1)+"px");
+          s.style.setProperty("--ly", ((Math.random()-.5)*24-6).toFixed(1)+"px");
+          s.style.setProperty("--lr", ((Math.random()-.5)*8).toFixed(1)+"deg");
+          s.style.setProperty("--cx", ((Math.random()-.5)*4).toFixed(1)+"px");
+          s.style.setProperty("--cy", ((Math.random()-.5)*4).toFixed(1)+"px");
+          s.style.setProperty("--mx", ((Math.random()-.5)*4).toFixed(1)+"px");
+          s.style.setProperty("--my", ((Math.random()-.5)*4).toFixed(1)+"px");
+          wrap.appendChild(s);
+        }
+      }
+      fragments.push({node, wrap});
+    } else if(node.nodeType === Node.ELEMENT_NODE){
+      letterize(node);  // recursive (em, b)
+    }
+  });
+  fragments.forEach(f => f.node.parentNode.replaceChild(f.wrap, f.node));
+}
+const h1 = document.querySelector(".hero-h1");
+if(h1){
+  letterize(h1);
+  const letters = h1.querySelectorAll(".letter");
+  letters.forEach((l,i)=>{
+    setTimeout(()=> l.classList.add("imprinted"), 250 + i*38);
+  });
+  // Fallback safety: si tras 4s alguna sigue sin imprinted, forzar
+  setTimeout(()=>{
+    h1.querySelectorAll(".letter:not(.imprinted)").forEach(l => l.classList.add("imprinted"));
+  }, 4000);
+}
+
+/* ============ WOW 3 · STICKER PEEL hover casos ============ */
+function ensurePeel(){
+  document.querySelectorAll(".caso .img").forEach(el=>{
+    if(el.querySelector(".peel-corner")) return;
+    const corner = document.createElement("div");
+    corner.className = "peel-corner";
+    const shadow = document.createElement("div");
+    shadow.className = "peel-shadow";
+    el.appendChild(shadow);
+    el.appendChild(corner);
+  });
+}
+ensurePeel();
+// Re-ensure cuando los casos se filtran (renderCasos rebuild)
+const oldRenderCasos = renderCasos;
+renderCasos = function(filter="all"){
+  oldRenderCasos(filter);
+  ensurePeel();
+};
+
+/* ============ WOW 4 · DRAG SMUDGE canvas (click+drag = pinta) ============ */
+const sm = document.getElementById("smudge-canvas");
+const smCtx = sm.getContext("2d");
+function smResize(){ sm.width = innerWidth; sm.height = innerHeight; }
+smResize(); addEventListener("resize", smResize);
+let smDown = false, smLastX = 0, smLastY = 0;
+addEventListener("pointerdown", e=>{
+  if(e.target.closest("a, button, input, textarea, .cta-brut, .nav-cta")) return;
+  smDown = true; smLastX = e.clientX; smLastY = e.clientY;
+});
+addEventListener("pointerup", ()=>{ smDown = false; });
+addEventListener("pointerleave", ()=>{ smDown = false; });
+addEventListener("pointermove", e=>{
+  if(!smDown) return;
+  const dx = e.clientX - smLastX;
+  const dy = e.clientY - smLastY;
+  const dist = Math.hypot(dx, dy);
+  const steps = Math.ceil(dist / 4);
+  for(let i=0;i<steps;i++){
+    const px = smLastX + (dx*i)/steps;
+    const py = smLastY + (dy*i)/steps;
+    const r = 6 + Math.random()*8;
+    smCtx.fillStyle = `rgba(242,95,12,${0.18 + Math.random()*0.12})`;
+    smCtx.beginPath();
+    smCtx.arc(px + (Math.random()-.5)*4, py + (Math.random()-.5)*4, r, 0, Math.PI*2);
+    smCtx.fill();
+  }
+  smLastX = e.clientX; smLastY = e.clientY;
+});
+// Slow fade
+function smFade(){
+  smCtx.globalCompositeOperation = "destination-out";
+  smCtx.fillStyle = "rgba(0,0,0,0.012)";
+  smCtx.fillRect(0,0,sm.width,sm.height);
+  smCtx.globalCompositeOperation = "source-over";
+  requestAnimationFrame(smFade);
+}
+if(!reduced){ requestAnimationFrame(smFade); }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+/* ============================================================================
+   SERIGRAFÍA DUATO · v4 industrial · CAPA FX + GRAFISMOS
+   Motion sobrio = precisión mecánica, no espectáculo. Reutiliza los tokens
+   del sistema "Acero & Seguridad" (--safety, --ink, --steel, --dark, --line…).
+   Todo respeta prefers-reduced-motion.
+============================================================================ */
+
+/* ---------- 1 · REVELADOS CON VARIEDAD (rompe el "todo igual") ---------- */
+[data-fx] { opacity: 0; will-change: transform, opacity; transition:
+    opacity 620ms var(--ease, cubic-bezier(.2,0,0,1)),
+    transform 620ms var(--ease, cubic-bezier(.2,0,0,1)),
+    clip-path 720ms var(--ease, cubic-bezier(.2,0,0,1)); }
+[data-fx="up"]     { transform: translateY(20px); }
+[data-fx="down"]   { transform: translateY(-20px); }
+[data-fx="left"]   { transform: translateX(28px); }
+[data-fx="right"]  { transform: translateX(-28px); }
+[data-fx="scale"]  { transform: scale(.96); }
+[data-fx="clip"]   { clip-path: inset(0 100% 0 0); }          /* barrido L→R, como una pasada de rasqueta */
+[data-fx="clip-up"]{ clip-path: inset(100% 0 0 0); transform: translateY(8px); }
+[data-fx="blur"]   { transform: translateY(14px); filter: blur(6px); }
+.fx-in { opacity: 1 !important; transform: none !important;
+    clip-path: inset(0 0 0 0) !important; filter: none !important; }
+
+/* Escalonado de hijos (listas, grids, chips) */
+[data-fx-stagger] > * { opacity: 0; transform: translateY(16px);
+    transition: opacity 520ms var(--ease), transform 520ms var(--ease); }
+[data-fx-stagger].fx-in > * { opacity: 1; transform: none; }
+[data-fx-stagger].fx-in > *:nth-child(1){transition-delay:.00s}
+[data-fx-stagger].fx-in > *:nth-child(2){transition-delay:.06s}
+[data-fx-stagger].fx-in > *:nth-child(3){transition-delay:.12s}
+[data-fx-stagger].fx-in > *:nth-child(4){transition-delay:.18s}
+[data-fx-stagger].fx-in > *:nth-child(5){transition-delay:.24s}
+[data-fx-stagger].fx-in > *:nth-child(6){transition-delay:.30s}
+[data-fx-stagger].fx-in > *:nth-child(7){transition-delay:.36s}
+[data-fx-stagger].fx-in > *:nth-child(8){transition-delay:.42s}
+[data-fx-stagger].fx-in > *:nth-child(n+9){transition-delay:.48s}
+
+/* ---------- 2 · IMÁGENES: encuadre técnico + zoom + barrido láser ---------- */
+.media {
+  position: relative; overflow: hidden; border: 1px solid var(--line);
+  border-radius: var(--radius-2, 4px); background: var(--surface-2); isolation: isolate;
+}
+.media img { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 900ms var(--ease); backface-visibility: hidden; }
+.media[data-ar="4/3"] img { aspect-ratio: 4/3; }
+.media[data-ar="3/4"] img { aspect-ratio: 3/4; }
+.media[data-ar="16/9"] img { aspect-ratio: 16/9; }
+.media[data-ar="1/1"] img { aspect-ratio: 1/1; }
+.media[data-ar="21/9"] img { aspect-ratio: 21/9; }
+.media:hover img { transform: scale(1.045); }
+/* Caption técnico (metadato mono, estilo ficha) */
+.media .media-cap {
+  position: absolute; left: 0; bottom: 0; right: 0; z-index: 3;
+  padding: 10px 14px; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .02em;
+  color: #fff; display: flex; align-items: center; gap: 8px;
+  background: linear-gradient(to top, rgba(10,12,15,.82), rgba(10,12,15,0));
+}
+.media .media-cap .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--safety); flex: none; }
+/* Etiqueta de técnica arriba-izquierda */
+.media .media-tag {
+  position: absolute; top: 10px; left: 10px; z-index: 3;
+  font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em;
+  padding: 4px 8px; background: rgba(22,25,30,.72); color: #fff; border-radius: 2px; backdrop-filter: blur(2px);
+}
+
+/* Marcas de registro (crop marks) — grafismo nativo de una imprenta */
+.regmark { position: relative; }
+.regmark::before, .regmark::after {
+  content: ""; position: absolute; width: 14px; height: 14px; z-index: 4; pointer-events: none;
+  border-color: var(--safety); border-style: solid; opacity: .9;
+}
+.regmark::before { top: 8px; left: 8px; border-width: 1.5px 0 0 1.5px; }
+.regmark::after  { bottom: 8px; right: 8px; border-width: 0 1.5px 1.5px 0; }
+
+/* Barrido láser: una línea fina que "marca" la imagen al entrar en viewport */
+.scan { position: relative; }
+.scan::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; z-index: 5;
+  background: linear-gradient(90deg, transparent, var(--safety), transparent);
+  box-shadow: 0 0 12px 1px rgba(232,89,12,.6); opacity: 0; pointer-events: none;
+}
+.scan.fx-in::after { animation: laser-pass 1400ms var(--ease) .2s 1 both; }
+@keyframes laser-pass {
+  0% { top: 0; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { top: 100%; opacity: 0; }
+}
+
+/* ---------- 3 · TICKER / MARQUEE industrial (banda de datos en movimiento) ---------- */
+.ticker { overflow: hidden; border-block: 1px solid var(--line-2, #2A2F38); background: var(--dark); }
+.ticker .ticker-track { display: inline-flex; gap: 0; white-space: nowrap; will-change: transform;
+  animation: ticker-scroll 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker .ti {
+  display: inline-flex; align-items: center; gap: 12px; padding: 14px 28px;
+  font-family: var(--font-mono); font-size: .8125rem; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--steel-on-dark, #A8AFB9);
+}
+.ticker .ti b { color: var(--ink-on-dark, #F4F5F7); font-weight: 500; }
+.ticker .ti::before { content: ""; width: 6px; height: 6px; background: var(--safety); flex: none; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- 4 · DATA-MATRIX (grafismo de marcaje/trazabilidad) ---------- */
+.datamatrix { display: grid; gap: 3px; width: max-content; }
+.datamatrix .dm-cell { width: var(--dm, 10px); height: var(--dm, 10px); background: var(--ink); border-radius: 1px;
+  opacity: 0; transform: scale(.4); transition: opacity 360ms var(--ease), transform 360ms var(--ease); }
+.datamatrix.fx-in .dm-cell.on { opacity: 1; transform: none; }
+.datamatrix.fx-in .dm-cell.off { opacity: .07; transform: none; }
+.datamatrix .dm-cell.accent { background: var(--safety); }
+.section--dark .datamatrix .dm-cell { background: var(--ink-on-dark, #F4F5F7); }
+.section--dark .datamatrix .dm-cell.accent { background: var(--safety); }
+
+/* ---------- 5 · REPETIBILIDAD: misma marca ×N (promesa núcleo, animada) ---------- */
+.repeat-strip { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.repeat-strip .mark {
+  width: 54px; height: 54px; border: 1px solid var(--line); border-radius: var(--radius-2,4px);
+  display: grid; place-items: center; background: var(--surface);
+  opacity: 0; transform: translateY(10px) scale(.9); transition: opacity 300ms var(--ease), transform 300ms var(--ease);
+}
+.section--dark .repeat-strip .mark { background: rgba(244,245,247,.03); border-color: var(--line-2,#2A2F38); }
+.repeat-strip.fx-in .mark { opacity: 1; transform: none; }
+.repeat-strip .mark svg { width: 26px; height: 26px; stroke: var(--safety); stroke-width: 1.6; fill: none; }
+.repeat-strip .mark.ghost { border-style: dashed; }
+.repeat-strip .mark.ghost svg { stroke: var(--steel); opacity: .5; }
+.repeat-strip .rep-plus { font-family: var(--font-mono); color: var(--steel); font-size: .9rem; }
+
+/* ---------- 6 · SPOTLIGHT en secciones oscuras (blueprint que reacciona) ---------- */
+.spotlight { position: relative; }
+.spotlight::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 30%) var(--my, 30%),
+    rgba(232,89,12,.10), transparent 60%);
+  opacity: 0; transition: opacity 500ms var(--ease);
+}
+.spotlight.is-live::before { opacity: 1; }
+.spotlight > * { position: relative; z-index: 1; }
+
+/* ---------- 7 · NÚMERO DE SECCIÓN + línea que se dibuja ---------- */
+.section-no { font-family: var(--font-mono); font-size: .8125rem; color: var(--safety);
+  letter-spacing: .06em; display: inline-flex; align-items: center; gap: 10px; }
+.section-no::after { content: ""; width: 0; height: 1px; background: var(--line);
+  transition: width 800ms var(--ease); }
+.section-no.fx-in::after { width: 72px; }
+.section--dark .section-no::after { background: var(--line-2, #2A2F38); }
+
+/* ---------- 8 · TARJETAS: barrido de acento + realce índice ---------- */
+.card, .cap-group, .sector-card, .surface-row { position: relative; }
+.card::after, .sector-card::after {
+  content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 0; background: var(--safety);
+  transition: width 320ms var(--ease); z-index: 2;
+}
+.card:hover::after, .sector-card:hover::after { width: 100%; }
+.card:hover .sol-index, .card:hover .card-icon { color: var(--safety); }
+.card:hover .card-icon { stroke: var(--safety); }
+
+/* ---------- 9 · CONTADORES ---------- */
+.count { font-variant-numeric: tabular-nums lining-nums; }
+
+/* ---------- 10 · HERO: capa de grano + vídeo/imagen fija ---------- */
+.hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; opacity: .32;
+  filter: grayscale(.2) contrast(1.05); }
+.hero-media::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(22,25,30,.72), rgba(22,25,30,.92)); }
+.hero.has-media > .container { position: relative; z-index: 1; }
+
+/* ---------- 11 · BOTÓN con micro-empuje de flecha ---------- */
+.btn .icon { transition: transform 220ms var(--ease); }
+.btn:hover .icon { transform: translateX(3px); }
+
+/* ---------- 12 · SECTOR CARD (casos) ---------- */
+.sector-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-2,4px);
+  background: var(--surface); display: flex; flex-direction: column; }
+.sector-card .media { border: none; border-radius: 0; }
+.sector-card .sector-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; }
+.sector-card .sector-kicker { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--safety); }
+.sector-card h3 { font-size: 1.25rem; }
+.sector-card p { color: var(--steel); font-size: .9375rem; }
+.sector-card .sector-tech { margin-top: 6px; font-family: var(--font-mono); font-size: .78rem; color: var(--steel);
+  border-top: 1px solid var(--line); padding-top: 10px; }
+
+/* ---------- 12b · VÍDEO como media (b-roll de técnica, ya creado) ---------- */
+.media video { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 900ms var(--ease); }
+.media:hover video { transform: scale(1.04); }
+.media[data-ar="4/3"] video { aspect-ratio: 4/3; }
+.media[data-ar="16/9"] video { aspect-ratio: 16/9; }
+.media[data-ar="3/4"] video { aspect-ratio: 3/4; }
+.media[data-ar="1/1"] video { aspect-ratio: 1/1; }
+
+/* Rejilla de técnicas en movimiento */
+.tech-video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gutter); }
+.tech-video-grid .media { display: block; }
+.tech-video-grid .vlabel { position: absolute; left: 10px; bottom: 10px; z-index: 3;
+  font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
+  color: #fff; background: rgba(22,25,30,.72); padding: 4px 8px; border-radius: 2px; backdrop-filter: blur(2px); }
+.tech-video-grid .vno { position: absolute; top: 10px; right: 12px; z-index: 3;
+  font-family: var(--font-mono); font-size: .72rem; color: var(--safety); }
+@media (max-width: 900px) { .tech-video-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .tech-video-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- 13 · LOGO en cabecera/footer ---------- */
+.brand-logo { height: 30px; width: auto; display: block; }
+.site-footer .brand-logo { height: 30px; }
+@media (max-width: 380px) { .brand-logo { height: 26px; } }
+
+/* ---------- 13b · CONTRASTE CTA SECUNDARIO (fix Marc) ----------
+   "Hablar con un técnico" / "Llamar al taller" / "Ver trabajos":
+   SIEMPRE fondo gris acero + texto blanco. Nunca oscuro-sobre-oscuro ni
+   claro-sobre-claro. Blanco sobre #4A525E ≈ 8:1 (WCAG AA holgado).
+   Va en fx.css (se carga después del sistema inline) → gana el cascade. */
+.btn-ghost,
+.section--dark .btn-ghost {
+  background: var(--steel, #4A525E) !important;
+  color: #FFFFFF !important;
+  border-color: var(--steel, #4A525E) !important;
+}
+.btn-ghost:hover,
+.section--dark .btn-ghost:hover {
+  background: var(--ink, #15181D) !important;
+  color: #FFFFFF !important;
+  border-color: var(--ink, #15181D) !important;
+}
+.btn-ghost:focus-visible { box-shadow: 0 0 0 3px var(--focus-ring, #1B6FE0) !important; }
+.btn-ghost .icon { stroke: #FFFFFF !important; }
+
+/* Legibilidad: enlaces de contacto sobre secciones oscuras siempre claros */
+.section--dark a[href^="tel:"], .section--dark a[href^="mailto:"] { color: #FFFFFF; }
+
+/* ---------- 15 · HERO SLIDER (propuesta de valor por técnica × público) ---------- */
+.hero-slider { position: relative; overflow: hidden; background: var(--dark); isolation: isolate;
+  min-height: clamp(560px, 84vh, 800px); }
+.hero-slides { position: absolute; inset: 0; }
+.hero-slide { position: absolute; inset: 0; display: flex; align-items: center;
+  opacity: 0; visibility: hidden; transition: opacity 800ms var(--ease); }
+.hero-slide.is-active { opacity: 1; visibility: visible; }
+.hs-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hs-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.02); }
+.hero-slide.is-active .hs-media img { animation: hsZoom 7.5s var(--ease) forwards; }
+@keyframes hsZoom { from { transform: scale(1.02); } to { transform: scale(1.10); } }
+.hs-scrim { position: absolute; inset: 0; z-index: 1; background:
+  linear-gradient(90deg, rgba(16,19,24,.90) 0%, rgba(16,19,24,.78) 20%, rgba(16,19,24,.40) 44%, rgba(16,19,24,.06) 62%, rgba(16,19,24,0) 80%),
+  linear-gradient(0deg, rgba(16,19,24,.42), transparent 34%); }
+/* hs-inner conserva la rejilla del sitio (.container, 1280 centrado); el texto
+   se ancla a la izquierda limitando el ancho de los hijos → imagen libre a la derecha */
+.hs-inner { position: relative; z-index: 2; padding-block: var(--sp-8); }
+.hs-inner .eyebrow { color: var(--safety); }
+.hs-inner h1 { color: #fff; margin-top: var(--sp-4); max-width: 15ch; }
+.hs-inner .lead { color: #D7DBE0; margin-top: var(--sp-4); max-width: 44ch; }
+.hs-inner .hero-cta { margin-top: var(--sp-6); max-width: 620px; }
+@media (min-width: 1100px) { .hs-inner h1 { font-size: clamp(2.6rem, 1.6rem + 3vw, 4rem); } }
+.hs-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 48px; height: 48px;
+  border-radius: 50%; background: rgba(74,82,94,.55); border: 1px solid rgba(255,255,255,.18);
+  display: grid; place-items: center; backdrop-filter: blur(4px); transition: background var(--dur-2) var(--ease); }
+.hs-arrow:hover { background: var(--safety); }
+.hs-arrow svg { width: 22px; height: 22px; stroke: #fff; stroke-width: 1.8; fill: none; }
+.hs-prev { left: 16px; } .hs-next { right: 16px; }
+.hs-arrow:focus-visible { box-shadow: 0 0 0 3px var(--focus-ring); outline: none; }
+.hs-dots { position: absolute; left: 0; right: 0; bottom: 18px; z-index: 5; display: flex; gap: 10px; justify-content: center; }
+.hs-dot { width: 28px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.34);
+  transition: background var(--dur-2) var(--ease), width var(--dur-2) var(--ease); }
+.hs-dot.is-active { background: var(--safety); width: 46px; }
+.hs-dot:focus-visible { box-shadow: 0 0 0 3px var(--focus-ring); outline: none; }
+.proofband { padding-block: var(--sp-6); }
+.proofband .proofbar { margin-top: 0; border-top: none; padding-top: 0; }
+@media (max-width: 760px) {
+  .hero-slider { min-height: 0; }
+  .hero-slide { position: relative; inset: auto; display: none; min-height: 78vh; }
+  .hero-slide.is-active { display: flex; }
+  .hs-media img { object-position: center; }
+  .hs-scrim { background: linear-gradient(0deg, rgba(16,19,24,.94) 6%, rgba(16,19,24,.55) 58%, rgba(16,19,24,.5) 100%); }
+  .hs-inner { padding-block: var(--sp-9) var(--sp-8); }
+  .hs-arrow { width: 40px; height: 40px; } .hs-prev { left: 8px; } .hs-next { right: 8px; }
+  .hs-dots { bottom: 12px; }
+}
+
+/* ---------- 16 · GRAFISMO DE MARCA · gota de tinta Duato (estampado) ---------- */
+/* Marca de agua gigante tipo sello serigráfico en la esquina de la sección */
+.has-ink { position: relative; }
+.has-ink::after {
+  content: ""; position: absolute; z-index: 0; top: -28px; right: -18px;
+  width: min(32vw, 300px); aspect-ratio: 100/120; pointer-events: none; transform: rotate(9deg);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20120'%3E%3Cpath%20d='M50%206C68%2042%2090%2060%2090%2084a40%2040%200%201%201-80%200C10%2060%2032%2042%2050%206Z'%20fill='%23E8590C'/%3E%3C/svg%3E") no-repeat center/contain;
+  opacity: .055;
+}
+.has-ink.ink-left::after { right: auto; left: -26px; top: auto; bottom: -30px; transform: rotate(-14deg); }
+.section--dark.has-ink::after { opacity: .12; }
+.has-ink > .container, .has-ink > * { position: relative; z-index: 1; }
+.has-ink::after { z-index: 0; }
+
+/* Regla estampada: fila de gotas repetidas (divisor entre secciones) */
+.ink-rule { height: 30px; opacity: .5;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20120'%3E%3Cpath%20d='M50%206C68%2042%2090%2060%2090%2084a40%2040%200%201%201-80%200C10%2060%2032%2042%2050%206Z'%20fill='%23E8590C'/%3E%3C/svg%3E") repeat-x left center;
+  background-size: 16px 20px; }
+/* gota inline como viñeta/acento */
+.ink-dot { display:inline-block; width:.7em; height:.85em; vertical-align:-.08em; background: var(--safety);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20120'%3E%3Cpath%20d='M50%206C68%2042%2090%2060%2090%2084a40%2040%200%201%201-80%200C10%2060%2032%2042%2050%206Z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20120'%3E%3Cpath%20d='M50%206C68%2042%2090%2060%2090%2084a40%2040%200%201%201-80%200C10%2060%2032%2042%2050%206Z'/%3E%3C/svg%3E") center/contain no-repeat; }
+
+/* ---------- 17 · BENTO visual (soluciones con imagen, adiós tarjeta plana) ---------- */
+.bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; grid-auto-rows: 220px; }
+.btile { position: relative; overflow: hidden; border-radius: var(--radius-2); grid-column: span 2;
+  background: var(--dark); text-decoration: none; display: block; isolation: isolate; }
+.btile--feature { grid-column: span 4; grid-row: span 2; }
+.btile--wide { grid-column: span 3; }
+.btile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .8s var(--ease); }
+.btile:hover img { transform: scale(1.07); }
+.btile .btile-scrim { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(0deg, rgba(14,17,21,.94), rgba(14,17,21,.28) 52%, rgba(14,17,21,.08)); }
+.btile .btile-body { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 20px 22px; }
+.btile .btile-no { position: absolute; top: 14px; left: 18px; font-family: var(--font-mono);
+  font-size: .8rem; color: var(--safety); letter-spacing: .04em; }
+.btile .btile-kicker { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--safety); margin-bottom: 6px; }
+.btile h3 { color: #fff; font-size: 1.3rem; line-height: 1.1; }
+.btile--feature h3 { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem); }
+.btile p { color: #D7DBE0; font-size: .9rem; margin-top: 6px; max-width: 30ch; }
+.btile .btile-go { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; color: #fff;
+  font-weight: 600; font-size: .85rem; opacity: 0; transform: translateY(6px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease); }
+.btile .btile-go svg { width: 16px; height: 16px; stroke: var(--safety); fill: none; stroke-width: 1.8; }
+.btile:hover .btile-go, .btile:focus-visible .btile-go { opacity: 1; transform: none; }
+.btile::after { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 0; background: var(--safety); z-index: 3; transition: width .32s var(--ease); }
+.btile:hover::after { width: 100%; }
+.btile:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+@media (max-width: 900px) { .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 190px; }
+  .btile, .btile--feature, .btile--wide { grid-column: span 1; grid-row: span 1; } }
+@media (max-width: 520px) { .bento { grid-template-columns: 1fr; } }
+
+/* ---------- 14 · REDUCED MOTION: todo estático y visible ---------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-fx], [data-fx-stagger] > * { opacity: 1 !important; transform: none !important;
+    clip-path: none !important; filter: none !important; }
+  .ticker .ticker-track { animation: none; }
+  .scan.fx-in::after { animation: none; opacity: 0; }
+  .media:hover img { transform: none; }
+  .spotlight::before { display: none; }
+  .hero-slide.is-active .hs-media img { animation: none; transform: none; }
+}

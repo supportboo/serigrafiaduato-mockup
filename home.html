@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serigrafía Duato · Marcaje industrial en Valencia</title>
+  <meta name="description" content="Taller de marcaje industrial multitécnica en Alboraya (Valencia). 12 técnicas bajo un techo, más de 30 años. Tampografía, láser, serigrafía cilíndrica, señalética y ropa laboral. Un solo proveedor para todo el marcaje de tu planta.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Sistema de diseño "Acero & Seguridad" · inline -->
+  <style>
+/* ============================================================================
+   SERIGRAFÍA DUATO · v4 industrial · SISTEMA DE DISEÑO "Acero & Seguridad"
+============================================================================ */
+
+/* 1 · TOKENS */
+:root {
+  --surface:        #F4F5F7;
+  --surface-2:      #E7E9ED;
+  --ink:            #15181D;
+  --steel:          #4A525E;
+  --safety:         #E8590C;
+  --safety-2:       #FFB000;
+  --dark:           #16191E;
+
+  --ink-on-dark:    #F4F5F7;
+  --steel-on-dark:  #A8AFB9;
+  --line:           #CBD0D8;
+  --line-2:         #2A2F38;
+  --safety-hover:   #CF4D08;
+  --safety-press:   #B54206;
+  --safety-tint:    rgba(232, 89, 12, .10);
+  --safety-2-tint:  rgba(255, 176, 0, .14);
+  --focus-ring:     #1B6FE0;
+
+  --font-display: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --fs-display: clamp(2.25rem, 1.4rem + 4.2vw, 4rem);
+  --fs-h2:      clamp(1.75rem, 1.25rem + 2.5vw, 2.5rem);
+  --fs-h3:      clamp(1.375rem, 1.1rem + 1.4vw, 1.75rem);
+  --fs-lead:    clamp(1.125rem, 1rem + .6vw, 1.375rem);
+  --fs-body:    1.125rem;
+  --fs-sm:      0.9375rem;
+  --fs-eyebrow: 0.8125rem;
+  --fs-data:    1rem;
+
+  --lh-display: 1.05;
+  --lh-head:    1.12;
+  --lh-body:    1.6;
+  --lh-tight:   1.3;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  --tracking-eyebrow: 0.1em;
+  --tracking-head:   -0.01em;
+  --tracking-display:-0.02em;
+
+  --sp-1:  4px;  --sp-2:  8px;  --sp-3:  12px; --sp-4:  16px; --sp-5:  24px;
+  --sp-6:  32px; --sp-7:  48px; --sp-8:  64px; --sp-9:  96px; --sp-10: 128px;
+
+  --container:    1280px;
+  --container-sm: 1100px;
+  --gutter:       24px;
+  --gutter-mobile:16px;
+
+  --radius-0:  0px; --radius-1:  2px; --radius-2:  4px; --radius-3:  8px; --radius-pill: 999px;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 0 var(--line);
+  --shadow-2: 0 1px 2px rgba(21, 24, 29, .06), 0 0 0 1px var(--line);
+  --shadow-3: 0 2px 0 0 rgba(21, 24, 29, .08), 0 0 0 1px var(--line);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-1: 150ms; --dur-2: 200ms; --dur-3: 250ms;
+
+  --grid-line: rgba(21, 24, 29, .035);
+  --grid-line-dark: rgba(244, 245, 247, .045);
+  --grid-size: 24px;
+}
+
+/* 2 · RESET LIGERO */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+svg { fill: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; padding: 0; }
+table { border-collapse: collapse; width: 100%; }
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: var(--radius-2); }
+
+/* 3 · TIPOGRAFÍA BASE */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tracking-head);
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-display); font-weight: var(--fw-black); line-height: var(--lh-display); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semi); }
+h4 { font-size: var(--fs-lead); font-weight: var(--fw-medium); }
+p { max-width: 68ch; }
+.lead { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--steel); max-width: 64ch; }
+small, .text-sm { font-size: var(--fs-sm); line-height: 1.5; }
+strong, b { font-weight: var(--fw-semi); }
+em, i { font-style: normal; font-weight: var(--fw-semi); }
+.mono, .data, .spec, td.num, .stat-value {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
+}
+.mono-unit { color: var(--steel); font-weight: var(--fw-regular); }
+
+/* 4 · LAYOUT */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.container--narrow { max-width: var(--container-sm); }
+.section { padding-block: var(--sp-9); }
+.section--tight { padding-block: var(--sp-7); }
+.section--dark { background: var(--dark); color: var(--ink-on-dark); }
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--ink-on-dark); }
+.section--dark .lead { color: var(--steel-on-dark); }
+.section--surface-2 { background: var(--surface-2); }
+.grid { display: grid; gap: var(--gutter); grid-template-columns: repeat(12, 1fr); }
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+.grid-cards { display: grid; gap: var(--gutter); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-cards--2 { grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+.stack > * + * { margin-top: var(--sp-4); }
+.stack-lg > * + * { margin-top: var(--sp-6); }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.between { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); }
+
+/* 5 · EYEBROW */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-family: var(--font-text); font-size: var(--fs-eyebrow); font-weight: var(--fw-semi);
+  line-height: 1; text-transform: uppercase; letter-spacing: var(--tracking-eyebrow); color: var(--steel);
+}
+.eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--safety); flex: none; }
+.section--dark .eyebrow { color: var(--steel-on-dark); }
+
+/* 6 · BOTONES */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+  min-height: 48px; padding: 0 var(--sp-5);
+  font-family: var(--font-display); font-size: var(--fs-sm); font-weight: var(--fw-bold);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  border-radius: var(--radius-2); border: 1.5px solid transparent;
+  transition: background var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease),
+              color var(--dur-2) var(--ease), transform var(--dur-1) var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn .icon { width: 18px; height: 18px; flex: none; }
+/* Primario · CTA de marca unificado en las 4 páginas: naranja profundo + texto
+   blanco. Blanco sobre #BA4408 ≈ 5.0:1 → cumple WCAG 2.2 AA texto normal. El token
+   --safety (#E8590C) se reserva a acentos no-texto (tick eyebrow, índice, stat). */
+.btn-safety { background: #BA4408; color: #FFFFFF; border-color: #BA4408; }
+.btn-safety:hover { background: #A23A06; border-color: #A23A06; color: #FFFFFF; }
+.btn-safety:active { background: #8F3305; border-color: #8F3305; color: #FFFFFF; }
+.btn-safety .icon { stroke: #FFFFFF; }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--steel); }
+.btn-ghost:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.section--dark .btn-ghost { color: var(--ink-on-dark); border-color: var(--steel-on-dark); }
+.section--dark .btn-ghost:hover { background: var(--ink-on-dark); color: var(--ink); border-color: var(--ink-on-dark); }
+.btn-dark { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
+.btn-dark:hover { background: #000; border-color: #000; }
+.btn-block { width: 100%; }
+
+/* 7 · TARJETAS */
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-2);
+  padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3);
+  transition: border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease); position: relative;
+}
+.card:hover { border-color: var(--steel); box-shadow: var(--shadow-3); }
+.card--accent { border-top: 3px solid var(--safety); }
+.card .card-icon { width: 32px; height: 32px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; }
+.card h3 { font-size: var(--fs-h3); }
+.card p { color: var(--steel); font-size: var(--fs-sm); }
+.card .card-meta {
+  margin-top: auto; font-family: var(--font-mono); font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums; color: var(--steel);
+  border-top: 1px solid var(--line); padding-top: var(--sp-3);
+}
+.card-link { margin-top: var(--sp-2); font-weight: var(--fw-semi); color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.card-link .icon { width: 16px; height: 16px; transition: transform var(--dur-2) var(--ease); }
+.card:hover .card-link .icon { transform: translateX(4px); }
+
+/* 8 · TABLA TÉCNICA */
+.spec-table { border: 1px solid var(--line); border-radius: var(--radius-2); overflow: hidden; background: var(--surface); font-size: var(--fs-sm); }
+.spec-table caption { text-align: left; padding: var(--sp-3) var(--sp-4); font-size: var(--fs-eyebrow); font-weight: var(--fw-semi); text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel); background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.spec-table th { text-align: left; padding: var(--sp-3) var(--sp-4); font-size: var(--fs-eyebrow); font-weight: var(--fw-semi); text-transform: uppercase; letter-spacing: 0.06em; color: var(--steel); background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.spec-table td { padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink); }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td.num, .spec-table .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums lining-nums; font-weight: var(--fw-medium); }
+.spec-table tbody tr:hover { background: var(--surface-2); }
+
+/* 9 · BADGE NORMATIVA / PRL */
+.badge-normativa { display: inline-flex; align-items: center; gap: var(--sp-2); padding: 4px 10px; font-family: var(--font-mono); font-size: 0.75rem; font-weight: var(--fw-medium); letter-spacing: 0.02em; color: var(--ink); background: var(--safety-2-tint); border: 1px solid var(--safety-2); border-radius: var(--radius-2); }
+.badge-normativa .icon { width: 14px; height: 14px; color: var(--ink); stroke: var(--ink); stroke-width: 1.5; flex: none; }
+.badge-pending { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.02em; color: var(--steel); background: var(--surface-2); border: 1px dashed var(--steel); border-radius: var(--radius-2); }
+.section--dark .badge-pending { color: var(--steel-on-dark); background: rgba(244,245,247,.04); border-color: var(--steel-on-dark); }
+
+/* 10 · DISCLAIMER */
+.disclaimer { font-size: 0.8125rem; line-height: 1.4; color: var(--steel); font-family: var(--font-text); }
+.disclaimer::before { content: "— "; }
+.section--dark .disclaimer { color: var(--steel-on-dark); }
+
+/* 11 · STAT */
+.stat { display: flex; flex-direction: column; gap: var(--sp-1); }
+.stat-value { font-family: var(--font-mono); font-size: clamp(2rem, 1.4rem + 2vw, 2.75rem); font-weight: var(--fw-semi); font-variant-numeric: tabular-nums; line-height: 1; color: var(--ink); }
+.stat-value .accent { color: var(--safety); }
+.stat-label { font-size: var(--fs-eyebrow); text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel); font-weight: var(--fw-semi); }
+.section--dark .stat-value { color: var(--ink-on-dark); }
+.section--dark .stat-label { color: var(--steel-on-dark); }
+
+/* 12 · BLUEPRINT */
+.blueprint-bg { position: relative; isolation: isolate; }
+.blueprint-bg::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size); pointer-events: none;
+}
+.section--dark.blueprint-bg::before { background-image: linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px); }
+
+/* 13 · MEDIA PENDING */
+.media-pending {
+  position: relative; display: flex; align-items: flex-end; aspect-ratio: 4 / 3; width: 100%;
+  background: var(--surface-2);
+  background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size); border: 1px solid var(--line); border-radius: var(--radius-2); overflow: hidden;
+}
+.media-pending::after { content: "+"; position: absolute; top: var(--sp-3); right: var(--sp-4); font-family: var(--font-mono); color: var(--steel); font-size: 1.25rem; line-height: 1; }
+.media-pending .media-label { width: 100%; padding: var(--sp-3) var(--sp-4); background: linear-gradient(to top, rgba(231,233,237,.96), rgba(231,233,237,0)); font-family: var(--font-mono); font-size: 0.8125rem; letter-spacing: 0.01em; color: var(--steel); display: flex; align-items: center; gap: var(--sp-2); }
+.media-pending .media-label .icon { width: 16px; height: 16px; color: var(--steel); stroke: var(--steel); stroke-width: 1.5; flex: none; }
+.media-pending--dark { background: var(--dark); background-image: linear-gradient(to right, var(--grid-line-dark) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line-dark) 1px, transparent 1px); background-size: var(--grid-size) var(--grid-size); border-color: var(--line-2); }
+.media-pending--dark .media-label { color: var(--steel-on-dark); background: linear-gradient(to top, rgba(22,25,30,.96), rgba(22,25,30,0)); }
+.media-pending--dark .media-label .icon { color: var(--steel-on-dark); stroke: var(--steel-on-dark); }
+
+/* 14 · HEADER + NAV */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(244, 245, 247, .92); backdrop-filter: saturate(120%) blur(8px); border-bottom: 1px solid var(--line); }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: var(--sp-5); }
+.brand { display: inline-flex; align-items: baseline; gap: var(--sp-2); font-family: var(--font-display); font-weight: var(--fw-black); font-size: 1.125rem; color: var(--ink); letter-spacing: -0.01em; }
+.brand .brand-sub { font-family: var(--font-mono); font-size: 0.6875rem; font-weight: var(--fw-medium); text-transform: uppercase; letter-spacing: 0.08em; color: var(--steel); }
+.nav { display: flex; align-items: center; gap: var(--sp-5); }
+.nav a { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--steel); padding: var(--sp-2) 0; border-bottom: 2px solid transparent; transition: color var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--safety); }
+.header-cta { display: flex; align-items: center; gap: var(--sp-3); }
+.nav-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--ink); }
+.nav-toggle .icon { width: 24px; height: 24px; stroke: var(--ink); stroke-width: 1.5; }
+
+/* 15 · FOOTER */
+.site-footer { background: var(--dark); color: var(--steel-on-dark); padding-block: var(--sp-8) var(--sp-6); }
+.site-footer a { color: var(--steel-on-dark); transition: color var(--dur-2) var(--ease); }
+.site-footer a:hover { color: var(--ink-on-dark); }
+.site-footer h4 { color: var(--ink-on-dark); font-size: var(--fs-eyebrow); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-text); font-weight: var(--fw-semi); margin-bottom: var(--sp-4); }
+.footer-grid { display: grid; gap: var(--sp-7); grid-template-columns: 1.4fr 1fr 1fr; }
+.footer-data { font-family: var(--font-mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; line-height: 1.9; }
+.footer-bottom { margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--line-2); display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: space-between; font-size: var(--fs-sm); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+
+/* 16 · WHATSAPP STICKY */
+.whatsapp-sticky { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 200; align-items: center; gap: var(--sp-2); padding: 0 var(--sp-5); min-height: 52px; background: var(--ink); color: var(--ink-on-dark); border-radius: var(--radius-pill); font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-sm); box-shadow: 0 4px 16px rgba(21,24,29,.28); }
+.whatsapp-sticky .icon { width: 22px; height: 22px; stroke: var(--ink-on-dark); stroke-width: 1.5; }
+
+/* 17 · RFQ / CHIPS / FIELDS */
+.chip { display: inline-flex; align-items: center; gap: var(--sp-2); padding: 10px var(--sp-4); border: 1.5px solid var(--line); border-radius: var(--radius-pill); background: var(--surface); font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--ink); transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease); }
+.chip:hover { border-color: var(--steel); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:has(input:checked), .chip.is-selected { border-color: var(--safety); background: var(--safety-tint); }
+
+/* 18 · HELPERS */
+.text-steel { color: var(--steel); }
+.text-safety { color: var(--safety); }
+.text-center { text-align: center; }
+.measure { max-width: 60ch; }
+.divider { height: 1px; background: var(--line); border: none; margin-block: var(--sp-6); }
+.section--dark .divider { background: var(--line-2); }
+
+/* 19 · MOTION */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* 20 · RESPONSIVE */
+@media (max-width: 980px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: span 6; }
+}
+@media (max-width: 760px) {
+  :root { --gutter: var(--gutter-mobile); }
+  .container { padding-inline: var(--gutter-mobile); }
+  .section { padding-block: var(--sp-7); }
+  .section--tight { padding-block: var(--sp-6); }
+  .nav { display: none; }
+  /* Menú móvil desplegado (controlado por JS con .is-open, sin estilos inline) */
+  .nav.is-open {
+    display: flex;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: var(--sp-4) var(--gutter-mobile);
+    z-index: 99;
+  }
+  /* Tap target táctil >= 44px en los enlaces del menú móvil */
+  .nav.is-open a { padding: var(--sp-3) 0; width: 100%; }
+  .nav-toggle { display: inline-flex; }
+  .site-header .header-cta .btn-ghost { display: none; }
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .col-12, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 { grid-column: 1 / -1; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .footer-bottom { flex-direction: column; gap: var(--sp-3); }
+  .whatsapp-sticky { display: inline-flex; }
+  .spec-table.collapsible thead { display: none; }
+  .spec-table.collapsible, .spec-table.collapsible tbody, .spec-table.collapsible tr, .spec-table.collapsible td { display: block; width: 100%; }
+  .spec-table.collapsible tr { border-bottom: 1px solid var(--line); padding: var(--sp-2) 0; }
+  .spec-table.collapsible td { border-bottom: none; padding: 6px var(--sp-4); }
+  .spec-table.collapsible td[data-label]::before { content: attr(data-label) " · "; font-family: var(--font-text); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.6875rem; font-weight: var(--fw-semi); color: var(--steel); }
+  body { padding-bottom: 84px; }
+}
+@media (max-width: 380px) {
+  :root { --fs-body: 1.0625rem; }
+  .btn { padding-inline: var(--sp-4); }
+}
+  </style>
+
+  <!-- Ajustes puntuales de la home (reutilizan tokens) -->
+  <style>
+/* Compensar el header sticky de 64px al saltar a una sección por ancla */
+section[id], [id="contacto"], [id="asistente"] { scroll-margin-top: 80px; }
+/* Hero */
+.hero { padding-block: var(--sp-10) var(--sp-9); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--sp-8); align-items: center; }
+.hero h1 { max-width: 16ch; }
+.hero .lead { margin-top: var(--sp-5); }
+.hero-cta { margin-top: var(--sp-7); }
+.hero-figure { aspect-ratio: 4/3; }
+/* Barra de prueba numérica */
+.proofbar { border-top: 1px solid var(--line-2); margin-top: var(--sp-9); padding-top: var(--sp-6); display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-5); }
+.proofbar .stat-value { font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.25rem); }
+/* Bloques de solución: cabecera con índice.
+   El naranja --safety se reserva a CTA/dato/alerta (<8% superficie, estrategia §222):
+   neutralizamos la barra superior repetida de las 6 tarjetas de solución y los 5
+   grupos de capacidad a un borde de acero; el acento naranja queda solo en el
+   índice mono (dato) y en el bloque destacado (contact-card). */
+#soluciones .card.card--accent { border-top: 3px solid var(--line); }
+#capacidades .cap-group.cap-group--accent { border-top: 3px solid var(--line); }
+.sol-index { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--steel); }
+.card .sol-index { color: var(--safety); }
+/* Asistente preview */
+.assistant { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--sp-8); align-items: center; }
+.assistant-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-3); padding: var(--sp-6); }
+.surface-row { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--surface); transition: border-color var(--dur-2) var(--ease), background var(--dur-2) var(--ease); }
+.surface-row:hover { border-color: var(--safety); background: var(--safety-tint); }
+.surface-row .surf-icon { width: 28px; height: 28px; stroke: var(--ink); stroke-width: 1.5; flex: none; }
+.surface-row .surf-name { font-weight: var(--fw-semi); }
+.surface-row .surf-tech { margin-left: auto; font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--steel); }
+.surface-row .icon-arrow { width: 18px; height: 18px; stroke: var(--steel); stroke-width: 1.5; flex: none; transition: transform var(--dur-2) var(--ease); }
+.surface-row:hover .icon-arrow { transform: translateX(4px); stroke: var(--safety); }
+/* Capacidad por superficie */
+.cap-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-2); padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-4); }
+.cap-group--accent { border-top: 3px solid var(--safety); }
+.cap-group h3 { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--fs-lead); }
+.cap-group h3 .icon { width: 26px; height: 26px; stroke: var(--ink); stroke-width: 1.5; flex: none; }
+.tech-list { display: flex; flex-direction: column; gap: var(--sp-2); }
+.tech-item { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); padding: var(--sp-2) 0; border-bottom: 1px solid var(--line); }
+.tech-item:last-child { border-bottom: none; }
+.tech-item .icon { width: 20px; height: 20px; stroke: var(--steel); stroke-width: 1.5; flex: none; }
+.tech-item .tech-no { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--steel); flex: none; font-variant-numeric: tabular-nums; }
+.tech-item .tech-name { font-weight: var(--fw-medium); color: var(--ink); }
+.tech-item .tech-use { color: var(--steel); margin-left: auto; font-family: var(--font-mono); font-size: 0.8125rem; }
+/* Proceso / repetibilidad: línea de pasos */
+.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; margin-top: var(--sp-7); }
+.process-step { position: relative; padding: var(--sp-5) var(--sp-5) var(--sp-5) 0; }
+.process-step::before { counter-increment: step; content: counter(step, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--safety); display: block; margin-bottom: var(--sp-3); }
+.process-step::after { content: ""; position: absolute; top: calc(var(--sp-5) + 4px); left: 0; right: var(--sp-5); height: 1px; background: var(--line-2); z-index: 0; }
+.process-step:first-child::after { left: 0; }
+.process-step .dot { position: absolute; top: var(--sp-5); left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--safety); z-index: 1; transform: translateY(-1px); }
+.process-step h4 { color: var(--ink-on-dark); font-size: var(--fs-body); font-weight: var(--fw-semi); margin-bottom: var(--sp-2); }
+.process-step p { color: var(--steel-on-dark); font-size: var(--fs-sm); max-width: 30ch; }
+/* Cumplimiento honesto */
+.compliance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
+.compliance-item { display: flex; gap: var(--sp-4); padding: var(--sp-5); border: 1px solid var(--line); border-radius: var(--radius-2); background: var(--surface); }
+.compliance-item .icon { width: 28px; height: 28px; stroke: var(--ink); stroke-width: 1.5; flex: none; }
+.compliance-item h4 { font-size: var(--fs-body); font-weight: var(--fw-semi); margin-bottom: var(--sp-2); }
+.compliance-item p { font-size: var(--fs-sm); color: var(--steel); }
+/* Contacto técnico */
+.contact-card { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--safety); border-radius: var(--radius-2); padding: var(--sp-7); }
+.contact-data { font-family: var(--font-mono); font-variant-numeric: tabular-nums; line-height: 2; font-size: var(--fs-body); }
+.contact-data a { color: var(--ink); border-bottom: 1px solid var(--line); }
+.contact-data a:hover { border-bottom-color: var(--safety); }
+/* CTA sticky dual (desktop + móvil) */
+.cta-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; background: rgba(22,25,30,.96); backdrop-filter: blur(8px); border-top: 1px solid var(--line-2); transform: translateY(110%); transition: transform var(--dur-3) var(--ease); }
+.cta-sticky.is-visible { transform: translateY(0); }
+.cta-sticky .container { display: flex; align-items: center; gap: var(--sp-4); padding-block: var(--sp-3); }
+.cta-sticky .cta-sticky-text { color: var(--ink-on-dark); font-family: var(--font-display); font-weight: var(--fw-semi); font-size: var(--fs-sm); margin-right: auto; }
+.cta-sticky .cta-sticky-text span { color: var(--steel-on-dark); font-weight: var(--fw-regular); display: block; font-family: var(--font-mono); font-size: 0.75rem; }
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: var(--sp-7); }
+  .assistant { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .process { grid-template-columns: 1fr 1fr; }
+  .process-step::after { display: none; }
+}
+@media (max-width: 760px) {
+  .hero { padding-block: var(--sp-8) var(--sp-7); }
+  .proofbar { grid-template-columns: 1fr 1fr; gap: var(--sp-6) var(--sp-4); }
+  .process { grid-template-columns: 1fr; }
+  .compliance-grid { grid-template-columns: 1fr; }
+  /* En móvil mandamos una sola CTA persistente: el pill de WhatsApp.
+     La barra CTA dual se oculta para no apilar tres llamadas a la acción. */
+  .cta-sticky { display: none !important; }
+}
+  </style>
+
+  <link rel="stylesheet" href="assets/fx.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="home.html" aria-label="Serigrafía Duato, inicio">
+        <img class="brand-logo" src="assets/img/homepage__logo-v2-con-d-horiz.png" alt="Serigrafía Duato · marcaje industrial" width="184" height="61">
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Principal">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="casos.html">Casos</a>
+        <a href="#calidad">Calidad</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="#contacto">Hablar con un técnico</a>
+        <a class="btn btn-safety" href="presupuesto.html">Pedir presupuesto</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== 1 · HERO SLIDER ===================== -->
+    <section class="hero-slider" aria-label="Propuesta de valor de Duato por técnica y sector" tabindex="0">
+      <div class="hero-slides">
+
+        <!-- Slide 1 · Piezas y componentes -->
+        <article class="hero-slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 4 · Piezas y componentes" aria-hidden="false">
+          <div class="hs-media"><img src="assets/img/hero-piezas.jpg" alt="Máquina de tampografía marcando una pieza técnica de plástico en el taller de Duato" fetchpriority="high"></div>
+          <div class="hs-scrim"></div>
+          <div class="container hs-inner">
+            <span class="eyebrow">Piezas y componentes · producción</span>
+            <h1>Marcamos la pieza que nadie más sabe marcar</h1>
+            <p class="lead">Tampografía sobre geometrías imposibles: mandos, carcasas, instrumental. Marca permanente y repetible, serie tras serie.</p>
+            <div class="hero-cta cluster">
+              <a class="btn btn-safety" href="presupuesto.html?tecnica=tampografia&amp;intencion=muestra">Pide una muestra sobre tu pieza
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#contacto">Hablar con un técnico</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2 · Trazabilidad -->
+        <article class="hero-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 4 · Trazabilidad industrial" aria-hidden="true">
+          <div class="hs-media"><img src="assets/img/hero-trazabilidad.jpg" alt="Cabezal de láser de fibra grabando un código de trazabilidad sobre una pieza de acero inoxidable" loading="lazy"></div>
+          <div class="hs-scrim"></div>
+          <div class="container hs-inner">
+            <span class="eyebrow">Trazabilidad industrial · calidad</span>
+            <h1>Trazabilidad que sobrevive a tu proceso</h1>
+            <p class="lead">Grabado láser permanente: número de serie, lote y código legibles durante toda la vida de la pieza. Sin no conformidades por marca ilegible.</p>
+            <div class="hero-cta cluster">
+              <a class="btn btn-safety" href="presupuesto.html?tecnica=laser&amp;motivo=trazabilidad">Solicita una muestra de validación
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#contacto">Hablar con un técnico</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3 · Envases y cilíndrico -->
+        <article class="hero-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 4 · Envases y cilíndrico" aria-hidden="true">
+          <div class="hs-media"><img src="assets/img/hero-envases.jpg" alt="Máquina de serigrafía cilíndrica imprimiendo directamente sobre una fila de envases" loading="lazy"></div>
+          <div class="hs-scrim"></div>
+          <div class="container hs-inner">
+            <span class="eyebrow">Envases y cilíndrico · packaging</span>
+            <h1>Tu marca en el envase, sin etiquetas que se despeguen</h1>
+            <p class="lead">Serigrafía cilíndrica sobre vidrio, PET y aluminio. Pantone exacto, tirada tras tirada, con maquinaria específica y 30 años de rodaje.</p>
+            <div class="hero-cta cluster">
+              <a class="btn btn-safety" href="presupuesto.html?tecnica=cilindrico">Pide presupuesto sobre tu envase
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#contacto">Hablar con un técnico</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 4 · Ropa laboral y EPI -->
+        <article class="hero-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 4 · Ropa laboral y EPI" aria-hidden="true">
+          <div class="hs-media"><img src="assets/img/hero-epi.jpg" alt="Chaqueta de trabajo de alta visibilidad con banda reflectante colgada en un taller" loading="lazy"></div>
+          <div class="hs-scrim"></div>
+          <div class="container hs-inner">
+            <span class="eyebrow">Ropa laboral y EPI · PRL</span>
+            <h1>Marcaje que aguanta tu lavadero industrial</h1>
+            <p class="lead">EPI y uniforme con la técnica correcta para cada tejido. Aguante real al lavado a 60–90&nbsp;°C, sin comprometer la certificación, y reposiciones ágiles.</p>
+            <div class="hero-cta cluster">
+              <a class="btn btn-safety" href="presupuesto.html?tecnica=ropa-laboral">Consulta técnica EPI sin compromiso
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#contacto">Hablar con un técnico</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="hs-arrow hs-prev" type="button" aria-label="Diapositiva anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="hs-arrow hs-next" type="button" aria-label="Diapositiva siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="hs-dots" role="tablist" aria-label="Elegir diapositiva">
+        <button class="hs-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Piezas y componentes"></button>
+        <button class="hs-dot" type="button" role="tab" aria-selected="false" aria-label="Trazabilidad industrial"></button>
+        <button class="hs-dot" type="button" role="tab" aria-selected="false" aria-label="Envases y cilíndrico"></button>
+        <button class="hs-dot" type="button" role="tab" aria-selected="false" aria-label="Ropa laboral y EPI"></button>
+      </div>
+    </section>
+
+    <!-- Barra de prueba numérica -->
+    <section class="proofband section--dark blueprint-bg">
+      <div class="container">
+        <div class="proofbar" aria-label="Datos del taller">
+          <div class="stat">
+            <span class="stat-value count" data-count="30" data-prefix="+" aria-label="más de 30">+30</span>
+            <span class="stat-label">Años de oficio</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value count" data-count="12">12</span>
+            <span class="stat-label">Técnicas bajo un techo</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value count" data-count="5">5</span>
+            <span class="stat-label">Familias de superficie</span>
+          </div>
+          <div class="stat">
+            <span class="stat-place" style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: clamp(1.5rem, 1.1rem + 1.2vw, 1.875rem); line-height: 1; color: var(--ink-on-dark); letter-spacing: var(--tracking-head);">Alboraya</span>
+            <span class="stat-label">Valencia · taller propio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TICKER INDUSTRIAL ===================== -->
+    <div class="ticker" aria-hidden="true" data-clone>
+      <div class="ticker-track">
+        <span class="ti"><b>Metal</b> aluminio · acero · inox</span>
+        <span class="ti"><b>Plástico técnico</b> ABS · PP · PE · PC</span>
+        <span class="ti"><b>Envase</b> vidrio · PET · aluminio</span>
+        <span class="ti"><b>Tampografía</b> geometrías irregulares</span>
+        <span class="ti"><b>Láser</b> trazabilidad · DataMatrix</span>
+        <span class="ti"><b>Serigrafía cilíndrica</b> Pantone exacto</span>
+        <span class="ti"><b>DTF · sublimación</b> textil técnico</span>
+        <span class="ti"><b>Fresado CNC</b> metacrilato · ±0,1&nbsp;mm</span>
+        <span class="ti"><b>Automoción · farmacia · alimentación · química</b></span>
+      </div>
+    </div>
+
+    <!-- ===================== 2 · SOLUCIONES (bento visual) ===================== -->
+    <section class="section has-ink" id="soluciones">
+      <div class="container">
+        <div style="max-width: 62ch">
+          <span class="eyebrow">Entra por tu pieza</span>
+          <h2 style="margin-top: var(--sp-4)">Seis formas de resolver tu marcaje <span class="ink-dot" aria-hidden="true"></span></h2>
+          <p class="lead" style="margin-top: var(--sp-4)">Elige por lo que necesitas conseguir, no por el nombre de la máquina.</p>
+        </div>
+        <div class="bento reveal" data-fx-stagger style="margin-top: var(--sp-7)">
+
+          <a class="btile btile--feature" href="marcaje-piezas-componentes.html">
+            <img src="assets/img/casos-tampografia.jpg" alt="Marcaje por tampografía sobre una pieza técnica en el taller de Duato" loading="lazy">
+            <div class="btile-scrim"></div>
+            <div class="btile-body">
+              <span class="btile-kicker">Producción · OEM</span>
+              <h3>Piezas y componentes</h3>
+              <p>Marca permanente sobre cualquier geometría. La pieza 1 y la 10.000, idénticas.</p>
+              <span class="btile-go">Ver solución <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+          <a class="btile" href="presupuesto.html?tecnica=laser&amp;motivo=trazabilidad">
+            <img src="assets/img/casos-laser.jpg" alt="Grabado láser de trazabilidad sobre pieza de metal" loading="lazy">
+            <div class="btile-scrim"></div>
+            <div class="btile-body"><span class="btile-kicker">Calidad</span><h3>Trazabilidad</h3><p>Serie, lote y código que no se borran.</p><span class="btile-go">Pedir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+
+          <a class="btile" href="presupuesto.html?tecnica=cilindrico">
+            <img src="assets/img/hero-envases.jpg" alt="Serigrafía cilíndrica sobre una fila de envases" loading="lazy">
+            <div class="btile-scrim"></div>
+            <div class="btile-body"><span class="btile-kicker">Packaging</span><h3>Envases y cilíndrico</h3><p>Tu marca en el envase, sin etiquetas.</p><span class="btile-go">Pedir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+
+          <a class="btile" href="presupuesto.html?tecnica=senaletica">
+            <img src="assets/img/caso-senaletica.png" alt="Señalética técnica en paneles de metacrilato" loading="lazy">
+            <div class="btile-scrim"></div>
+            <div class="btile-body"><span class="btile-kicker">Facility · PRL</span><h3>Señalética técnica</h3><p>Permanente y conforme a norma.</p><span class="btile-go">Pedir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+
+          <a class="btile" href="presupuesto.html?tecnica=ropa-laboral">
+            <img src="assets/img/caso-uniforme.png" alt="Prenda de ropa laboral marcada colgada en el taller" loading="lazy">
+            <div class="btile-scrim"></div>
+            <div class="btile-body"><span class="btile-kicker">PRL · RRHH</span><h3>Ropa laboral y EPI</h3><p>Aguanta el lavado industrial.</p><span class="btile-go">Pedir <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+
+          <a class="btile" href="presupuesto.html?tecnica=todas">
+            <img src="assets/img/repetibilidad.jpg" alt="Serie de piezas idénticas marcadas en filas" loading="lazy">
+            <div class="btile-scrim"></div>
+            <div class="btile-body"><span class="btile-kicker">Compras</span><h3>Un solo proveedor</h3><p>12 técnicas, un interlocutor, una factura.</p><span class="btile-go">Consolidar <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===================== 3 · ASISTENTE "¿QUÉ NECESITAS MARCAR?" ===================== -->
+    <section class="section section--surface-2" id="asistente">
+      <div class="container">
+        <div class="assistant">
+          <div class="reveal">
+            <span class="eyebrow">Asistente técnico</span>
+            <h2 style="margin-top: var(--sp-4)">¿No sabes qué técnica aguanta tu pieza?</h2>
+            <p class="lead" style="margin-top: var(--sp-4)">Dinos sobre qué superficie hay que marcar y para qué. Partimos de tu material para orientarte hacia la técnica correcta entre las 12 y pasar a la solicitud de presupuesto.</p>
+            <a class="btn btn-dark" href="presupuesto.html" style="margin-top: var(--sp-6)">
+              Empezar por mi superficie
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <p class="disclaimer" style="margin-top: var(--sp-4)">Vista previa de mockup: el asistente guiado por superficie y objetivo llega en la versión completa. La recomendación es orientativa; la técnica final se confirma con tu brief, material y proceso.</p>
+          </div>
+
+          <div class="assistant-panel reveal" aria-label="Vista previa del asistente por superficie">
+            <p class="rfq-progress-label" style="font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--steel); margin-bottom: var(--sp-4)">Elige la superficie de tu pieza</p>
+            <div class="stack" style="--sp-4: 12px">
+
+              <a class="surface-row" href="presupuesto.html?superficie=metal&tecnica=laser">
+                <svg class="surf-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18M7 6v12" stroke="currentColor" stroke-width="1.5"/></svg>
+                <span class="surf-name">Metal</span>
+                <span class="surf-tech">láser · serigrafía</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a class="surface-row" href="presupuesto.html?superficie=plastico&tecnica=tampografia">
+                <svg class="surf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12l-1 16H7L6 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <span class="surf-name">Plástico técnico</span>
+                <span class="surf-tech">tampografía · láser</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a class="surface-row" href="presupuesto.html?superficie=envase&tecnica=serigrafia-cilindrica">
+                <svg class="surf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l-1 3v13a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V6L9 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <span class="surf-name">Envase cilíndrico</span>
+                <span class="surf-tech">serigrafía cilíndrica</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a class="surface-row" href="presupuesto.html?superficie=textil&tecnica=ropa-laboral">
+                <svg class="surf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l-3 2v4h2v10h10V10h2V6l-3-2-2 2H10L8 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <span class="surf-name">Textil técnico / EPI</span>
+                <span class="surf-tech">serigrafía · DTF · vinilo</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a class="surface-row" href="presupuesto.html?superficie=metacrilato&tecnica=senaletica">
+                <svg class="surf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 3v8L5 19V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <span class="surf-name">Metacrilato / señalética</span>
+                <span class="surf-tech">fresado CNC · UVI</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4 · CAPACIDAD POR SUPERFICIE (12 técnicas) ===================== -->
+    <section class="section has-ink" id="capacidades">
+      <div class="container">
+        <div style="max-width: 64ch">
+          <span class="eyebrow">Capacidad por superficie</span>
+          <h2 style="margin-top: var(--sp-4)">Las 12 técnicas, ordenadas por el material que tienes delante</h2>
+          <p class="lead" style="margin-top: var(--sp-4)">Estas son las 12, numeradas y cada una bajo su superficie principal. No clasificamos por máquina, sino por tu pieza. Muchas técnicas sirven también para otros materiales: lo confirmamos con tu brief.</p>
+        </div>
+
+        <div class="grid reveal" style="margin-top: var(--sp-7)">
+
+          <div class="col-4">
+            <div class="cap-group cap-group--accent">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18M7 6v12" stroke="currentColor" stroke-width="1.5"/></svg>
+                Metal
+              </h3>
+              <div class="tech-list">
+                <div class="tech-item"><span class="tech-no">01</span><span class="tech-name">Láser</span><span class="tech-use">trazabilidad</span></div>
+                <div class="tech-item"><span class="tech-no">02</span><span class="tech-name">Serigrafía industrial</span><span class="tech-use">color Pantone</span></div>
+                <div class="tech-item"><span class="tech-no">03</span><span class="tech-name">Gota de resina (doming)</span><span class="tech-use">etiqueta dura</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="cap-group cap-group--accent">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12l-1 16H7L6 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Plástico técnico
+              </h3>
+              <div class="tech-list">
+                <div class="tech-item"><span class="tech-no">04</span><span class="tech-name">Tampografía</span><span class="tech-use">geometría irregular</span></div>
+                <div class="tech-item"><span class="tech-no">05</span><span class="tech-name">Impresión UVI</span><span class="tech-use">color en rígido</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="cap-group cap-group--accent">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l-1 3v13a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2V6L9 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Envase cilíndrico
+              </h3>
+              <div class="tech-list">
+                <div class="tech-item"><span class="tech-no">06</span><span class="tech-name">Serigrafía cilíndrica</span><span class="tech-use">vidrio / PET</span></div>
+              </div>
+              <p class="text-sm text-steel" style="margin-top: var(--sp-2)">El tapón o dosificador del envase se marca con tampografía (técnica 04).</p>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="cap-group cap-group--accent">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l-3 2v4h2v10h10V10h2V6l-3-2-2 2H10L8 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Textil técnico / EPI
+              </h3>
+              <div class="tech-list">
+                <div class="tech-item"><span class="tech-no">07</span><span class="tech-name">Serigrafía textil</span><span class="tech-use">tirada media-alta</span></div>
+                <div class="tech-item"><span class="tech-no">08</span><span class="tech-name">DTF</span><span class="tech-use">logo complejo</span></div>
+                <div class="tech-item"><span class="tech-no">09</span><span class="tech-name">Vinilo térmico</span><span class="tech-use">nombre / número</span></div>
+                <div class="tech-item"><span class="tech-no">10</span><span class="tech-name">Sublimación</span><span class="tech-use">poliéster</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="cap-group cap-group--accent">
+              <h3>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 3v8L5 19V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Metacrilato / señalética
+              </h3>
+              <div class="tech-list">
+                <div class="tech-item"><span class="tech-no">11</span><span class="tech-name">Fresado CNC</span><span class="tech-use">alta precisión</span></div>
+                <div class="tech-item"><span class="tech-no">12</span><span class="tech-name">Rotulación</span><span class="tech-use">gran formato</span></div>
+              </div>
+              <p class="text-sm text-steel" style="margin-top: var(--sp-2)">El color sobre metacrilato rígido va con impresión UVI (técnica 05).</p>
+            </div>
+          </div>
+
+        </div>
+        <p class="disclaimer" style="margin-top: var(--sp-6)">Serie mínima, plazo y aguante por técnica se confirman según tu material y proceso. Series desde unidades hasta grandes tiradas — consultar disponibilidad. Estimación orientativa, sujeta a brief.</p>
+      </div>
+    </section>
+
+    <!-- ===================== TÉCNICAS EN MOVIMIENTO (b-roll ya creado) ===================== -->
+    <section class="section section--dark blueprint-bg spotlight" id="tecnicas-video">
+      <div class="container">
+        <span class="section-no" data-fx>CAPACIDAD · EN MOVIMIENTO</span>
+        <h2 data-fx="up" style="margin-top: var(--sp-3); max-width: 22ch">Así marcamos, en el taller</h2>
+        <p class="lead" data-fx="up" data-fx-delay="80" style="margin-top: var(--sp-4); max-width: 60ch">Cada técnica, en movimiento: tampografía sobre pieza, grabado láser, serigrafía cilíndrica sobre envase y fresado de metacrilato.</p>
+        <div class="tech-video-grid" data-fx-stagger style="margin-top: var(--sp-7)">
+          <figure class="media regmark" data-ar="4/3">
+            <span class="vno">02</span>
+            <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="assets/img/tampografia__Imagen102.jpg" aria-label="Marcaje por tampografía en el taller de Duato"><source src="assets/video/02-tampografia.mp4" type="video/mp4"></video>
+            <span class="vlabel">Tampografía</span>
+          </figure>
+          <figure class="media regmark" data-ar="4/3">
+            <span class="vno">03</span>
+            <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="assets/img/homepage__cabecera-laser.jpg" aria-label="Grabado láser en el taller de Duato"><source src="assets/video/03-laser-co2.mp4" type="video/mp4"></video>
+            <span class="vlabel">Láser</span>
+          </figure>
+          <figure class="media regmark" data-ar="4/3">
+            <span class="vno">12</span>
+            <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="assets/img/repetibilidad.jpg" aria-label="Serigrafía cilíndrica sobre envase en el taller de Duato"><source src="assets/video/12-cilindrica.mp4" type="video/mp4"></video>
+            <span class="vlabel">Cilíndrica</span>
+          </figure>
+          <figure class="media regmark" data-ar="4/3">
+            <span class="vno">10</span>
+            <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="assets/img/fresado__fresado-metacrilato-valencia.jpg" aria-label="Fresado de metacrilato por CNC en el taller de Duato"><source src="assets/video/10-fresado.mp4" type="video/mp4"></video>
+            <span class="vlabel">Fresado CNC</span>
+          </figure>
+        </div>
+        <p class="disclaimer" style="margin-top: var(--sp-5)">Imágenes de proceso del taller · vídeo sin sonido.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 5 · REPETIBILIDAD Y CONTINUIDAD ===================== -->
+    <section class="section section--dark blueprint-bg" id="repetibilidad">
+      <div class="container">
+        <div style="max-width: 62ch">
+          <span class="eyebrow">Repetibilidad y continuidad</span>
+          <h2 style="margin-top: var(--sp-4)">Cuando repites pedido, la marca sale idéntica a la primera vez</h2>
+          <p class="lead" style="margin-top: var(--sp-4)">Archivamos la ficha de proceso de cada trabajo —técnica, tinta, fotolito o cliché, parámetros— para que la reposición de dentro de tres años sea exactamente igual. Más de 30 años de oficio significan que el proveedor sigue ahí cuando vuelves a pedir.</p>
+        </div>
+
+        <div class="process" aria-label="Proceso de archivo para reposición idéntica">
+          <div class="process-step"><span class="dot"></span><h4>Brief y muestra</h4><p>Definimos pieza, material, técnica y validamos el resultado contigo.</p></div>
+          <div class="process-step"><span class="dot"></span><h4>Ficha de proceso</h4><p>Documentamos parámetros, tinta, cliché o fotolito y referencia de color.</p></div>
+          <div class="process-step"><span class="dot"></span><h4>Producción de serie</h4><p>Producimos la tirada con control de proceso, pieza a pieza igual.</p></div>
+          <div class="process-step"><span class="dot"></span><h4>Reposición idéntica</h4><p>Recuperamos la ficha archivada y repetimos el pedido sin desviación.</p></div>
+        </div>
+
+        <div class="grid" style="margin-top: var(--sp-8); align-items: center">
+          <div class="col-6">
+            <figure class="media regmark scan" data-ar="4/3" data-fx="right" role="img" aria-label="Serie de piezas con acabado en gota de resina, todas idénticas, producidas en el taller de Duato en Alboraya">
+              <span class="media-tag">Gota de resina · serie</span>
+              <img src="assets/img/repetibilidad.jpg" alt="Serie de piezas con acabado en gota de resina, todas idénticas, producidas en Alboraya" loading="lazy">
+              <figcaption class="media-cap"><span class="dot"></span>Misma ficha de proceso, misma marca en cada reposición</figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <div class="stack">
+              <p style="color: var(--steel-on-dark)">El comprador industrial no compra una vez: repone. Que la pieza número 1 y la 10.000 —y la del año que viene— salgan idénticas es lo que reduce su riesgo y por lo que vuelve.</p>
+              <div class="repeat-strip" data-fx aria-hidden="true">
+                <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg></span>
+                <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg></span>
+                <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg></span>
+                <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg></span>
+                <span class="mark ghost"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="5"/></svg></span>
+                <span class="rep-plus">× 10.000 · idénticas</span>
+              </div>
+              <a class="btn btn-ghost" href="#contacto" style="margin-top: var(--sp-2)">Hablar con un técnico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6 · CUMPLIMIENTO HONESTO ===================== -->
+    <section class="section has-ink" id="calidad">
+      <div class="container">
+        <div style="max-width: 62ch">
+          <span class="eyebrow">Cumplimiento y medioambiente</span>
+          <h2 style="margin-top: var(--sp-4)">Lo que podemos demostrar, te lo demostramos</h2>
+          <p class="lead" style="margin-top: var(--sp-4)">Solo declaramos lo verificable. Sin sellos que no tengamos: gestión ambiental real y proceso documentado son señales de una empresa que estará aquí dentro de años.</p>
+        </div>
+
+        <div class="compliance-grid reveal" style="margin-top: var(--sp-7)">
+          <div class="compliance-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 16c2 1.5 4 1.5 6 0s4-1.5 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Tratamiento de aguas en circuito cerrado</h4>
+              <p>El agua del proceso se trata y reutiliza en circuito cerrado, sin vertido directo. Una decisión de empresa a largo plazo, no un eslogan.</p>
+            </div>
+          </div>
+          <div class="compliance-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l-2 4 4 1M17 7l2 4-4 1M12 17l-3-3h6l-3 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 11h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Reciclaje con RECICLAMAS</h4>
+              <p>Gestión de papel, cartón y plástico a través del partner de reciclaje RECICLAMAS, y residuos peligrosos vía gestor autorizado.</p>
+            </div>
+          </div>
+          <div class="compliance-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Ficha de proceso archivada por pedido</h4>
+              <p>Cada trabajo deja su ficha documentada: la base de la reposición idéntica y de la trazabilidad de tu propio pedido.</p>
+            </div>
+          </div>
+          <div class="compliance-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <h4>Certificación ISO</h4>
+              <p>No publicamos sellos que no tengamos. <span class="badge-pending" style="margin-top: 6px"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Pendiente de confirmar con el taller</span></p>
+            </div>
+          </div>
+        </div>
+        <p class="disclaimer" style="margin-top: var(--sp-6)">La compatibilidad de marcaje sobre EPI certificado se valida por escrito antes de producir: marcar sobre un EPI puede afectar a su certificación.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 7 · CONTACTO TÉCNICO ===================== -->
+    <section class="section section--surface-2" id="contacto">
+      <div class="container">
+        <div class="grid" style="align-items: stretch">
+          <div class="col-6">
+            <span class="eyebrow">Contacto técnico</span>
+            <h2 style="margin-top: var(--sp-4)">Cuéntanos tu pieza. Te decimos cómo la marcamos.</h2>
+            <p class="lead" style="margin-top: var(--sp-4)">Para un presupuesto técnico, pídelo con tu plano o muestra y te respondemos lo antes posible. Para plazos críticos, llámanos o escríbenos directamente: hablas con quien conoce el proceso.</p>
+            <div class="cluster" style="margin-top: var(--sp-6)">
+              <a class="btn btn-safety" href="presupuesto.html">
+                Pedir presupuesto
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="tel:+34961860275">Llamar al taller</a>
+            </div>
+            <p class="disclaimer" style="margin-top: var(--sp-4)">Te respondemos lo antes posible en horario de taller. Estimación orientativa, sujeta a brief.</p>
+          </div>
+
+          <div class="col-6">
+            <div class="contact-card">
+              <h3 style="font-size: var(--fs-lead)">Serigrafía Duato S.L.</h3>
+              <address class="contact-data" style="font-style: normal; margin-top: var(--sp-4)">
+                Camino del Mar 36<br>
+                46120 Alboraya · Valencia<br>
+                <a href="tel:+34961860275">+34 96 186 02 75</a><br>
+                <a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a>
+              </address>
+              <hr class="divider">
+              <div class="cluster">
+                <span class="badge-normativa">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  Circuito cerrado de aguas
+                </span>
+                <span class="badge-normativa">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l-2 4 4 1M17 7l2 4-4 1M12 17l-3-3h6l-3 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  Partner RECICLAMAS
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="home.html" style="color: var(--ink-on-dark)">
+            Serigrafía Duato
+            <span class="brand-sub" style="color: var(--steel-on-dark)">Marcaje industrial</span>
+          </a>
+          <p class="text-sm" style="margin-top: var(--sp-4); max-width: 42ch; color: var(--steel-on-dark)">
+            Taller de marcaje industrial multitécnica en Alboraya (Valencia).
+            12 técnicas bajo un techo, más de 30 años de oficio.
+          </p>
+          <p class="text-sm" style="margin-top: var(--sp-4); color: var(--steel-on-dark)">
+            Tratamiento de aguas en circuito cerrado. Partner de reciclaje RECICLAMAS.
+          </p>
+        </div>
+
+        <div>
+          <h4>Contacto</h4>
+          <address class="footer-data" style="font-style: normal">
+            Camino del Mar 36<br>
+            46120 Alboraya · Valencia<br>
+            <a href="tel:+34961860275">+34 96 186 02 75</a><br>
+            <a href="mailto:info@serigrafiaduato.es">info@serigrafiaduato.es</a>
+          </address>
+        </div>
+
+        <div>
+          <h4>Capacidades</h4>
+          <ul class="stack" style="--sp-4: 8px">
+            <li><a href="marcaje-piezas-componentes.html">Piezas y componentes</a></li>
+            <li><span aria-disabled="true" style="opacity:.6">Trazabilidad industrial <span class="text-sm">· en preparación</span></span></li>
+            <li><span aria-disabled="true" style="opacity:.6">Envases y cilíndrico <span class="text-sm">· en preparación</span></span></li>
+            <li><span aria-disabled="true" style="opacity:.6">Ropa laboral y EPI <span class="text-sm">· en preparación</span></span></li>
+            <li><a href="capacidades-tampografia.html">Todas las técnicas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span class="mono">2026</span> Serigrafía Duato S.L.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <span aria-disabled="true" style="opacity:.6">Aviso legal</span>
+          <span aria-disabled="true" style="opacity:.6">Privacidad</span>
+          <span aria-disabled="true" style="opacity:.6">Cookies</span>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== CTA DUAL STICKY ===================== -->
+  <div class="cta-sticky" id="ctaSticky" aria-hidden="true">
+    <div class="container">
+      <span class="cta-sticky-text">Marcaje industrial en Valencia<span>+30 años · 12 técnicas · Alboraya</span></span>
+      <a class="btn btn-ghost" href="#contacto">Hablar con un técnico</a>
+      <a class="btn btn-safety" href="presupuesto.html">Pedir presupuesto</a>
+    </div>
+  </div>
+
+  <!-- ===================== WHATSAPP STICKY (móvil) ===================== -->
+  <a class="whatsapp-sticky" href="https://wa.me/34961860275" aria-label="Escríbenos por WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 9 18.6L4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10c0 3 2 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    WhatsApp
+  </a>
+
+  <!-- ===================== MOTION + NAV ===================== -->
+  <script>
+    const rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!rm && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
+    }
+
+    // Nav móvil
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    const closeNav = () => {
+      if (!nav) return;
+      nav.style.display = '';
+      nav.removeAttribute('style');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    };
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.style.display === 'flex';
+        if (open) { closeNav(); return; }
+        nav.style.display = 'flex';
+        nav.style.position = 'absolute';
+        nav.style.flexDirection = 'column';
+        nav.style.alignItems = 'flex-start';
+        nav.style.gap = 'var(--sp-3)';
+        nav.style.top = '64px';
+        nav.style.left = '0';
+        nav.style.right = '0';
+        nav.style.background = 'var(--surface)';
+        nav.style.borderBottom = '1px solid var(--line)';
+        nav.style.padding = 'var(--sp-4) var(--gutter-mobile)';
+        nav.style.zIndex = '99';
+        toggle.setAttribute('aria-expanded', 'true');
+      });
+      // Al pulsar un enlace de ancla, cerrar el menú para que el scroll funcione limpio
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    }
+
+    // CTA dual sticky: aparece al salir del hero, se oculta al llegar al contacto
+    const ctaSticky = document.getElementById('ctaSticky');
+    const hero = document.querySelector('.hero');
+    const contacto = document.getElementById('contacto');
+    if (ctaSticky && hero && 'IntersectionObserver' in window) {
+      let pastHero = false, atContacto = false;
+      const update = () => {
+        const show = pastHero && !atContacto;
+        ctaSticky.classList.toggle('is-visible', show);
+        ctaSticky.setAttribute('aria-hidden', String(!show));
+      };
+      new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; update(); }, { threshold: 0 }).observe(hero);
+      new IntersectionObserver(([e]) => { atContacto = e.isIntersecting; update(); }, { threshold: 0.2 }).observe(contacto);
+    }
+  </script>
+  <script src="assets/fx.js" defer></script>
+
+</body>
+</html>
